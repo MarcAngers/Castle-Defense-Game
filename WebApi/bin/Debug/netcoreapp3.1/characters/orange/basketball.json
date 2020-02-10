@@ -1,0 +1,11 @@
+{
+    "name": "basketball",
+    "price": 1,
+    "health": 3,
+    "damage": 1,
+    "speed": 20,
+    "size": 50,
+    "y": 400,
+    "team": "orange",
+    "html": "<div class='character' id='basketball'><label class='price'>$1</label><img src='../../assets/img/icons/basketball icon.png'></div>"
+}

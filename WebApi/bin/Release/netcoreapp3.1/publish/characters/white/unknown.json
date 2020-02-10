@@ -1,0 +1,11 @@
+{
+    "name": "unknown",
+    "price": 1000000,
+    "health": 0,
+    "damage": 0,
+    "speed": 0,
+    "size": 0,
+    "y": 1000000,
+    "team": "white",
+    "html": "<div class='character' id='unknown'><label class='price'>?</label><img src='../../assets/img/icons/question icon.png'></div>"
+}

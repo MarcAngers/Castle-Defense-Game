@@ -1,0 +1,11 @@
+{
+    "name": "bread",
+    "price": 10,
+    "health": 30,
+    "damage": 3,
+    "speed": 8,
+    "size": 75,
+    "y": 375,
+    "team": "white",
+    "html": "<div class='character' id='bread'><label class='price'>$10</label><img src='../../assets/img/icons/bread icon.png'></div>"
+}

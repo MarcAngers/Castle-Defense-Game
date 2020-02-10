@@ -1,0 +1,11 @@
+{
+    "name": "fishy",
+    "price": 3,
+    "health": 8,
+    "damage": 3,
+    "speed": 12,
+    "size": 50,
+    "y": 400,
+    "team": "blue",
+    "html": "<div class='character first' id='fishy'><label class='price'>$3</label><img src='../../assets/img/icons/fishy icon.png'></div>"
+}

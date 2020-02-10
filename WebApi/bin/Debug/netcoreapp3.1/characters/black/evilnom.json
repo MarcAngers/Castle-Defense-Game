@@ -1,0 +1,11 @@
+{
+    "name": "evilnom",
+    "price": 8,
+    "health": 18,
+    "damage": 9,
+    "speed": 13,
+    "size": 50,
+    "y": 400,
+    "team": "black",
+    "html": "<div class='character' id='evilnom'><label class='price black-unit'>$8</label><img src='../../assets/img/icons/evilnom icon.png'></div>"
+}

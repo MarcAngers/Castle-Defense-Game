@@ -1,0 +1,11 @@
+{
+    "name": "barry",
+    "price": 5,
+    "health": 17,
+    "damage": 2,
+    "speed": 13,
+    "size": 75,
+    "y": 375,
+    "team": "red",
+    "html": "<div class='character' id='barry'><label class='price'>$5</label><img src='../../assets/img/icons/barry icon.png'></div>"
+}

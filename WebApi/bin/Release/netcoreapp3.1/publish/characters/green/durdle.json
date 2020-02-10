@@ -1,0 +1,11 @@
+{
+    "name": "durdle",
+    "price": 4,
+    "health": 20,
+    "damage": 2,
+    "speed": 2,
+    "size": 75,
+    "y": 400,
+    "team": "green",
+    "html": "<div class='character' id='durdle'><label class='price'>$4</label><img src='../../assets/img/icons/durdle icon.png'></div>"
+}

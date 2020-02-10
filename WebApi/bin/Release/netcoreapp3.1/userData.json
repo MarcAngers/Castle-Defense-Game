@@ -1,0 +1,55 @@
+{
+    "Bob": {
+        "credits": 10,
+        "name": "Bob",
+        "unlocks": [
+            "doggo",
+            "catto",
+            "froggo",
+            "fishy",
+            "blobbo",
+            "ducko",
+            "derpyberd"
+        ],
+        "levelWins": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "Rob": {
+        "credits": 100,
+        "name": "Rob",
+        "unlocks": [
+            "doggo",
+            "catto",
+            "alpacco",
+            "froggo",
+            "minisnecko",
+            "durdle",
+            "snecko",
+            "fishy",
+            "blobbo",
+            "ducko",
+            "derpyberd",
+            "birdo",
+            "evildoggo",
+            "gorillo"
+        ],
+        "levelWins": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    }
+}

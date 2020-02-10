@@ -1,0 +1,11 @@
+{
+    "name": "eggo",
+    "price": 35,
+    "health": 45,
+    "damage": 25,
+    "speed": 15,
+    "size": 100,
+    "y": 350,
+    "team": "white",
+    "html": "<div class='character' id='eggo'><label class='price'>$35</label><img src='../../assets/img/icons/eggo icon.png'></div>"
+}

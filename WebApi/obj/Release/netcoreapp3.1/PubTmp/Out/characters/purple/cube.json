@@ -1,0 +1,11 @@
+{
+    "name": "cube",
+    "price": 5,
+    "health": 10,
+    "damage": 5,
+    "speed": 10,
+    "size": 50,
+    "y": 400,
+    "team": "purple",
+    "html": "<div class='character' id='cube'><label class='price'>$5</label><img src='../../assets/img/icons/cube icon.png'></div>"
+}

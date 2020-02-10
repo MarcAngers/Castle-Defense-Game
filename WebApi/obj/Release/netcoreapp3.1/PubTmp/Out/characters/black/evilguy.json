@@ -1,0 +1,11 @@
+{
+    "name": "evilguy",
+    "price": 115,
+    "health": 375,
+    "damage": 15,
+    "speed": 2,
+    "size": 200,
+    "y": 250,
+    "team": "black",
+    "html": "<div class='character' id='evilguy'><label class='price black-unit'>$115</label><img src='../../assets/img/icons/evilguy icon.png'></div>"
+}

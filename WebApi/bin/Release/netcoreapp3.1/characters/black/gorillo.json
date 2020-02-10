@@ -1,0 +1,11 @@
+{
+    "name": "gorillo",
+    "price": 24,
+    "health": 75,
+    "damage": 20,
+    "speed": 5,
+    "size": 75,
+    "y": 375,
+    "team": "black",
+    "html": "<div class='character' id='gorillo'><label class='price black-unit'>$24</label><img src='../../assets/img/icons/gorillo icon.png'></div>"
+}
