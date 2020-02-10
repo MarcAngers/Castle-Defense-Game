@@ -746,27 +746,6 @@ let GameComponent = GameComponent_1 = class GameComponent {
     constructor(route, http) {
         this.route = route;
         this.ended = 0;
-        // Self reference to get around weird lexical scoping in places...
-        this.game = this;
-        this.ngOnChanges = () => {
-            /*this.id = (<any>this.route.paramMap).id;
-            this.team = (<any>this.route.paramMap).team;
-            this.side = (<any>this.route.paramMap).side;
-            if (this.side == 1)
-              this.connectedPlayer = this.player1;
-            else
-              this.connectedPlayer = this.player2;*/
-            /*this.route.paramMap.subscribe(map => {
-              var mapParams = <any> map;
-              this.id = mapParams.params.id;
-              this.team = mapParams.params.team;
-              this.side = mapParams.params.side;
-              if (this.side == 1)
-                this.connectedPlayer = this.player1;
-              else
-                this.connectedPlayer = this.player2;
-            });*/
-        };
         this.init = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield GameComponent_1.gameServices.init(this.team, this.id);
             if (this.id < 1000)
@@ -839,17 +818,16 @@ let GameComponent = GameComponent_1 = class GameComponent {
         this.context = this.canvas.getContext("2d");
         var menuButton = document.getElementById("main-menu");
         menuButton.onclick = () => {
+            menuButton.style.display = "none";
             GameComponent_1.gameServices.end(this.id);
             this.reset();
         };
         this.units = new Array();
         this.route.paramMap.subscribe(map => {
             var mapParams = map;
-            console.log(mapParams);
             this.id = mapParams.params.id;
             this.team = mapParams.params.team;
             this.side = mapParams.params.side;
-            console.log(this.id, this.team, this.side);
             if (this.side == 1)
                 this.connectedPlayer = this.player1;
             else
@@ -1485,7 +1463,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\WebApi\Angular\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\repos\WebApi\Angular\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -13,6 +13,10 @@ namespace WebApi.Services
         {
             return new Character(name, team, side);
         }
+        public Character GetWeirdo(int price, int side)
+        {
+            return new Character(price, side);
+        }
 
         public int GetPrice(string name, string team)
         {

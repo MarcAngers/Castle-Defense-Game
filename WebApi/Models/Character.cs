@@ -38,7 +38,25 @@ namespace WebApi.Models
             this.Stopped = false;
             this.Dead = false;
         }
-        
+        public Character(int price, int side) : this(side)
+        {
+            Random r = new Random();
+
+            this.Name = "weirdo";
+            this.Price = 0;
+            this.Health = (int)Math.Ceiling(r.NextDouble() * price);
+            this.MaxHealth = this.Health;
+            this.Damage = (int)Math.Ceiling(r.NextDouble() * price);
+            this.Speed = (int)r.NextDouble() * 17;
+            this.Y = 350;
+            this.Y = this.Y + (-25 + r.Next(51));
+            this.Team = "black";
+            this.HTML = "<div class='character' id='weirdo'><label class='price black-unit'>$?</label><img src='../../assets/img/icons/weirdo icon.png'></div>";
+
+            this.Stopped = false;
+            this.Dead = false;
+        }
+
         public Character(string name, string team, int side) : this(name, team)
         {
             this.Side = side;

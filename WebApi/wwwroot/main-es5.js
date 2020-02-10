@@ -1473,30 +1473,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, GameComponent);
 
         this.route = route;
-        this.ended = 0; // Self reference to get around weird lexical scoping in places...
-
-        this.game = this;
-
-        this.ngOnChanges = function () {
-          /*this.id = (<any>this.route.paramMap).id;
-          this.team = (<any>this.route.paramMap).team;
-          this.side = (<any>this.route.paramMap).side;
-          if (this.side == 1)
-            this.connectedPlayer = this.player1;
-          else
-            this.connectedPlayer = this.player2;*/
-
-          /*this.route.paramMap.subscribe(map => {
-            var mapParams = <any> map;
-            this.id = mapParams.params.id;
-            this.team = mapParams.params.team;
-            this.side = mapParams.params.side;
-            if (this.side == 1)
-              this.connectedPlayer = this.player1;
-            else
-              this.connectedPlayer = this.player2;
-          });*/
-        };
+        this.ended = 0;
 
         this.init = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this3, void 0, void 0,
@@ -1630,6 +1607,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var menuButton = document.getElementById("main-menu");
 
           menuButton.onclick = function () {
+            menuButton.style.display = "none";
             GameComponent_1.gameServices.end(_this5.id);
 
             _this5.reset();
@@ -1638,11 +1616,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.units = new Array();
           this.route.paramMap.subscribe(function (map) {
             var mapParams = map;
-            console.log(mapParams);
             _this5.id = mapParams.params.id;
             _this5.team = mapParams.params.team;
             _this5.side = mapParams.params.side;
-            console.log(_this5.id, _this5.team, _this5.side);
             if (_this5.side == 1) _this5.connectedPlayer = _this5.player1;else _this5.connectedPlayer = _this5.player2;
           });
           if (this.side == 1) this.init();else GameComponent_1.gameServices.init(this.team, this.id);
@@ -2662,7 +2638,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\WebApi\Angular\src\main.ts */
+    /*! C:\repos\WebApi\Angular\src\main.ts */
     "./src/main.ts");
     /***/
   }

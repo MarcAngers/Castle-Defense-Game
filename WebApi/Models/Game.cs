@@ -211,6 +211,15 @@ namespace WebApi.Models
                 return;
             }
 
+            // Special logic for weirdo
+            if (name == "weirdo")
+            {
+                Random r = new Random();
+                price = r.NextDouble() * player.Money;
+                if (player.SpendMoney(price))
+                    this.Units.Add(this.CharacterServices.GetWeirdo(price, player.Side));
+            }
+
             price = this.CharacterServices.GetPrice(name, player.Team);
             if (player.SpendMoney(price))
             {
