@@ -52,7 +52,6 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             Startup.GameInstances = new List<Game>();
-            Startup.GameInstances.Add(new Game());
             services.AddControllers();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
             builder =>

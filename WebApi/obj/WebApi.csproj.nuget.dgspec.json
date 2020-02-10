@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\WebApi\\WebApi\\WebApi.csproj": {}
+    "C:\\repos\\WebApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\WebApi\\WebApi\\WebApi.csproj": {
+    "C:\\repos\\WebApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\WebApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\repos\\WebApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\WebApi\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\repos\\WebApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\marc.angers\\.nuget\\packages\\",
-        "outputPath": "C:\\WebApi\\WebApi\\obj\\",
+        "outputPath": "C:\\repos\\WebApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marc.angers\\AppData\\Roaming\\NuGet\\NuGet.Config",
