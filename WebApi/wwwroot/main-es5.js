@@ -1331,22 +1331,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CharacterService, [{
         key: "getCharacter",
         value: function getCharacter(team, name) {
-          return this.http.get('https://localhost:44364/api/characters/getcharacter/' + team + '/' + name).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getcharacter/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getPrice",
         value: function getPrice(team, name) {
-          return this.http.get('https://localhost:44364/api/characters/getprice/' + team + '/' + name).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getprice/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getHTML",
         value: function getHTML(team, name) {
-          return this.http.get('https://localhost:44364/api/characters/gethtml/' + team + '/' + name).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/gethtml/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getTeam",
         value: function getTeam(team) {
-          return this.http.get('https://localhost:44364/api/characters/getteam/' + team).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getteam/' + team).toPromise();
         }
       }]);
 
@@ -1750,32 +1750,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(GameServices, [{
         key: "getUnits",
         value: function getUnits() {
-          return this.http.get('https://localhost:44364/api/game/getunits').toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getunits').toPromise();
         }
       }, {
         key: "getPlayers",
         value: function getPlayers() {
-          return this.http.get('https://localhost:44364/api/game/getplayers').toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getplayers').toPromise();
         }
       }, {
         key: "init",
         value: function init(team, id) {
-          return this.http.get('https://localhost:44364/api/game/init/' + team + '/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/init/' + team + '/' + id).toPromise();
         }
       }, {
         key: "play",
         value: function play(id) {
-          return this.http.get('https://localhost:44364/api/game/play/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/play/' + id).toPromise();
         }
       }, {
         key: "end",
         value: function end(id) {
-          return this.http.get('https://localhost:44364/api/game/end/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/end/' + id).toPromise();
         }
       }, {
         key: "buy",
         value: function buy(id, player, unit) {
-          return this.http.get('https://localhost:44364/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
         }
       }]);
 
@@ -2385,13 +2385,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserServices, [{
         key: "Login",
         value: function Login(username, password) {
-          return this.http.get('https://localhost:44364/api/user/login/' + username + '/' + password).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/login/' + username + '/' + password).toPromise();
         }
       }, {
         key: "Win",
         value: function Win(username, id) {
-          if (id < 1000) return this.http.get('https://localhost:44364/api/user/win/' + username + '/' + id).toPromise();
-          return this.http.get('https://localhost:44364/api/user/win/' + username + '/1000').toPromise();
+          if (id < 1000) return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/1000').toPromise();
         }
       }]);
 

@@ -680,16 +680,16 @@ class CharacterService {
         this.http = http;
     }
     getCharacter(team, name) {
-        return this.http.get('https://localhost:44364/api/characters/getcharacter/' + team + '/' + name).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getcharacter/' + team + '/' + name).toPromise();
     }
     getPrice(team, name) {
-        return this.http.get('https://localhost:44364/api/characters/getprice/' + team + '/' + name).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getprice/' + team + '/' + name).toPromise();
     }
     getHTML(team, name) {
-        return this.http.get('https://localhost:44364/api/characters/gethtml/' + team + '/' + name).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/gethtml/' + team + '/' + name).toPromise();
     }
     getTeam(team) {
-        return this.http.get('https://localhost:44364/api/characters/getteam/' + team).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getteam/' + team).toPromise();
     }
 }
 
@@ -913,22 +913,22 @@ class GameServices {
         this.http = http;
     }
     getUnits() {
-        return this.http.get('https://localhost:44364/api/game/getunits').toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getunits').toPromise();
     }
     getPlayers() {
-        return this.http.get('https://localhost:44364/api/game/getplayers').toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getplayers').toPromise();
     }
     init(team, id) {
-        return this.http.get('https://localhost:44364/api/game/init/' + team + '/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/init/' + team + '/' + id).toPromise();
     }
     play(id) {
-        return this.http.get('https://localhost:44364/api/game/play/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/play/' + id).toPromise();
     }
     end(id) {
-        return this.http.get('https://localhost:44364/api/game/end/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/end/' + id).toPromise();
     }
     buy(id, player, unit) {
-        return this.http.get('https://localhost:44364/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
     }
 }
 
@@ -1305,12 +1305,12 @@ class UserServices {
         this.http = http;
     }
     Login(username, password) {
-        return this.http.get('https://localhost:44364/api/user/login/' + username + '/' + password).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/login/' + username + '/' + password).toPromise();
     }
     Win(username, id) {
         if (id < 1000)
-            return this.http.get('https://localhost:44364/api/user/win/' + username + '/' + id).toPromise();
-        return this.http.get('https://localhost:44364/api/user/win/' + username + '/1000').toPromise();
+            return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/1000').toPromise();
     }
 }
 
