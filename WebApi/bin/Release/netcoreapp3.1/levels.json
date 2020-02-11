@@ -250,5 +250,31 @@
             7500
         ]
     },
-    "8": {}
+    "8": {
+        "team": "black",
+        "income": 10,
+        "health": 9900,
+        "units": [
+            "evilguy"
+        ],
+        "times": [
+            1000000
+        ],
+        "recurring": [
+            "evilminnow",
+            "evildoggo",
+            "eevil",
+            "evilnom",
+            "evilbirdo",
+            "gorillo"
+        ],
+        "intervals": [
+            5000,
+            10000,
+            15000,
+            50000,
+            55000,
+            100000
+        ]     
+    }
 }

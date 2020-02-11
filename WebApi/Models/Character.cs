@@ -44,10 +44,11 @@ namespace WebApi.Models
 
             this.Name = "weirdo";
             this.Price = 0;
-            this.Health = (int)Math.Ceiling(r.NextDouble() * price);
+            this.Health = (int)(Math.Ceiling(r.NextDouble() * 10) + price);
             this.MaxHealth = this.Health;
-            this.Damage = (int)Math.Ceiling(r.NextDouble() * price);
-            this.Speed = (int)r.NextDouble() * 17;
+            this.Damage = (int)(Math.Ceiling(r.NextDouble() * 10) + price);
+            this.Speed = (int)(r.NextDouble() * 14) + 3;
+            this.Size = 100;
             this.Y = 350;
             this.Y = this.Y + (-25 + r.Next(51));
             this.Team = "black";

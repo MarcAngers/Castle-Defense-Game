@@ -73,7 +73,7 @@
             "derpyberd"
         ],
         "intervals": [
-            3000
+            5000
         ]
     },
     "4": {
@@ -148,11 +148,41 @@
     "6": {
         "team": "yellow",
         "income": 3,
-        "health": 10000,
-        "units": [],
-        "times": [],
+        "health": 650,
+        "units": [
+            "ducko",
+            "ducko",
+            "ducko",
+            "doc",
+            "ducko",
+            "jig",
+            "ducko",
+            "doc",
+            "jig",
+            "ducko",
+            "doc",
+            "jig",
+            "deus",
+            "deus"
+        ],
+        "times": [
+            1000,
+            10000,
+            12000,
+            20000,
+            25000,
+            35000,
+            50000,
+            65000,
+            67000,
+            75000,
+            95000,
+            97500,
+            100000,
+            175000
+        ],
         "recurring": [
-            "ducko"
+            "minnow"
         ],
         "intervals": [
             3000

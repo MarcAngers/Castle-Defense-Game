@@ -222,7 +222,7 @@ namespace WebApi.Models
             {
                 Random r = new Random();
                 price = r.NextDouble() * player.Money;
-                if (player.SpendMoney(price))
+                if (price >= 2 && player.SpendMoney(price))
                     this.Units.Add(this.CharacterServices.GetWeirdo((int)price, player.Side));
             }
 
