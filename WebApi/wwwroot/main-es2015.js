@@ -547,7 +547,7 @@ let CharacterBarComponent = class CharacterBarComponent {
     ngOnInit() {
         document.getElementById("character-bar").classList.add(this.team);
         this.initBar();
-        document.addEventListener("click", (e) => {
+        document.addEventListener("mouseup", (e) => {
             var testForCharacter = e;
             if (testForCharacter.target.parentElement)
                 var target = testForCharacter.target.parentElement;
@@ -817,15 +817,15 @@ let GameComponent = GameComponent_1 = class GameComponent {
         this.canvas = document.getElementById("game-canvas");
         this.context = this.canvas.getContext("2d");
         var menuButton = document.getElementById("main-menu");
-        menuButton.onclick = () => {
+        menuButton.onmouseup = () => {
             menuButton.style.display = "none";
             GameComponent_1.gameServices.end(this.id);
             this.reset();
         };
-        document.getElementById("income").onclick = () => {
+        document.getElementById("income").onmouseup = () => {
             GameComponent_1.gameServices.buy(this.id, this.side, "income");
         };
-        document.getElementById("health").onclick = () => {
+        document.getElementById("health").onmouseup = () => {
             GameComponent_1.gameServices.buy(this.id, this.side, "health");
         };
         this.units = new Array();

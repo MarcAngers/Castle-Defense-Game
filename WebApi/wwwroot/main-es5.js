@@ -1101,7 +1101,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           document.getElementById("character-bar").classList.add(this.team);
           this.initBar();
-          document.addEventListener("click", function (e) {
+          document.addEventListener("mouseup", function (e) {
             var testForCharacter = e;
             if (testForCharacter.target.parentElement) var target = testForCharacter.target.parentElement;else return;
 
@@ -1606,18 +1606,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.context = this.canvas.getContext("2d");
           var menuButton = document.getElementById("main-menu");
 
-          menuButton.onclick = function () {
+          menuButton.onmouseup = function () {
             menuButton.style.display = "none";
             GameComponent_1.gameServices.end(_this5.id);
 
             _this5.reset();
           };
 
-          document.getElementById("income").onclick = function () {
+          document.getElementById("income").onmouseup = function () {
             GameComponent_1.gameServices.buy(_this5.id, _this5.side, "income");
           };
 
-          document.getElementById("health").onclick = function () {
+          document.getElementById("health").onmouseup = function () {
             GameComponent_1.gameServices.buy(_this5.id, _this5.side, "health");
           };
 
