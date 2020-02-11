@@ -822,6 +822,12 @@ let GameComponent = GameComponent_1 = class GameComponent {
             GameComponent_1.gameServices.end(this.id);
             this.reset();
         };
+        document.getElementById("income").onclick = () => {
+            GameComponent_1.gameServices.buy(this.id, this.side, "income");
+        };
+        document.getElementById("health").onclick = () => {
+            GameComponent_1.gameServices.buy(this.id, this.side, "health");
+        };
         this.units = new Array();
         this.route.paramMap.subscribe(map => {
             var mapParams = map;

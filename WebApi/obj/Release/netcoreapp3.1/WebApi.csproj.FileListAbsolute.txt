@@ -321,3 +321,4 @@ C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.
 C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\repos\WebApi\WebApi\obj\Release\netcoreapp3.1\WebApi.RazorTargetAssemblyInfo.cache
 C:\repos\WebApi\WebApi\obj\Release\netcoreapp3.1\WebApi.csproj.CopyComplete
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\aws-beanstalk-tools-defaults.json

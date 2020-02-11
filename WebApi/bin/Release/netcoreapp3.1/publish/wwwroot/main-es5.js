@@ -1331,22 +1331,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CharacterService, [{
         key: "getCharacter",
         value: function getCharacter(team, name) {
-          return this.http.get('https://localhost:44364/api/characters/getcharacter/' + team + '/' + name).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getcharacter/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getPrice",
         value: function getPrice(team, name) {
-          return this.http.get('https://localhost:44364/api/characters/getprice/' + team + '/' + name).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getprice/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getHTML",
         value: function getHTML(team, name) {
-          return this.http.get('https://localhost:44364/api/characters/gethtml/' + team + '/' + name).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/gethtml/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getTeam",
         value: function getTeam(team) {
-          return this.http.get('https://localhost:44364/api/characters/getteam/' + team).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getteam/' + team).toPromise();
         }
       }]);
 
@@ -1473,30 +1473,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, GameComponent);
 
         this.route = route;
-        this.ended = 0; // Self reference to get around weird lexical scoping in places...
-
-        this.game = this;
-
-        this.ngOnChanges = function () {
-          /*this.id = (<any>this.route.paramMap).id;
-          this.team = (<any>this.route.paramMap).team;
-          this.side = (<any>this.route.paramMap).side;
-          if (this.side == 1)
-            this.connectedPlayer = this.player1;
-          else
-            this.connectedPlayer = this.player2;*/
-
-          /*this.route.paramMap.subscribe(map => {
-            var mapParams = <any> map;
-            this.id = mapParams.params.id;
-            this.team = mapParams.params.team;
-            this.side = mapParams.params.side;
-            if (this.side == 1)
-              this.connectedPlayer = this.player1;
-            else
-              this.connectedPlayer = this.player2;
-          });*/
-        };
+        this.ended = 0;
 
         this.init = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this3, void 0, void 0,
@@ -1630,6 +1607,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var menuButton = document.getElementById("main-menu");
 
           menuButton.onclick = function () {
+            menuButton.style.display = "none";
             GameComponent_1.gameServices.end(_this5.id);
 
             _this5.reset();
@@ -1638,11 +1616,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.units = new Array();
           this.route.paramMap.subscribe(function (map) {
             var mapParams = map;
-            console.log(mapParams);
             _this5.id = mapParams.params.id;
             _this5.team = mapParams.params.team;
             _this5.side = mapParams.params.side;
-            console.log(_this5.id, _this5.team, _this5.side);
             if (_this5.side == 1) _this5.connectedPlayer = _this5.player1;else _this5.connectedPlayer = _this5.player2;
           });
           if (this.side == 1) this.init();else GameComponent_1.gameServices.init(this.team, this.id);
@@ -1774,32 +1750,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(GameServices, [{
         key: "getUnits",
         value: function getUnits() {
-          return this.http.get('https://localhost:44364/api/game/getunits').toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getunits').toPromise();
         }
       }, {
         key: "getPlayers",
         value: function getPlayers() {
-          return this.http.get('https://localhost:44364/api/game/getplayers').toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getplayers').toPromise();
         }
       }, {
         key: "init",
         value: function init(team, id) {
-          return this.http.get('https://localhost:44364/api/game/init/' + team + '/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/init/' + team + '/' + id).toPromise();
         }
       }, {
         key: "play",
         value: function play(id) {
-          return this.http.get('https://localhost:44364/api/game/play/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/play/' + id).toPromise();
         }
       }, {
         key: "end",
         value: function end(id) {
-          return this.http.get('https://localhost:44364/api/game/end/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/end/' + id).toPromise();
         }
       }, {
         key: "buy",
         value: function buy(id, player, unit) {
-          return this.http.get('https://localhost:44364/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
         }
       }]);
 
@@ -2409,13 +2385,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserServices, [{
         key: "Login",
         value: function Login(username, password) {
-          return this.http.get('https://localhost:44364/api/user/login/' + username + '/' + password).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/login/' + username + '/' + password).toPromise();
         }
       }, {
         key: "Win",
         value: function Win(username, id) {
-          if (id < 1000) return this.http.get('https://localhost:44364/api/user/win/' + username + '/' + id).toPromise();
-          return this.http.get('https://localhost:44364/api/user/win/' + username + '/1000').toPromise();
+          if (id < 1000) return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/' + id).toPromise();
+          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/1000').toPromise();
         }
       }]);
 
@@ -2662,7 +2638,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\WebApi\Angular\src\main.ts */
+    /*! C:\repos\WebApi\Angular\src\main.ts */
     "./src/main.ts");
     /***/
   }

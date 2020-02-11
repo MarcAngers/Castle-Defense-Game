@@ -175,11 +175,17 @@ namespace WebApi.Models
                 {
                     this.Player2.Castle.Siege(lead1);
                     lead1.Recoil();
+                    for (var i = 0; i < this.Units.Count; i++)
+                        if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
+                            this.Units[i].Recoil();
                 }
                 if (lead2pos - 170 < 3)
                 {
                     this.Player1.Castle.Siege(lead2);
                     lead2.Recoil();
+                    for (var i = 0; i < this.Units.Count; i++)
+                        if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
+                            this.Units[i].Recoil();
                 }
             }
 

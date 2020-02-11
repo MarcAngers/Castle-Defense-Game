@@ -1613,6 +1613,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this5.reset();
           };
 
+          document.getElementById("income").onclick = function () {
+            GameComponent_1.gameServices.buy(_this5.id, _this5.side, "income");
+          };
+
+          document.getElementById("health").onclick = function () {
+            GameComponent_1.gameServices.buy(_this5.id, _this5.side, "health");
+          };
+
           this.units = new Array();
           this.route.paramMap.subscribe(function (map) {
             var mapParams = map;

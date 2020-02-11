@@ -680,16 +680,16 @@ class CharacterService {
         this.http = http;
     }
     getCharacter(team, name) {
-        return this.http.get('https://localhost:44364/api/characters/getcharacter/' + team + '/' + name).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getcharacter/' + team + '/' + name).toPromise();
     }
     getPrice(team, name) {
-        return this.http.get('https://localhost:44364/api/characters/getprice/' + team + '/' + name).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getprice/' + team + '/' + name).toPromise();
     }
     getHTML(team, name) {
-        return this.http.get('https://localhost:44364/api/characters/gethtml/' + team + '/' + name).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/gethtml/' + team + '/' + name).toPromise();
     }
     getTeam(team) {
-        return this.http.get('https://localhost:44364/api/characters/getteam/' + team).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getteam/' + team).toPromise();
     }
 }
 
@@ -746,27 +746,6 @@ let GameComponent = GameComponent_1 = class GameComponent {
     constructor(route, http) {
         this.route = route;
         this.ended = 0;
-        // Self reference to get around weird lexical scoping in places...
-        this.game = this;
-        this.ngOnChanges = () => {
-            /*this.id = (<any>this.route.paramMap).id;
-            this.team = (<any>this.route.paramMap).team;
-            this.side = (<any>this.route.paramMap).side;
-            if (this.side == 1)
-              this.connectedPlayer = this.player1;
-            else
-              this.connectedPlayer = this.player2;*/
-            /*this.route.paramMap.subscribe(map => {
-              var mapParams = <any> map;
-              this.id = mapParams.params.id;
-              this.team = mapParams.params.team;
-              this.side = mapParams.params.side;
-              if (this.side == 1)
-                this.connectedPlayer = this.player1;
-              else
-                this.connectedPlayer = this.player2;
-            });*/
-        };
         this.init = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield GameComponent_1.gameServices.init(this.team, this.id);
             if (this.id < 1000)
@@ -839,17 +818,16 @@ let GameComponent = GameComponent_1 = class GameComponent {
         this.context = this.canvas.getContext("2d");
         var menuButton = document.getElementById("main-menu");
         menuButton.onclick = () => {
+            menuButton.style.display = "none";
             GameComponent_1.gameServices.end(this.id);
             this.reset();
         };
         this.units = new Array();
         this.route.paramMap.subscribe(map => {
             var mapParams = map;
-            console.log(mapParams);
             this.id = mapParams.params.id;
             this.team = mapParams.params.team;
             this.side = mapParams.params.side;
-            console.log(this.id, this.team, this.side);
             if (this.side == 1)
                 this.connectedPlayer = this.player1;
             else
@@ -935,22 +913,22 @@ class GameServices {
         this.http = http;
     }
     getUnits() {
-        return this.http.get('https://localhost:44364/api/game/getunits').toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getunits').toPromise();
     }
     getPlayers() {
-        return this.http.get('https://localhost:44364/api/game/getplayers').toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getplayers').toPromise();
     }
     init(team, id) {
-        return this.http.get('https://localhost:44364/api/game/init/' + team + '/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/init/' + team + '/' + id).toPromise();
     }
     play(id) {
-        return this.http.get('https://localhost:44364/api/game/play/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/play/' + id).toPromise();
     }
     end(id) {
-        return this.http.get('https://localhost:44364/api/game/end/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/end/' + id).toPromise();
     }
     buy(id, player, unit) {
-        return this.http.get('https://localhost:44364/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
     }
 }
 
@@ -1327,12 +1305,12 @@ class UserServices {
         this.http = http;
     }
     Login(username, password) {
-        return this.http.get('https://localhost:44364/api/user/login/' + username + '/' + password).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/login/' + username + '/' + password).toPromise();
     }
     Win(username, id) {
         if (id < 1000)
-            return this.http.get('https://localhost:44364/api/user/win/' + username + '/' + id).toPromise();
-        return this.http.get('https://localhost:44364/api/user/win/' + username + '/1000').toPromise();
+            return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/' + id).toPromise();
+        return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/1000').toPromise();
     }
 }
 
@@ -1485,7 +1463,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\WebApi\Angular\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\repos\WebApi\Angular\src\main.ts */"./src/main.ts");
 
 
 /***/ })
