@@ -171,7 +171,7 @@ namespace WebApi.Models
                     return;
                 }
                 // Hardcoded Castle positions... might want to change later
-                if (1330 - (lead1pos + lead1.Size) < 3)
+                if (1375 - (lead1pos + lead1.Size) < 3)
                 {
                     this.Player2.Castle.Siege(lead1);
                     lead1.Recoil();
@@ -179,7 +179,7 @@ namespace WebApi.Models
                         if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
                             this.Units[i].Recoil();
                 }
-                if (lead2pos - 170 < 3)
+                if (lead2pos - 125 < 3)
                 {
                     this.Player1.Castle.Siege(lead2);
                     lead2.Recoil();
