@@ -322,3 +322,8 @@ C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.
 C:\repos\WebApi\WebApi\obj\Release\netcoreapp3.1\WebApi.RazorTargetAssemblyInfo.cache
 C:\repos\WebApi\WebApi\obj\Release\netcoreapp3.1\WebApi.csproj.CopyComplete
 C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\aws-beanstalk-tools-defaults.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\blue\lightningbear.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\orange\hwy.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\red\draggo.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\white\corn.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\yellow\lyon.json
