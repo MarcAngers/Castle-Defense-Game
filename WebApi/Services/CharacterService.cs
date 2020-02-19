@@ -66,5 +66,10 @@ namespace WebApi.Services
                 return list.ToArray();
             }
         }
+
+        public CharacterInfo GetInfo(string team, string name)
+        {
+            return new CharacterInfo(team, name);
+        }
     }
 }

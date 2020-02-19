@@ -10,6 +10,7 @@ namespace WebApi.Models
         public double Money { get; set; }
         public double Income { get; set; }
         public double IncomePrice { get; set; }
+        public int IncomeIncreases { get; set; }
         public double HealthPrice { get; set; }
         public Castle Castle { get; set; }
         public string Team { get; set; }
@@ -19,6 +20,7 @@ namespace WebApi.Models
         {
             this.Money = 0;
             this.Income = 0.05;
+            this.IncomeIncreases = 0;
             this.IncomePrice = 4;
             this.HealthPrice = 5;
         }
@@ -43,8 +45,9 @@ namespace WebApi.Models
 
         public void AddIncome()
         {
-            this.Income += this.Income * 0.25;
-            this.IncomePrice++;
+            this.Income += 0.07;
+            this.IncomeIncreases++;
+            this.IncomePrice = Math.Round(Math.Pow(4, (this.IncomeIncreases + 5) / 5));
         }
         public void AddHealth()
         {

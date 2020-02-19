@@ -12,5 +12,6 @@ namespace WebApi.Services
         int GetPrice(string name, string team);
         string GetHTML(string name, string team);
         string[] GetTeam(string team);
+        CharacterInfo GetInfo(string team, string name);
     }
 }

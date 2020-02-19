@@ -66,6 +66,17 @@ namespace WebApi.Controllers
             return fullTeam;
         }
 
+        [HttpGet("getInfo/{team=white}/{name=doggo}")]
+        public ActionResult<CharacterInfo> GetInfo(string team, string name)
+        {
+            var characterInfo = _services.GetInfo(team, name);
+
+            if (characterInfo == null)
+                return NotFound();
+
+            return characterInfo;
+        }
+
         [HttpGet("test")]
         public ActionResult<string> Test()
         {
