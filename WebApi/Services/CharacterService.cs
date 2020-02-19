@@ -35,6 +35,7 @@ namespace WebApi.Services
                         return price;
                 } catch (Exception e)
                 {
+                    var msg = e.Message;
                     return 1000000;
                 }
             }
