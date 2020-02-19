@@ -51,7 +51,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<router-outlet></router-outlet>";
+    __webpack_exports__["default"] = "<router-outlet></router-outlet>\r\n<h1>hi</h1>";
     /***/
   },
 
@@ -72,6 +72,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     __webpack_exports__["default"] = "<div id=\"character-bar\">\n\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/character-info/character-info.component.html":
+  /*!****************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/character-info/character-info.component.html ***!
+    \****************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppCharacterInfoCharacterInfoComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div id=\"main-view\">\n    <div>\n        <h1>{{ character.name }}</h1>\n    </div>\n    <div class=\"info-container\">\n        <div class=\"image\" style=\"display: inline-block; margin: 50px; margin-top: 0px;\">\n            <img src=\"../../assets/img/units/{{name}}1.png\">\n        </div>\n        <div class=\"info\">\n            <div id=\"info-headers\">\n                Name:<br/>\n                Team:<br/>\n                Damage:<br/>\n                Health:<br/>\n                Speed:<br/>\n                Description:<br/>\n            </div>\n            <div id=\"info-values\">\n                {{character.name}}<br/>\n                {{character.team}}<br/>\n                {{character.damage}}<br/>\n                {{character.health}}<br/>\n                {{character.speed}}<br/>\n                {{character.description}}<br/>\n            </div>\n        </div>\n    </div>\n</div>\n<div id=\"footer\">\n    <div id=\"footer-content\">\n        <a class=\"image-link\" [routerLink]=\"['/characterinfo/', team, prev]\">\n            <img id=\"prev-info\" src=\"../../assets/img/icons/{{prev}} icon.png\">\n        </a>\n        <button id=\"back\" [routerLink]=\"['/teaminfo']\">Back to Team View</button>\n        <a class=\"image-link\" [routerLink]=\"['/characterinfo/', team, next]\">\n            <img id=\"next-info\" src=\"../../assets/img/icons/{{next}} icon.png\">\n        </a>\n    </div>\n</div>\n";
     /***/
   },
 
@@ -136,6 +156,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/team-info/team-info.component.html":
+  /*!******************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/team-info/team-info.component.html ***!
+    \******************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppTeamInfoTeamInfoComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div id=\"team-info-view\">\n    <h2>Choose a Character to see details on them!</h2>\n    <div id=\"character-select-bar\">\n        <div *ngFor=\"let unit of currentUnits\" style=\"display: inline-block; margin: 10px;\">\n            <a [routerLink]=\"['../characterinfo', currentTeam, unit]\">\n                <img src=\"../../assets/img/icons/{{unit}} icon.png\">\n            </a>\n        </div>\n    </div>\n    <app-team-select></app-team-select>\n</div>\n<div id=\"footer\">\n    <div id=\"footer-button-container\">\n        <button id=\"back\" [routerLink]=\"['']\">Back to Main Menu</button>\n    </div>\n</div>";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/team-select/team-select.component.html":
   /*!**********************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/team-select/team-select.component.html ***!
@@ -171,7 +211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"main-view\">\n    <div>\n        <h1>The Great Castle Defense Game!</h1>\n    </div>\n    <h2>Choose Your Game Mode:</h2>\n    <button routerLink='levelselect' id=\"sp\">Singleplayer</button>\n    <button routerLink='multiplayer' id=\"mp\">Multiplayer</button>\n</div>\n<div id=\"footer\">\n    <button id=\"instructions\">Instructions</button>\n</div>\n\n<!-- Instructions Modal -->\n<div id=\"instruction-modal\" class=\"modal\">\n    <div class=\"modal-content\">\n        <span class=\"close\">&times;</span>\n        <h1 class=\"modal-header\">Instructions:</h1>\n        <p>This is a castle defense game, the aim of the game is to power up and purchase units to attack the enemy castle while keeping your own castle safe!</p>\n        <br/>\n        <h1 class=\"modal-header\">Singleplayer:</h1>\n        <p>Choose your favorite team and battle against a variety of opponents in 8 different levels who will send units at you in a pre-defined pattern!</p>\n        <p>Be careful though! The levels get difficult very quickly!</p>\n        <br/>\n        <h1 class=\"modal-header\">Multiplayer:</h1>\n        <p>Pit your best strategies against your friends in a 2-player battle!</p>\n        <p>Create a new game and you will be assigned a random Game ID!</p>\n        <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>\n    </div>\n</div>\n<!--\n<div id=\"login\">\n    <h2>Login: </h2>\n    <div class=\"container\" id=\"test\">\n        <label for=\"uname\"><b>Username</b></label>\n        <input type=\"text\" id=\"username\" placeholder=\"Enter Username\" name=\"uname\" required>\n\n        <label for=\"psw\"><b>Password</b></label>\n        <input type=\"password\" id=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>\n\n        <button type=\"submit\" id=\"login-button\">Login</button>\n    </div>\n</div>\n<div id=\"user-info\">\n    \n</div>\n-->";
+    __webpack_exports__["default"] = "<div id=\"main-view\">\r\n    <h1>The Great Castle Defense Game!</h1>\r\n    <h2>Choose Your Game Mode:</h2>\r\n    <div id=\"main-button-container\">\r\n        <button routerLink='levelselect' id=\"sp\">Singleplayer</button>\r\n        <button routerLink='multiplayer' id=\"mp\">Multiplayer</button>\r\n    </div>\r\n</div>\r\n<div id=\"footer\">\r\n    <div id=\"footer-button-container\">\r\n        <button id=\"instructions\">Instructions</button>\r\n        <button routerLink='teaminfo' id=\"character-stats\">Character Stats</button>\r\n    </div>\r\n</div>\r\n\r\n<!-- Instructions Modal -->\r\n<div id=\"instruction-modal\" class=\"modal\">\r\n    <div class=\"modal-content\">\r\n        <span class=\"close\">&times;</span>\r\n        <h1 class=\"modal-header\">Instructions:</h1>\r\n        <p>This is a castle defense game, the aim of the game is to power up and purchase units to attack the enemy castle while keeping your own castle safe!</p>\r\n        <br/>\r\n        <h1 class=\"modal-header\">Singleplayer:</h1>\r\n        <p>Choose your favorite team and battle against a variety of opponents in 8 different levels who will send units at you in a pre-defined pattern!</p>\r\n        <p>Be careful though! The levels get difficult very quickly!</p>\r\n        <br/>\r\n        <h1 class=\"modal-header\">Multiplayer:</h1>\r\n        <p>Pit your best strategies against your friends in a 2-player battle!</p>\r\n        <p>Create a new game and you will be assigned a random Game ID!</p>\r\n        <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>\r\n    </div>\r\n</div>\r\n<!--\r\n<div id=\"login\">\r\n    <h2>Login: </h2>\r\n    <div class=\"container\" id=\"test\">\r\n        <label for=\"uname\"><b>Username</b></label>\r\n        <input type=\"text\" id=\"username\" placeholder=\"Enter Username\" name=\"uname\" required>\r\n\r\n        <label for=\"psw\"><b>Password</b></label>\r\n        <input type=\"password\" id=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>\r\n\r\n        <button type=\"submit\" id=\"login-button\">Login</button>\r\n    </div>\r\n</div>\r\n<div id=\"user-info\">\r\n    \r\n</div>\r\n-->";
     /***/
   },
 
@@ -800,6 +840,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./multiplayer/multiplayer.component */
     "./src/app/multiplayer/multiplayer.component.ts");
+    /* harmony import */
+
+
+    var _team_info_team_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./team-info/team-info.component */
+    "./src/app/team-info/team-info.component.ts");
+    /* harmony import */
+
+
+    var _character_info_character_info_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./character-info/character-info.component */
+    "./src/app/character-info/character-info.component.ts");
 
     var routes = [{
       path: "game/:id/:team/:side",
@@ -813,6 +865,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: "game/10000",
       component: _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_6__["MultiplayerComponent"]
+    }, {
+      path: "teaminfo",
+      component: _team_info_team_info_component__WEBPACK_IMPORTED_MODULE_7__["TeamInfoComponent"]
+    }, {
+      path: "characterinfo/:team/:name",
+      component: _character_info_character_info_component__WEBPACK_IMPORTED_MODULE_8__["CharacterInfoComponent"]
     }, {
       path: "",
       component: _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_4__["WelcomeComponent"]
@@ -829,7 +887,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
       exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })], AppRoutingModule);
-    var routingComponents = [_game_game_component__WEBPACK_IMPORTED_MODULE_3__["GameComponent"], _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_4__["WelcomeComponent"], _level_select_level_select_component__WEBPACK_IMPORTED_MODULE_5__["LevelSelectComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_6__["MultiplayerComponent"]];
+    var routingComponents = [_game_game_component__WEBPACK_IMPORTED_MODULE_3__["GameComponent"], _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_4__["WelcomeComponent"], _level_select_level_select_component__WEBPACK_IMPORTED_MODULE_5__["LevelSelectComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_6__["MultiplayerComponent"], _team_info_team_info_component__WEBPACK_IMPORTED_MODULE_7__["TeamInfoComponent"], _character_info_character_info_component__WEBPACK_IMPORTED_MODULE_8__["CharacterInfoComponent"]];
     /***/
   },
 
@@ -902,15 +960,127 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _userServices__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./userServices */
     "./src/app/userServices.ts");
+    /* harmony import */
+
+
+    var _game_characterServices__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./game/characterServices */
+    "./src/app/game/characterServices.ts");
 
     var AppComponent_1;
 
-    var AppComponent = AppComponent_1 = function AppComponent(http) {
-      _classCallCheck(this, AppComponent);
+    var AppComponent = AppComponent_1 =
+    /*#__PURE__*/
+    function () {
+      function AppComponent(http) {
+        var _this = this;
 
-      AppComponent_1.user = new _user__WEBPACK_IMPORTED_MODULE_2__["User"]();
-      AppComponent_1.userServices = new _userServices__WEBPACK_IMPORTED_MODULE_4__["UserServices"](http);
-    };
+        _classCallCheck(this, AppComponent);
+
+        this.setupTeamMap = function () {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.t0 = AppComponent_1.teamMap;
+                    _context.next = 3;
+                    return AppComponent_1.characterServices.getTeam("white");
+
+                  case 3:
+                    _context.t1 = _context.sent;
+
+                    _context.t0.set.call(_context.t0, "white", _context.t1);
+
+                    _context.t2 = AppComponent_1.teamMap;
+                    _context.next = 8;
+                    return AppComponent_1.characterServices.getTeam("green");
+
+                  case 8:
+                    _context.t3 = _context.sent;
+
+                    _context.t2.set.call(_context.t2, "green", _context.t3);
+
+                    _context.t4 = AppComponent_1.teamMap;
+                    _context.next = 13;
+                    return AppComponent_1.characterServices.getTeam("blue");
+
+                  case 13:
+                    _context.t5 = _context.sent;
+
+                    _context.t4.set.call(_context.t4, "blue", _context.t5);
+
+                    _context.t6 = AppComponent_1.teamMap;
+                    _context.next = 18;
+                    return AppComponent_1.characterServices.getTeam("purple");
+
+                  case 18:
+                    _context.t7 = _context.sent;
+
+                    _context.t6.set.call(_context.t6, "purple", _context.t7);
+
+                    _context.t8 = AppComponent_1.teamMap;
+                    _context.next = 23;
+                    return AppComponent_1.characterServices.getTeam("yellow");
+
+                  case 23:
+                    _context.t9 = _context.sent;
+
+                    _context.t8.set.call(_context.t8, "yellow", _context.t9);
+
+                    _context.t10 = AppComponent_1.teamMap;
+                    _context.next = 28;
+                    return AppComponent_1.characterServices.getTeam("orange");
+
+                  case 28:
+                    _context.t11 = _context.sent;
+
+                    _context.t10.set.call(_context.t10, "orange", _context.t11);
+
+                    _context.t12 = AppComponent_1.teamMap;
+                    _context.next = 33;
+                    return AppComponent_1.characterServices.getTeam("red");
+
+                  case 33:
+                    _context.t13 = _context.sent;
+
+                    _context.t12.set.call(_context.t12, "red", _context.t13);
+
+                    _context.t14 = AppComponent_1.teamMap;
+                    _context.next = 38;
+                    return AppComponent_1.characterServices.getTeam("black");
+
+                  case 38:
+                    _context.t15 = _context.sent;
+
+                    _context.t14.set.call(_context.t14, "black", _context.t15);
+
+                  case 40:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+        };
+
+        AppComponent_1.user = new _user__WEBPACK_IMPORTED_MODULE_2__["User"]();
+        AppComponent_1.userServices = new _userServices__WEBPACK_IMPORTED_MODULE_4__["UserServices"](http);
+        AppComponent_1.characterServices = new _game_characterServices__WEBPACK_IMPORTED_MODULE_5__["CharacterServices"](http);
+      }
+
+      _createClass(AppComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          AppComponent_1.teamMap = new Map();
+          this.setupTeamMap();
+        }
+      }]);
+
+      return AppComponent;
+    }();
 
     AppComponent.ctorParameters = function () {
       return [{
@@ -970,15 +1140,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./app-routing.module */
-    "./src/app/app-routing.module.ts");
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./app-routing.module */
+    "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
@@ -1015,15 +1185,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./multiplayer/multiplayer.component */
     "./src/app/multiplayer/multiplayer.component.ts");
+    /* harmony import */
+
+
+    var _character_info_character_info_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ./character-info/character-info.component */
+    "./src/app/character-info/character-info.component.ts");
+    /* harmony import */
+
+
+    var _team_info_team_info_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ./team-info/team-info.component */
+    "./src/app/team-info/team-info.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["routingComponents"], _character_bar_character_bar_component__WEBPACK_IMPORTED_MODULE_6__["CharacterBarComponent"], _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_7__["WelcomeComponent"], _team_select_team_select_component__WEBPACK_IMPORTED_MODULE_8__["TeamSelectComponent"], _level_select_level_select_component__WEBPACK_IMPORTED_MODULE_9__["LevelSelectComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_10__["MultiplayerComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]],
-      providers: [HTMLCanvasElement, _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["routingComponents"], _character_bar_character_bar_component__WEBPACK_IMPORTED_MODULE_6__["CharacterBarComponent"], _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_7__["WelcomeComponent"], _team_select_team_select_component__WEBPACK_IMPORTED_MODULE_8__["TeamSelectComponent"], _level_select_level_select_component__WEBPACK_IMPORTED_MODULE_9__["LevelSelectComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_10__["MultiplayerComponent"], _character_info_character_info_component__WEBPACK_IMPORTED_MODULE_11__["CharacterInfoComponent"], _team_info_team_info_component__WEBPACK_IMPORTED_MODULE_12__["TeamInfoComponent"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]],
+      providers: [HTMLCanvasElement, _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })], AppModule);
     /***/
@@ -1086,6 +1268,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _game_game_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../game/game.component */
     "./src/app/game/game.component.ts");
+    /* harmony import */
+
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../app.component */
+    "./src/app/app.component.ts");
 
     var CharacterBarComponent =
     /*#__PURE__*/
@@ -1097,7 +1285,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CharacterBarComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this2 = this;
 
           document.getElementById("character-bar").classList.add(this.team);
           this.initBar();
@@ -1106,7 +1294,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (testForCharacter.target.parentElement) var target = testForCharacter.target.parentElement;else return;
 
             if (target.id != "" && target.classList.contains("character")) {
-              _game_game_component__WEBPACK_IMPORTED_MODULE_2__["GameComponent"].gameServices.buy(_this.id, _this.side, target.id);
+              _game_game_component__WEBPACK_IMPORTED_MODULE_2__["GameComponent"].gameServices.buy(_this2.id, _this2.side, target.id);
 
               return;
             }
@@ -1117,64 +1305,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function initBar() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee() {
-            var fullTeam, i, chardata, unknown;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
+          regeneratorRuntime.mark(function _callee2() {
+            var fullTeam, i, charhtml;
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
-                switch (_context.prev = _context.next) {
+                switch (_context2.prev = _context2.next) {
                   case 0:
-                    _context.next = 2;
-                    return _game_game_component__WEBPACK_IMPORTED_MODULE_2__["GameComponent"].characterService.getTeam(this.team);
+                    fullTeam = _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].teamMap.get(this.team);
+                    i = 0;
 
                   case 2:
-                    fullTeam = _context.sent;
-                    i = 0;
-
-                  case 4:
-                    if (!(i < fullTeam.length)) {
-                      _context.next = 12;
+                    if (!(i < 8)) {
+                      _context2.next = 10;
                       break;
                     }
 
-                    _context.next = 7;
-                    return _game_game_component__WEBPACK_IMPORTED_MODULE_2__["GameComponent"].characterService.getCharacter(this.team, fullTeam[i]);
+                    _context2.next = 5;
+                    return _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].characterServices.getHTML(this.team, fullTeam[i]);
+
+                  case 5:
+                    charhtml = _context2.sent;
+                    document.getElementById("character-bar").innerHTML += charhtml;
 
                   case 7:
-                    chardata = _context.sent;
-                    document.getElementById("character-bar").innerHTML += chardata.html;
-
-                  case 9:
                     i++;
-                    _context.next = 4;
+                    _context2.next = 2;
                     break;
 
-                  case 12:
-                    i = 0;
-
-                  case 13:
-                    if (!(i < 8 - fullTeam.length)) {
-                      _context.next = 21;
-                      break;
-                    }
-
-                    _context.next = 16;
-                    return _game_game_component__WEBPACK_IMPORTED_MODULE_2__["GameComponent"].characterService.getCharacter("white", "unknown");
-
-                  case 16:
-                    unknown = _context.sent;
-                    document.getElementById("character-bar").innerHTML += unknown.html;
-
-                  case 18:
-                    i++;
-                    _context.next = 13;
-                    break;
-
-                  case 21:
+                  case 10:
                   case "end":
-                    return _context.stop();
+                    return _context2.stop();
                 }
               }
-            }, _callee, this);
+            }, _callee2, this);
           }));
         }
       }]);
@@ -1196,6 +1359,216 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       "./src/app/character-bar/character-bar.component.css")).default]
     })], CharacterBarComponent);
     /***/
+  },
+
+  /***/
+  "./src/app/character-info/character-info.component.css":
+  /*!*************************************************************!*\
+    !*** ./src/app/character-info/character-info.component.css ***!
+    \*************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppCharacterInfoCharacterInfoComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "#main-view {\r\n    width: 1500px;\r\n    height: 500px;\r\n    border: 1px solid black;\r\n}\r\n\r\nh1 {\r\n    text-align: center;\r\n    margin-top: 50px;\r\n    margin-bottom: 50px;\r\n    color: #888888;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n}\r\n\r\nbutton {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n}\r\n\r\n.info {\r\n    display: inline-block;\r\n}\r\n\r\n.info-container {\r\n    width: 50%;\r\n    margin: auto;\r\n}\r\n\r\n.image-link {\r\n    width: 100px;\r\n    height: 100px;\r\n    margin: 10px;\r\n    display: inline-block;\r\n}\r\n\r\n#info-headers {\r\n    display: inline-block;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    margin: 50px;\r\n}\r\n\r\n#info-values {\r\n    display: inline-block;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    margin: 50px;\r\n}\r\n\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    background-color: #0b912c;\r\n    border-radius: 0px 0px 20px 20px;\r\n}\r\n\r\n#footer-content {\r\n    width: 510px;\r\n    margin: auto;\r\n}\r\n\r\n#back {\r\n    background-color: #ff2222;\r\n}\r\n\r\n#back:hover {\r\n    background-color: #ff6622;\r\n    cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWluZm8vY2hhcmFjdGVyLWluZm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGFBQWE7SUFDYixhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsY0FBYztJQUNkLGtCQUFrQjtJQUNsQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksWUFBWTtJQUNaLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxxQkFBcUI7QUFDekI7O0FBQ0E7SUFDSSxVQUFVO0lBQ1YsWUFBWTtBQUNoQjs7QUFDQTtJQUNJLFlBQVk7SUFDWixhQUFhO0lBQ2IsWUFBWTtJQUNaLHFCQUFxQjtBQUN6Qjs7QUFDQTtJQUNJLHFCQUFxQjtJQUNyQiw0QkFBc0I7SUFBdEIsNkJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0QixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixZQUFZO0FBQ2hCOztBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLDRCQUFzQjtJQUF0Qiw2QkFBc0I7WUFBdEIsc0JBQXNCO0lBQ3RCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxhQUFhO0lBQ2IsYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixnQ0FBZ0M7QUFDcEM7O0FBQ0E7SUFDSSxZQUFZO0lBQ1osWUFBWTtBQUNoQjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvY2hhcmFjdGVyLWluZm8vY2hhcmFjdGVyLWluZm8uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNtYWluLXZpZXcge1xyXG4gICAgd2lkdGg6IDE1MDBweDtcclxuICAgIGhlaWdodDogNTAwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxufVxyXG5cclxuaDEge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogNTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDUwcHg7XHJcbiAgICBjb2xvcjogIzg4ODg4ODtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogNTBweDtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIG1hcmdpbjogMjVweDtcclxuICAgIHBhZGRpbmc6IDI1cHg7XHJcbiAgICBib3JkZXI6IDBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxufVxyXG5cclxuLmluZm8ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcbi5pbmZvLWNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG59XHJcbi5pbWFnZS1saW5rIHtcclxuICAgIHdpZHRoOiAxMDBweDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW46IDEwcHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuI2luZm8taGVhZGVycyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBtYXJnaW46IDUwcHg7XHJcbn1cclxuI2luZm8tdmFsdWVzIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBtYXJnaW46IDUwcHg7XHJcbn1cclxuXHJcbiNmb290ZXIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICB3aWR0aDogMTUwMnB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwYjkxMmM7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcclxufVxyXG4jZm9vdGVyLWNvbnRlbnQge1xyXG4gICAgd2lkdGg6IDUxMHB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG59XHJcbiNiYWNrIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZjIyMjI7XHJcbn1cclxuI2JhY2s6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmNjYyMjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufSJdfQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/character-info/character-info.component.ts":
+  /*!************************************************************!*\
+    !*** ./src/app/character-info/character-info.component.ts ***!
+    \************************************************************/
+
+  /*! exports provided: CharacterInfoComponent */
+
+  /***/
+  function srcAppCharacterInfoCharacterInfoComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CharacterInfoComponent", function () {
+      return CharacterInfoComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _characterInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./characterInfo */
+    "./src/app/character-info/characterInfo.ts");
+    /* harmony import */
+
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../app.component */
+    "./src/app/app.component.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+
+    var CharacterInfoComponent =
+    /*#__PURE__*/
+    function () {
+      function CharacterInfoComponent(route) {
+        _classCallCheck(this, CharacterInfoComponent);
+
+        this.route = route;
+        this.team = "white";
+        this.name = "doggo";
+        this.character = new _characterInfo__WEBPACK_IMPORTED_MODULE_2__["CharacterInfo"]("white", "unknown");
+        this.next = "doggo";
+        this.prev = "doggo";
+      }
+
+      _createClass(CharacterInfoComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          this.route.paramMap.subscribe(function (map) {
+            var mapParams = map;
+            _this3.team = mapParams.params.team;
+            _this3.name = mapParams.params.name;
+            _this3.character = new _characterInfo__WEBPACK_IMPORTED_MODULE_2__["CharacterInfo"](_this3.team, _this3.name);
+            _this3.fullTeam = _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].teamMap.get(_this3.team);
+
+            var index = _this3.fullTeam.indexOf(_this3.name);
+
+            _this3.next = _this3.fullTeam[(index + 1) % 8];
+            if (index == 0) _this3.prev = _this3.fullTeam[7];else _this3.prev = _this3.fullTeam[index - 1];
+            document.getElementById("main-view").style.backgroundColor = _this3.team;
+          });
+        }
+      }, {
+        key: "ngOnChanges",
+        value: function ngOnChanges() {}
+      }]);
+
+      return CharacterInfoComponent;
+    }();
+
+    CharacterInfoComponent.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
+      }];
+    };
+
+    CharacterInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-character-info',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./character-info.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/character-info/character-info.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./character-info.component.css */
+      "./src/app/character-info/character-info.component.css")).default]
+    })], CharacterInfoComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/character-info/characterInfo.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/character-info/characterInfo.ts ***!
+    \*************************************************/
+
+  /*! exports provided: CharacterInfo */
+
+  /***/
+  function srcAppCharacterInfoCharacterInfoTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CharacterInfo", function () {
+      return CharacterInfo;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../app.component */
+    "./src/app/app.component.ts");
+
+    var CharacterInfo = function CharacterInfo(team, name) {
+      var _this4 = this;
+
+      _classCallCheck(this, CharacterInfo);
+
+      this.constructAsync = function (team, name) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this4, void 0, void 0,
+        /*#__PURE__*/
+        regeneratorRuntime.mark(function _callee3() {
+          var data;
+          return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  _context3.next = 2;
+                  return _app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"].characterServices.getInfo(team, name);
+
+                case 2:
+                  data = _context3.sent;
+                  console.log("data: ", data);
+                  this.health = data.health;
+                  this.damage = data.damage;
+                  this.speed = data.speed;
+                  this.team = team;
+                  this.name = name;
+                  this.description = data.description;
+
+                case 10:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3, this);
+        }));
+      };
+
+      if (name == "unknown") {
+        this.health = 0;
+        this.damage = 0;
+        this.speed = 0;
+        this.team = "-";
+        this.name = "Loading...";
+        this.description = "...";
+      } else this.constructAsync(team, name);
+    };
+    /***/
+
   },
 
   /***/
@@ -1228,7 +1601,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function Castle(x, y, team, side) {
-        var _this2 = this;
+        var _this5 = this;
 
         var health = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 100;
         var maxHealth = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 100;
@@ -1242,8 +1615,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var ctx = context;
           var deadimg = new Image();
           deadimg.src = "../assets/img/castles/dead castle.png";
-          var x = _this2.x;
-          var y = _this2.y;
+          var x = _this5.x;
+          var y = _this5.y;
           ctx.drawImage(deadimg, x, y);
         };
 
@@ -1294,23 +1667,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/game/characterService.ts":
-  /*!******************************************!*\
-    !*** ./src/app/game/characterService.ts ***!
-    \******************************************/
+  "./src/app/game/characterServices.ts":
+  /*!*******************************************!*\
+    !*** ./src/app/game/characterServices.ts ***!
+    \*******************************************/
 
-  /*! exports provided: CharacterService */
+  /*! exports provided: CharacterServices */
 
   /***/
-  function srcAppGameCharacterServiceTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppGameCharacterServicesTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "CharacterService", function () {
-      return CharacterService;
+    __webpack_require__.d(__webpack_exports__, "CharacterServices", function () {
+      return CharacterServices;
     });
     /* harmony import */
 
@@ -1319,38 +1692,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var CharacterService =
+    var CharacterServices =
     /*#__PURE__*/
     function () {
-      function CharacterService(http) {
-        _classCallCheck(this, CharacterService);
+      function CharacterServices(http) {
+        _classCallCheck(this, CharacterServices);
 
         this.http = http;
       }
 
-      _createClass(CharacterService, [{
+      _createClass(CharacterServices, [{
         key: "getCharacter",
         value: function getCharacter(team, name) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getcharacter/' + team + '/' + name).toPromise();
+          return this.http.get('https://localhost:44364/api/characters/getcharacter/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getPrice",
         value: function getPrice(team, name) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getprice/' + team + '/' + name).toPromise();
+          return this.http.get('https://localhost:44364/api/characters/getprice/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getHTML",
         value: function getHTML(team, name) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/gethtml/' + team + '/' + name).toPromise();
+          return this.http.get('https://localhost:44364/api/characters/gethtml/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getTeam",
         value: function getTeam(team) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/characters/getteam/' + team).toPromise();
+          return this.http.get('https://localhost:44364/api/characters/getteam/' + team).toPromise();
+        }
+      }, {
+        key: "getInfo",
+        value: function getInfo(team, name) {
+          return this.http.get('https://localhost:44364/api/characters/getinfo/' + team + '/' + name).toPromise();
         }
       }]);
 
-      return CharacterService;
+      return CharacterServices;
     }();
     /***/
 
@@ -1446,19 +1824,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _characterService__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! ./characterService */
-    "./src/app/game/characterService.ts");
-    /* harmony import */
-
-
-    var _aspnet_signalr__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _aspnet_signalr__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @aspnet/signalr */
     "./node_modules/@aspnet/signalr/dist/esm/index.js");
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ../app.component */
     "./src/app/app.component.ts");
 
@@ -1468,7 +1840,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GameComponent(route, http) {
-        var _this3 = this;
+        var _this6 = this;
 
         _classCallCheck(this, GameComponent);
 
@@ -1476,65 +1848,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.ended = 0;
 
         this.init = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this3, void 0, void 0,
-          /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee2() {
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
-              while (1) {
-                switch (_context2.prev = _context2.next) {
-                  case 0:
-                    _context2.next = 2;
-                    return GameComponent_1.gameServices.init(this.team, this.id);
-
-                  case 2:
-                    if (this.id < 1000) this.start();else this.waitForPlayer2();
-
-                  case 3:
-                  case "end":
-                    return _context2.stop();
-                }
-              }
-            }, _callee2, this);
-          }));
-        };
-
-        this.waitForPlayer2 = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this3, void 0, void 0,
-          /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee3() {
-            return regeneratorRuntime.wrap(function _callee3$(_context3) {
-              while (1) {
-                switch (_context3.prev = _context3.next) {
-                  case 0:
-                    this.draw_background(false);
-                    if (this.player2.income < 0.01) setTimeout(this.waitForPlayer2, 250);else this.start();
-
-                  case 2:
-                  case "end":
-                    return _context3.stop();
-                }
-              }
-            }, _callee3, this);
-          }));
-        };
-
-        this.start = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this3, void 0, void 0,
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee4() {
-            var _this4 = this;
-
             return regeneratorRuntime.wrap(function _callee4$(_context4) {
               while (1) {
                 switch (_context4.prev = _context4.next) {
                   case 0:
                     _context4.next = 2;
-                    return GameComponent_1.gameServices.play(this.id);
+                    return GameComponent_1.gameServices.init(this.team, this.id);
 
                   case 2:
-                    window.requestAnimationFrame(function () {
-                      return _this4.draw();
-                    });
+                    if (this.id < 1000) this.start();else this.waitForPlayer2();
 
                   case 3:
                   case "end":
@@ -1545,25 +1870,71 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }));
         };
 
-        this.reset = function () {
-          _this3.player1 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
-          _this3.player2 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
-          _this3.units = new Array();
-          _this3.ended = 0;
+        this.waitForPlayer2 = function () {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee5() {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    this.draw_background(false);
+                    if (this.player2.income < 0.01) setTimeout(this.waitForPlayer2, 250);else this.start();
 
-          _this3.route.paramMap.subscribe(function (map) {
+                  case 2:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5, this);
+          }));
+        };
+
+        this.start = function () {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee6() {
+            var _this7 = this;
+
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    _context6.next = 2;
+                    return GameComponent_1.gameServices.play(this.id);
+
+                  case 2:
+                    window.requestAnimationFrame(function () {
+                      return _this7.draw();
+                    });
+
+                  case 3:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6, this);
+          }));
+        };
+
+        this.reset = function () {
+          _this6.player1 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
+          _this6.player2 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
+          _this6.units = new Array();
+          _this6.ended = 0;
+
+          _this6.route.paramMap.subscribe(function (map) {
             var mapParams = map;
-            _this3.id = mapParams.params.id;
-            _this3.team = mapParams.params.team;
-            _this3.side = mapParams.params.side;
-            if (_this3.side == 1) _this3.connectedPlayer = _this3.player1;else _this3.connectedPlayer = _this3.player2;
+            _this6.id = mapParams.params.id;
+            _this6.team = mapParams.params.team;
+            _this6.side = mapParams.params.side;
+            if (_this6.side == 1) _this6.connectedPlayer = _this6.player1;else _this6.connectedPlayer = _this6.player2;
           });
 
           document.getElementById("main-menu").style.display = "none";
         };
 
         GameComponent_1.gameServices = new _gameServices__WEBPACK_IMPORTED_MODULE_7__["GameServices"](http);
-        GameComponent_1.characterService = new _characterService__WEBPACK_IMPORTED_MODULE_8__["CharacterService"](http);
         this.background = new Image();
         this.background.src = "../../assets/img/background default.png";
       }
@@ -1571,12 +1942,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(GameComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this8 = this;
 
-          var connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_9__["HubConnectionBuilder"]().withUrl("/gamehub").build();
+          var connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_8__["HubConnectionBuilder"]().withUrl("/gamehub").build();
           connection.start().then(function () {
             console.log("connected!");
-            connection.invoke("connectedto", _this5.id);
+            connection.invoke("connectedto", _this8.id);
           });
           this.player1 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           this.player2 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
@@ -1584,23 +1955,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             alert("TEST");
           });
           connection.on("UpdateUnits", function (unitData) {
-            _this5.units = _unit__WEBPACK_IMPORTED_MODULE_3__["Unit"].parseUnits(unitData);
+            _this8.units = _unit__WEBPACK_IMPORTED_MODULE_3__["Unit"].parseUnits(unitData);
             window.requestAnimationFrame(function () {
-              return _this5.draw();
+              return _this8.draw();
             });
           });
           connection.on("UpdatePlayers", function (playerData) {
-            _this5.player1.updatePlayer(playerData, 0);
+            _this8.player1.updatePlayer(playerData, 0);
 
-            _this5.player2.updatePlayer(playerData, 1);
+            _this8.player2.updatePlayer(playerData, 1);
           });
           connection.on("EndGame", function (side) {
-            _this5.ended = side;
+            _this8.ended = side;
           });
           connection.onclose(function () {
-            GameComponent_1.gameServices.end(_this5.id);
+            GameComponent_1.gameServices.end(_this8.id);
 
-            _this5.reset();
+            _this8.reset();
           });
           this.canvas = document.getElementById("game-canvas");
           this.context = this.canvas.getContext("2d");
@@ -1608,26 +1979,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           menuButton.onmouseup = function () {
             menuButton.style.display = "none";
-            GameComponent_1.gameServices.end(_this5.id);
+            GameComponent_1.gameServices.end(_this8.id);
 
-            _this5.reset();
+            _this8.reset();
+
+            connection.stop();
           };
 
           document.getElementById("income").onmouseup = function () {
-            GameComponent_1.gameServices.buy(_this5.id, _this5.side, "income");
+            GameComponent_1.gameServices.buy(_this8.id, _this8.side, "income");
           };
 
           document.getElementById("health").onmouseup = function () {
-            GameComponent_1.gameServices.buy(_this5.id, _this5.side, "health");
+            GameComponent_1.gameServices.buy(_this8.id, _this8.side, "health");
           };
 
           this.units = new Array();
           this.route.paramMap.subscribe(function (map) {
             var mapParams = map;
-            _this5.id = mapParams.params.id;
-            _this5.team = mapParams.params.team;
-            _this5.side = mapParams.params.side;
-            if (_this5.side == 1) _this5.connectedPlayer = _this5.player1;else _this5.connectedPlayer = _this5.player2;
+            _this8.id = mapParams.params.id;
+            _this8.team = mapParams.params.team;
+            _this8.side = mapParams.params.side;
+            if (_this8.side == 1) _this8.connectedPlayer = _this8.player1;else _this8.connectedPlayer = _this8.player2;
           });
           if (this.side == 1) this.init();else GameComponent_1.gameServices.init(this.team, this.id);
         }
@@ -1636,11 +2009,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function draw() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee5() {
+          regeneratorRuntime.mark(function _callee7() {
             var ctx;
-            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
               while (1) {
-                switch (_context5.prev = _context5.next) {
+                switch (_context7.prev = _context7.next) {
                   case 0:
                     ctx = this.context;
                     this.draw_background();
@@ -1650,10 +2023,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 3:
                   case "end":
-                    return _context5.stop();
+                    return _context7.stop();
                 }
               }
-            }, _callee5, this);
+            }, _callee7, this);
           }));
         }
       }, {
@@ -1690,7 +2063,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.context.fillStyle = "black";
             this.context.font = "300px serif";
             this.context.fillText("VICTORY!", 100, 300, 1300);
-            if (_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"].user.name != "new_user") _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"].user.win(this.id);
+            if (_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"].user.name != "new_user") _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"].user.win(this.id);
           }
         }
       }]);
@@ -1758,32 +2131,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(GameServices, [{
         key: "getUnits",
         value: function getUnits() {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getunits').toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getunits').toPromise();
         }
       }, {
         key: "getPlayers",
         value: function getPlayers() {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getplayers').toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/getplayers').toPromise();
         }
       }, {
         key: "init",
         value: function init(team, id) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/init/' + team + '/' + id).toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/init/' + team + '/' + id).toPromise();
         }
       }, {
         key: "play",
         value: function play(id) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/play/' + id).toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/play/' + id).toPromise();
         }
       }, {
         key: "end",
         value: function end(id) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/end/' + id).toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/end/' + id).toPromise();
         }
       }, {
         key: "buy",
         value: function buy(id, player, unit) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
         }
       }]);
 
@@ -1933,14 +2306,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(LevelSelectComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this9 = this;
 
           var levels = document.getElementsByClassName("level");
 
           for (var i = 0; i < levels.length; i++) {
             levels[i].addEventListener("click", function (e) {
               var level = e.target;
-              _this6.id = Number(level.innerText);
+              _this9.id = Number(level.innerText);
 
               for (var i = 0; i < levels.length; i++) {
                 levels[i].classList.remove("selected");
@@ -2047,7 +2420,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function MultiplayerComponent() {
-        var _this7 = this;
+        var _this10 = this;
 
         _classCallCheck(this, MultiplayerComponent);
 
@@ -2060,11 +2433,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (input >= 1000 && input < 10000) {
             console.log(input);
-            _this7.id = input;
-            _this7.idIsNew = false;
+            _this10.id = input;
+            _this10.idIsNew = false;
           } else {
-            _this7.id = 10000;
-            _this7.idIsNew = false;
+            _this10.id = 10000;
+            _this10.idIsNew = false;
           }
         };
       }
@@ -2072,10 +2445,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MultiplayerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this8 = this;
+          var _this11 = this;
 
           document.getElementById("game-id").onchange = function () {
-            _this8.checkId();
+            _this11.checkId();
           };
 
           var modal = document.getElementById("instruction-modal");
@@ -2193,6 +2566,109 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
     /***/
 
+  },
+
+  /***/
+  "./src/app/team-info/team-info.component.css":
+  /*!***************************************************!*\
+    !*** ./src/app/team-info/team-info.component.css ***!
+    \***************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppTeamInfoTeamInfoComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "#team-info-view {\r\n    width: 1500px;\r\n    height: 500px;\r\n    border: 1px solid black;\r\n    display: -webkit-box;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    -webkit-box-pack: center;\r\n            justify-content: center;\r\n    color: #888888;\r\n}\r\n\r\nh1 {\r\n    text-align: center;\r\n    margin-top: 50px;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n}\r\n\r\nh2 {\r\n    text-align: center;\r\n    margin-top: 10px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n}\r\n\r\nbutton {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n}\r\n\r\n#character-select-bar {\r\n    display: inline-block;\r\n    width: 960px;\r\n    height: 120px;\r\n    background-color: lightgray;\r\n    margin: auto;\r\n    margin-top: 0px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    background-color: #0b912c;\r\n    border-radius: 0px 0px 20px 20px;\r\n    display: -webkit-box;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    -webkit-box-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n#back {\r\n    background-color: #ff2222;\r\n}\r\n\r\n#back:hover {\r\n    background-color: #ff6622;\r\n}\r\n\r\n#footer-button-container {\r\n    width: 290px;\r\n    margin: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGVhbS1pbmZvL3RlYW0taW5mby5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksYUFBYTtJQUNiLGFBQWE7SUFDYix1QkFBdUI7SUFDdkIsb0JBQWE7SUFBYixhQUFhO0lBQ2IsNEJBQXNCO0lBQXRCLDZCQUFzQjtZQUF0QixzQkFBc0I7SUFDdEIsd0JBQXVCO1lBQXZCLHVCQUF1QjtJQUN2QixjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsZUFBZTtBQUNuQjs7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLGVBQWU7QUFDbkI7O0FBQ0E7SUFDSSxZQUFZO0lBQ1osZUFBZTtJQUNmLFlBQVk7SUFDWixhQUFhO0lBQ2IsV0FBVztJQUNYLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixZQUFZO0lBQ1osYUFBYTtJQUNiLDJCQUEyQjtJQUMzQixZQUFZO0lBQ1osZUFBZTtJQUNmLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxhQUFhO0lBQ2IsYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixnQ0FBZ0M7SUFDaEMsb0JBQWE7SUFBYixhQUFhO0lBQ2IsNEJBQXNCO0lBQXRCLDZCQUFzQjtZQUF0QixzQkFBc0I7SUFDdEIsd0JBQXVCO1lBQXZCLHVCQUF1QjtBQUMzQjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLFlBQVk7SUFDWixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvdGVhbS1pbmZvL3RlYW0taW5mby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3RlYW0taW5mby12aWV3IHtcclxuICAgIHdpZHRoOiAxNTAwcHg7XHJcbiAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgY29sb3I6ICM4ODg4ODg7XHJcbn1cclxuXHJcbmgxIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUwcHg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDUwcHg7XHJcbn1cclxuaDIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxufVxyXG5idXR0b24ge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbWFyZ2luOiAyNXB4O1xyXG4gICAgcGFkZGluZzogMjVweDtcclxuICAgIGJvcmRlcjogMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG59XHJcblxyXG4jY2hhcmFjdGVyLXNlbGVjdC1iYXIge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgd2lkdGg6IDk2MHB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z3JheTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbiNmb290ZXIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICB3aWR0aDogMTUwMnB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwYjkxMmM7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuI2JhY2sge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmMjIyMjtcclxufVxyXG4jYmFjazpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmY2NjIyO1xyXG59XHJcbiNmb290ZXItYnV0dG9uLWNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMjkwcHg7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbn0iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/team-info/team-info.component.ts":
+  /*!**************************************************!*\
+    !*** ./src/app/team-info/team-info.component.ts ***!
+    \**************************************************/
+
+  /*! exports provided: TeamInfoComponent */
+
+  /***/
+  function srcAppTeamInfoTeamInfoComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "TeamInfoComponent", function () {
+      return TeamInfoComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.component */
+    "./src/app/app.component.ts");
+
+    var TeamInfoComponent =
+    /*#__PURE__*/
+    function () {
+      function TeamInfoComponent() {
+        var _this12 = this;
+
+        _classCallCheck(this, TeamInfoComponent);
+
+        this.currentTeam = "white";
+
+        this.updateTeam = function () {
+          _this12.currentTeam = document.getElementsByClassName("selected")[0].id;
+          _this12.currentUnits = _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"].teamMap.get(_this12.currentTeam);
+          document.getElementById("team-info-view").style.backgroundColor = "" + _this12.currentTeam;
+        };
+      }
+
+      _createClass(TeamInfoComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this13 = this;
+
+          this.updateTeam();
+
+          document.getElementById("team-info-view").onmouseup = function () {
+            _this13.updateTeam();
+          };
+        }
+      }]);
+
+      return TeamInfoComponent;
+    }();
+
+    TeamInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-team-info',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./team-info.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/team-info/team-info.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./team-info.component.css */
+      "./src/app/team-info/team-info.component.css")).default]
+    })], TeamInfoComponent);
+    /***/
   },
 
   /***/
@@ -2393,13 +2869,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(UserServices, [{
         key: "Login",
         value: function Login(username, password) {
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/login/' + username + '/' + password).toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/login/' + username + '/' + password).toPromise();
         }
       }, {
         key: "Win",
         value: function Win(username, id) {
-          if (id < 1000) return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/' + id).toPromise();
-          return this.http.get('http://castledefensegame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/1000').toPromise();
+          if (id < 1000) return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/' + id).toPromise();
+          return this.http.get('https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/api/user/win/' + username + '/1000').toPromise();
         }
       }]);
 
@@ -2425,7 +2901,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#main-view {\r\n    width: 1500px;\r\n    height: 500px;\r\n    border: 1px solid black;\r\n    background-image: url('background default.png');\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n\r\n@keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n\r\n/* Firefox < 16 */\r\n\r\n/* Safari, Chrome and Opera > 12.1 */\r\n\r\n@-webkit-keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n\r\n/* Internet Explorer */\r\n\r\n/* Opera < 12.1 */\r\n\r\nh1 {\r\n    text-align: center;\r\n    margin-top: 50px;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n}\r\n\r\nh2 {\r\n    text-align: center;\r\n    margin-top: 10px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n}\r\n\r\nbutton {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n}\r\n\r\n#sp {\r\n    background-color: #00ee55;\r\n    margin-left: 547px;\r\n    margin-right: 50px;\r\n}\r\n\r\n#sp:hover {\r\n    background-color: #22ff77;\r\n    cursor: pointer;\r\n}\r\n\r\n#mp {\r\n    background-color: #0066ff;\r\n}\r\n\r\n#mp:hover {\r\n    background-color: #2288ff;\r\n    cursor: pointer;\r\n}\r\n\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    background-color: #0b912c;\r\n    border-radius: 0px 0px 20px 20px;\r\n    display: inline-block;\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n\r\n#instructions {\r\n    background-color: #d38822;\r\n    margin-left: 674px;\r\n}\r\n\r\n#instructions:hover {\r\n    background-color: #f5aa44;\r\n}\r\n\r\n/* Modal Styling... */\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 5; /* Sit on top */\r\n    padding-top: 50px; /* Location of the box */\r\n    margin: 9px;\r\n    left: 0;\r\n    top: 0;\r\n    width: 1500px; /* Full width */\r\n    height: 570px; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n    border-radius: 0px 0px 20px 20px;\r\n}\r\n\r\n/* Modal Content */\r\n\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n    height: 80%;\r\n    font-family: arial;\r\n    font-size: 15px;\r\n    text-align: center;\r\n}\r\n\r\n.modal-header {\r\n      margin-top: 0px;\r\n      font-size: 20px;\r\n}\r\n\r\n/* The Close Button */\r\n\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2VsY29tZS93ZWxjb21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2IsYUFBYTtJQUNiLHVCQUF1QjtJQUN2QiwrQ0FBZ0U7O0lBRWhFLDRCQUE0QixFQUFFLG9DQUFvQyxFQUNwQyxpQkFBaUIsRUFDakIsc0JBQXNCLEVBQ3RCLGlCQUFpQjtZQUN2QyxvQkFBb0I7QUFDaEM7O0FBRUE7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2Qjs7QUFFQSxpQkFBaUI7O0FBTWpCLG9DQUFvQzs7QUFDcEM7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2Qjs7QUFFQSxzQkFBc0I7O0FBTXRCLGlCQUFpQjs7QUFNakI7SUFDSSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixlQUFlO0FBQ25COztBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsZUFBZTtBQUNuQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixlQUFlO0lBQ2YsWUFBWTtJQUNaLGFBQWE7SUFDYixXQUFXO0lBQ1gsa0JBQWtCO0FBQ3RCOztBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGtCQUFrQjtJQUNsQixrQkFBa0I7QUFDdEI7O0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsZUFBZTtBQUNuQjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25COztBQUNBO0lBQ0ksV0FBVztJQUNYLGFBQWE7SUFDYixhQUFhO0lBQ2IseUJBQXlCO0lBQ3pCLGdDQUFnQztJQUNoQyxxQkFBcUI7O0lBRXJCLDRCQUE0QixFQUFFLG9DQUFvQyxFQUNwQyxpQkFBaUIsRUFDakIsc0JBQXNCLEVBQ3RCLGlCQUFpQjtZQUN2QyxvQkFBb0I7QUFDaEM7O0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsa0JBQWtCO0FBQ3RCOztBQUNBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUVBLHFCQUFxQjs7QUFDckI7SUFDSSxhQUFhLEVBQUUsc0JBQXNCO0lBQ3JDLGVBQWUsRUFBRSxrQkFBa0I7SUFDbkMsVUFBVSxFQUFFLGVBQWU7SUFDM0IsaUJBQWlCLEVBQUUsd0JBQXdCO0lBQzNDLFdBQVc7SUFDWCxPQUFPO0lBQ1AsTUFBTTtJQUNOLGFBQWEsRUFBRSxlQUFlO0lBQzlCLGFBQWEsRUFBRSxnQkFBZ0I7SUFDL0IsY0FBYyxFQUFFLDRCQUE0QjtJQUM1Qyw0QkFBNEIsRUFBRSxtQkFBbUI7SUFDakQsaUNBQWlDLEVBQUUscUJBQXFCO0lBQ3hELGdDQUFnQztBQUNwQzs7QUFFRSxrQkFBa0I7O0FBQ3BCO0lBQ0kseUJBQXlCO0lBQ3pCLFlBQVk7SUFDWixhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLG1CQUFtQjtJQUNuQixVQUFVO0lBQ1YsV0FBVztJQUNYLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2Ysa0JBQWtCO0FBQ3RCOztBQUNBO01BQ00sZUFBZTtNQUNmLGVBQWU7QUFDckI7O0FBRUEscUJBQXFCOztBQUNyQjtJQUNJLGNBQWM7SUFDZCxZQUFZO0lBQ1osZUFBZTtJQUNmLGlCQUFpQjtBQUNyQjs7QUFFQTs7SUFFSSxXQUFXO0lBQ1gscUJBQXFCO0lBQ3JCLGVBQWU7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC93ZWxjb21lL3dlbGNvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNtYWluLXZpZXcge1xyXG4gICAgd2lkdGg6IDE1MDBweDtcclxuICAgIGhlaWdodDogNTAwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi4vLi4vYXNzZXRzL2ltZy9iYWNrZ3JvdW5kIGRlZmF1bHQucG5nJyk7XHJcblxyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAyczsgLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG4gICAgICAgLW1vei1hbmltYXRpb246IGZhZGVpbiAyczsgLyogRmlyZWZveCA8IDE2ICovXHJcbiAgICAgICAgLW1zLWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG4gICAgICAgICAtby1hbmltYXRpb246IGZhZGVpbiAyczsgLyogT3BlcmEgPCAxMi4xICovXHJcbiAgICAgICAgICAgIGFuaW1hdGlvbjogZmFkZWluIDJzO1xyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogRmlyZWZveCA8IDE2ICovXHJcbkAtbW96LWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIFNhZmFyaSwgQ2hyb21lIGFuZCBPcGVyYSA+IDEyLjEgKi9cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogSW50ZXJuZXQgRXhwbG9yZXIgKi9cclxuQC1tcy1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBPcGVyYSA8IDEyLjEgKi9cclxuQC1vLWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbmgxIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUwcHg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDUwcHg7XHJcbn1cclxuaDIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIG1hcmdpbjogMjVweDtcclxuICAgIHBhZGRpbmc6IDI1cHg7XHJcbiAgICBib3JkZXI6IDBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxufVxyXG4jc3Age1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwZWU1NTtcclxuICAgIG1hcmdpbi1sZWZ0OiA1NDdweDtcclxuICAgIG1hcmdpbi1yaWdodDogNTBweDtcclxufVxyXG4jc3A6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyZmY3NztcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4jbXAge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwNjZmZjtcclxufVxyXG4jbXA6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyODhmZjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4jZm9vdGVyIHtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgd2lkdGg6IDE1MDJweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMGI5MTJjO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMHB4IDBweCAyMHB4IDIwcHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcblxyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAyczsgLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG4gICAgICAgLW1vei1hbmltYXRpb246IGZhZGVpbiAyczsgLyogRmlyZWZveCA8IDE2ICovXHJcbiAgICAgICAgLW1zLWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG4gICAgICAgICAtby1hbmltYXRpb246IGZhZGVpbiAyczsgLyogT3BlcmEgPCAxMi4xICovXHJcbiAgICAgICAgICAgIGFuaW1hdGlvbjogZmFkZWluIDJzO1xyXG59XHJcbiNpbnN0cnVjdGlvbnMge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2QzODgyMjtcclxuICAgIG1hcmdpbi1sZWZ0OiA2NzRweDtcclxufVxyXG4jaW5zdHJ1Y3Rpb25zOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNWFhNDQ7XHJcbn1cclxuXHJcbi8qIE1vZGFsIFN0eWxpbmcuLi4gKi9cclxuLm1vZGFsIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7IC8qIEhpZGRlbiBieSBkZWZhdWx0ICovXHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7IC8qIFN0YXkgaW4gcGxhY2UgKi9cclxuICAgIHotaW5kZXg6IDU7IC8qIFNpdCBvbiB0b3AgKi9cclxuICAgIHBhZGRpbmctdG9wOiA1MHB4OyAvKiBMb2NhdGlvbiBvZiB0aGUgYm94ICovXHJcbiAgICBtYXJnaW46IDlweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB0b3A6IDA7XHJcbiAgICB3aWR0aDogMTUwMHB4OyAvKiBGdWxsIHdpZHRoICovXHJcbiAgICBoZWlnaHQ6IDU3MHB4OyAvKiBGdWxsIGhlaWdodCAqL1xyXG4gICAgb3ZlcmZsb3c6IGF1dG87IC8qIEVuYWJsZSBzY3JvbGwgaWYgbmVlZGVkICovXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApOyAvKiBGYWxsYmFjayBjb2xvciAqL1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLDAsMCwwLjQpOyAvKiBCbGFjayB3LyBvcGFjaXR5ICovXHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcclxufVxyXG4gIFxyXG4gIC8qIE1vZGFsIENvbnRlbnQgKi9cclxuLm1vZGFsLWNvbnRlbnQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZlZmVmZTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgICBoZWlnaHQ6IDgwJTtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4ubW9kYWwtaGVhZGVyIHtcclxuICAgICAgbWFyZ2luLXRvcDogMHB4O1xyXG4gICAgICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuICBcclxuLyogVGhlIENsb3NlIEJ1dHRvbiAqL1xyXG4uY2xvc2Uge1xyXG4gICAgY29sb3I6ICNhYWFhYWE7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBmb250LXNpemU6IDI4cHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4gIFxyXG4uY2xvc2U6aG92ZXIsXHJcbi5jbG9zZTpmb2N1cyB7XHJcbiAgICBjb2xvcjogIzAwMDtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufSJdfQ== */";
+    __webpack_exports__["default"] = "#main-view {\r\n    width: 1500px;\r\n    height: 500px;\r\n    border: 1px solid black;\r\n    display: -webkit-box;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    -webkit-box-pack: center;\r\n            justify-content: center;\r\n    background-image: url('background default.png');\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n\r\n@keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n\r\n/* Firefox < 16 */\r\n\r\n/* Safari, Chrome and Opera > 12.1 */\r\n\r\n@-webkit-keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n\r\n/* Internet Explorer */\r\n\r\n/* Opera < 12.1 */\r\n\r\nh1 {\r\n    text-align: center;\r\n    margin-top: 50px;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n}\r\n\r\nh2 {\r\n    text-align: center;\r\n    margin-top: 10px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n}\r\n\r\nbutton {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n}\r\n\r\n#sp {\r\n    background-color: #00ee55;\r\n}\r\n\r\n#sp:hover {\r\n    background-color: #22ff77;\r\n    cursor: pointer;\r\n}\r\n\r\n#mp {\r\n    background-color: #0066ff;\r\n}\r\n\r\n#mp:hover {\r\n    background-color: #2288ff;\r\n    cursor: pointer;\r\n}\r\n\r\n#main-button-container {\r\n    width: 415px;\r\n    margin: auto;\r\n    margin-top: 10px;\r\n}\r\n\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    background-color: #0b912c;\r\n    border-radius: 0px 0px 20px 20px;\r\n    display: -webkit-box;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    -webkit-box-pack: center;\r\n            justify-content: center;\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n\r\n#instructions {\r\n    background-color: #d38822;\r\n}\r\n\r\n#instructions:hover {\r\n    background-color: #f5aa44;\r\n}\r\n\r\n#character-stats {\r\n    background-color: #d38822;\r\n}\r\n\r\n#character-stats:hover {\r\n    background-color: #f5aa44;\r\n}\r\n\r\n#footer-button-container {\r\n    width: 450px;\r\n    margin: auto;\r\n}\r\n\r\n/* Modal Styling... */\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 5; /* Sit on top */\r\n    padding-top: 50px; /* Location of the box */\r\n    margin: 9px;\r\n    left: 0;\r\n    top: 0;\r\n    width: 1500px; /* Full width */\r\n    height: 570px; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n    border-radius: 0px 0px 20px 20px;\r\n}\r\n\r\n/* Modal Content */\r\n\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    border-radius: 20px;\r\n    width: 80%;\r\n    height: 80%;\r\n    font-family: arial;\r\n    font-size: 15px;\r\n    text-align: center;\r\n}\r\n\r\n.modal-header {\r\n      margin-top: 0px;\r\n      font-size: 20px;\r\n}\r\n\r\n/* The Close Button */\r\n\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2VsY29tZS93ZWxjb21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2IsYUFBYTtJQUNiLHVCQUF1QjtJQUN2QixvQkFBYTtJQUFiLGFBQWE7SUFDYiw0QkFBc0I7SUFBdEIsNkJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0Qix3QkFBdUI7WUFBdkIsdUJBQXVCO0lBQ3ZCLCtDQUFnRTs7SUFFaEUsNEJBQTRCLEVBQUUsb0NBQW9DLEVBQ3BDLGlCQUFpQixFQUNqQixzQkFBc0IsRUFDdEIsaUJBQWlCO1lBQ3ZDLG9CQUFvQjtBQUNoQzs7QUFFQTtJQUNJLE9BQU8sVUFBVSxFQUFFO0lBQ25CLE9BQU8sVUFBVSxFQUFFO0FBQ3ZCOztBQUVBLGlCQUFpQjs7QUFNakIsb0NBQW9DOztBQUNwQztJQUNJLE9BQU8sVUFBVSxFQUFFO0lBQ25CLE9BQU8sVUFBVSxFQUFFO0FBQ3ZCOztBQUVBLHNCQUFzQjs7QUFNdEIsaUJBQWlCOztBQU1qQjtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLGVBQWU7QUFDbkI7O0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksWUFBWTtJQUNaLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEI7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsZUFBZTtBQUNuQjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25COztBQUNBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWixnQkFBZ0I7QUFDcEI7O0FBQ0E7SUFDSSxXQUFXO0lBQ1gsYUFBYTtJQUNiLGFBQWE7SUFDYix5QkFBeUI7SUFDekIsZ0NBQWdDO0lBQ2hDLG9CQUFhO0lBQWIsYUFBYTtJQUNiLDRCQUFzQjtJQUF0Qiw2QkFBc0I7WUFBdEIsc0JBQXNCO0lBQ3RCLHdCQUF1QjtZQUF2Qix1QkFBdUI7O0lBRXZCLDRCQUE0QixFQUFFLG9DQUFvQyxFQUNwQyxpQkFBaUIsRUFDakIsc0JBQXNCLEVBQ3RCLGlCQUFpQjtZQUN2QyxvQkFBb0I7QUFDaEM7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSxZQUFZO0lBQ1osWUFBWTtBQUNoQjs7QUFFQSxxQkFBcUI7O0FBQ3JCO0lBQ0ksYUFBYSxFQUFFLHNCQUFzQjtJQUNyQyxlQUFlLEVBQUUsa0JBQWtCO0lBQ25DLFVBQVUsRUFBRSxlQUFlO0lBQzNCLGlCQUFpQixFQUFFLHdCQUF3QjtJQUMzQyxXQUFXO0lBQ1gsT0FBTztJQUNQLE1BQU07SUFDTixhQUFhLEVBQUUsZUFBZTtJQUM5QixhQUFhLEVBQUUsZ0JBQWdCO0lBQy9CLGNBQWMsRUFBRSw0QkFBNEI7SUFDNUMsNEJBQTRCLEVBQUUsbUJBQW1CO0lBQ2pELGlDQUFpQyxFQUFFLHFCQUFxQjtJQUN4RCxnQ0FBZ0M7QUFDcEM7O0FBRUUsa0JBQWtCOztBQUNwQjtJQUNJLHlCQUF5QjtJQUN6QixZQUFZO0lBQ1osYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixtQkFBbUI7SUFDbkIsVUFBVTtJQUNWLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLGtCQUFrQjtBQUN0Qjs7QUFDQTtNQUNNLGVBQWU7TUFDZixlQUFlO0FBQ3JCOztBQUVBLHFCQUFxQjs7QUFDckI7SUFDSSxjQUFjO0lBQ2QsWUFBWTtJQUNaLGVBQWU7SUFDZixpQkFBaUI7QUFDckI7O0FBRUE7O0lBRUksV0FBVztJQUNYLHFCQUFxQjtJQUNyQixlQUFlO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvd2VsY29tZS93ZWxjb21lLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFpbi12aWV3IHtcclxuICAgIHdpZHRoOiAxNTAwcHg7XHJcbiAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi9hc3NldHMvaW1nL2JhY2tncm91bmQgZGVmYXVsdC5wbmcnKTtcclxuXHJcbiAgICAtd2Via2l0LWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBTYWZhcmksIENocm9tZSBhbmQgT3BlcmEgPiAxMi4xICovXHJcbiAgICAgICAtbW96LWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBGaXJlZm94IDwgMTYgKi9cclxuICAgICAgICAtbXMtYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIEludGVybmV0IEV4cGxvcmVyICovXHJcbiAgICAgICAgIC1vLWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBPcGVyYSA8IDEyLjEgKi9cclxuICAgICAgICAgICAgYW5pbWF0aW9uOiBmYWRlaW4gMnM7XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBGaXJlZm94IDwgMTYgKi9cclxuQC1tb3ota2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG5ALW1zLWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIE9wZXJhIDwgMTIuMSAqL1xyXG5ALW8ta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuaDEge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luLXRvcDogNTBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogNTBweDtcclxufVxyXG5oMiB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbWFyZ2luOiAyNXB4O1xyXG4gICAgcGFkZGluZzogMjVweDtcclxuICAgIGJvcmRlcjogMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG59XHJcbiNzcCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDBlZTU1O1xyXG59XHJcbiNzcDpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjJmZjc3O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiNtcCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA2NmZmO1xyXG59XHJcbiNtcDpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjI4OGZmO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiNtYWluLWJ1dHRvbi1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDQxNXB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxufVxyXG4jZm9vdGVyIHtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgd2lkdGg6IDE1MDJweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMGI5MTJjO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMHB4IDBweCAyMHB4IDIwcHg7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG5cclxuICAgIC13ZWJraXQtYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIFNhZmFyaSwgQ2hyb21lIGFuZCBPcGVyYSA+IDEyLjEgKi9cclxuICAgICAgIC1tb3otYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIEZpcmVmb3ggPCAxNiAqL1xyXG4gICAgICAgIC1tcy1hbmltYXRpb246IGZhZGVpbiAyczsgLyogSW50ZXJuZXQgRXhwbG9yZXIgKi9cclxuICAgICAgICAgLW8tYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIE9wZXJhIDwgMTIuMSAqL1xyXG4gICAgICAgICAgICBhbmltYXRpb246IGZhZGVpbiAycztcclxufVxyXG4jaW5zdHJ1Y3Rpb25zIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNkMzg4MjI7XHJcbn1cclxuI2luc3RydWN0aW9uczpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVhYTQ0O1xyXG59XHJcbiNjaGFyYWN0ZXItc3RhdHMge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2QzODgyMjtcclxufVxyXG4jY2hhcmFjdGVyLXN0YXRzOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmNWFhNDQ7XHJcbn1cclxuI2Zvb3Rlci1idXR0b24tY29udGFpbmVyIHtcclxuICAgIHdpZHRoOiA0NTBweDtcclxuICAgIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuLyogTW9kYWwgU3R5bGluZy4uLiAqL1xyXG4ubW9kYWwge1xyXG4gICAgZGlzcGxheTogbm9uZTsgLyogSGlkZGVuIGJ5IGRlZmF1bHQgKi9cclxuICAgIHBvc2l0aW9uOiBmaXhlZDsgLyogU3RheSBpbiBwbGFjZSAqL1xyXG4gICAgei1pbmRleDogNTsgLyogU2l0IG9uIHRvcCAqL1xyXG4gICAgcGFkZGluZy10b3A6IDUwcHg7IC8qIExvY2F0aW9uIG9mIHRoZSBib3ggKi9cclxuICAgIG1hcmdpbjogOXB4O1xyXG4gICAgbGVmdDogMDtcclxuICAgIHRvcDogMDtcclxuICAgIHdpZHRoOiAxNTAwcHg7IC8qIEZ1bGwgd2lkdGggKi9cclxuICAgIGhlaWdodDogNTcwcHg7IC8qIEZ1bGwgaGVpZ2h0ICovXHJcbiAgICBvdmVyZmxvdzogYXV0bzsgLyogRW5hYmxlIHNjcm9sbCBpZiBuZWVkZWQgKi9cclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigwLDAsMCk7IC8qIEZhbGxiYWNrIGNvbG9yICovXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7IC8qIEJsYWNrIHcvIG9wYWNpdHkgKi9cclxuICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjBweCAyMHB4O1xyXG59XHJcbiAgXHJcbiAgLyogTW9kYWwgQ29udGVudCAqL1xyXG4ubW9kYWwtY29udGVudCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM4ODg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIGhlaWdodDogODAlO1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5tb2RhbC1oZWFkZXIge1xyXG4gICAgICBtYXJnaW4tdG9wOiAwcHg7XHJcbiAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG4gIFxyXG4vKiBUaGUgQ2xvc2UgQnV0dG9uICovXHJcbi5jbG9zZSB7XHJcbiAgICBjb2xvcjogI2FhYWFhYTtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbiAgXHJcbi5jbG9zZTpob3ZlcixcclxuLmNsb3NlOmZvY3VzIHtcclxuICAgIGNvbG9yOiAjMDAwO1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59Il19 */";
     /***/
   },
 
