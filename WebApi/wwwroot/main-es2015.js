@@ -622,6 +622,7 @@ let CharacterBarComponent = class CharacterBarComponent {
             var fullTeam = _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].teamMap.get(this.team);
             for (var i = 0; i < 8; i++) {
                 let charhtml = yield _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].characterServices.getHTML(this.team, fullTeam[i]);
+                console.log(charhtml);
                 document.getElementById("character-bar").innerHTML += charhtml;
             }
         });
@@ -743,7 +744,6 @@ class CharacterInfo {
     constructor(team, name) {
         this.constructAsync = (team, name) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             var data = yield _app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"].characterServices.getInfo(team, name);
-            console.log("data: ", data);
             this.health = data.health;
             this.damage = data.damage;
             this.speed = data.speed;
@@ -864,7 +864,7 @@ class CharacterServices {
         return this.http.get(this.URL + 'api/characters/getprice/' + team + '/' + name).toPromise();
     }
     getHTML(team, name) {
-        return this.http.get(this.URL + 'api/characters/gethtml/' + team + '/' + name).toPromise();
+        return this.http.get(this.URL + 'api/characters/gethtml/' + team + '/' + name, { responseType: 'text' }).toPromise();
     }
     getTeam(team) {
         return this.http.get(this.URL + 'api/characters/getteam/' + team).toPromise();
@@ -1472,7 +1472,7 @@ let TeamSelectComponent = class TeamSelectComponent {
     ngOnInit() {
         var teams = document.getElementsByClassName("team");
         for (var i = 0; i < teams.length; i++) {
-            teams[i].addEventListener("click", (e) => {
+            teams[i].addEventListener("mouseup", (e) => {
                 var team = e.target;
                 for (var i = 0; i < teams.length; i++)
                     teams[i].classList.remove("selected");
@@ -1695,7 +1695,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const production = true;
+const production = false;
 if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
 }

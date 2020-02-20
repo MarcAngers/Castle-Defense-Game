@@ -1316,7 +1316,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 2:
                     if (!(i < 8)) {
-                      _context2.next = 10;
+                      _context2.next = 11;
                       break;
                     }
 
@@ -1325,14 +1325,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 5:
                     charhtml = _context2.sent;
+                    console.log(charhtml);
                     document.getElementById("character-bar").innerHTML += charhtml;
 
-                  case 7:
+                  case 8:
                     i++;
                     _context2.next = 2;
                     break;
 
-                  case 10:
+                  case 11:
                   case "end":
                     return _context2.stop();
                 }
@@ -1541,7 +1542,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 case 2:
                   data = _context3.sent;
-                  console.log("data: ", data);
                   this.health = data.health;
                   this.damage = data.damage;
                   this.speed = data.speed;
@@ -1549,7 +1549,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   this.name = name;
                   this.description = data.description;
 
-                case 10:
+                case 9:
                 case "end":
                   return _context3.stop();
               }
@@ -1721,7 +1721,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getHTML",
         value: function getHTML(team, name) {
-          return this.http.get(this.URL + 'api/characters/gethtml/' + team + '/' + name).toPromise();
+          return this.http.get(this.URL + 'api/characters/gethtml/' + team + '/' + name, {
+            responseType: 'text'
+          }).toPromise();
         }
       }, {
         key: "getTeam",
@@ -2752,7 +2754,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var teams = document.getElementsByClassName("team");
 
           for (var i = 0; i < teams.length; i++) {
-            teams[i].addEventListener("click", function (e) {
+            teams[i].addEventListener("mouseup", function (e) {
               var team = e.target;
 
               for (var i = 0; i < teams.length; i++) {
@@ -3112,7 +3114,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./environments/environment */
     "./src/environments/environment.ts");
 
-    var production = true;
+    var production = false;
 
     if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
       Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
