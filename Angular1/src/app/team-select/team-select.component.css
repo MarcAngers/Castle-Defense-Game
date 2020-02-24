@@ -1,0 +1,51 @@
+h2 {
+    text-align: center;
+    margin: 10px;
+    font-family: arial;
+    font-size: 25px;
+}
+#team-select {
+    width: 960px;
+    height: 120px;
+    background-color: lightgray;
+    padding: 10px;
+    margin-left: 270px;
+}
+.team {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.selected {
+    margin: 0px;
+    border: 10px solid lightgreen;
+}
+
+#white {
+    width: 96px;
+    height: 96px;
+    background-color: white;
+}
+#black {
+    background-color: black;
+}
+#green {
+    background-color: green;
+}
+#blue {
+    background-color: blue;
+}
+#purple {
+    background-color: purple;
+}
+#yellow {
+    background-color: yellow;
+}
+#orange {
+    background-color: orangered;
+}
+#red {
+    background-color: red;
+}

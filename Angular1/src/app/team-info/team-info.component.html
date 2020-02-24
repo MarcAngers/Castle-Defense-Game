@@ -1,0 +1,16 @@
+<div id="team-info-view">
+    <h2>Choose a Character to see details on them!</h2>
+    <div id="character-select-bar">
+        <div *ngFor="let unit of currentUnits" style="display: inline-block; margin: 10px;">
+            <a [routerLink]="['../characterinfo', currentTeam, unit]">
+                <img src="../../assets/img/icons/{{unit}} icon.png">
+            </a>
+        </div>
+    </div>
+    <app-team-select></app-team-select>
+</div>
+<div id="footer">
+    <div id="footer-button-container">
+        <button id="back" [routerLink]="['']">Back to Main Menu</button>
+    </div>
+</div>

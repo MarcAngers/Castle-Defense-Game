@@ -1,0 +1,58 @@
+#character-bar {
+    width: 870px;
+    height: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+.white {
+    width: 868px;
+    height: 98px;
+    border: 1px solid black;
+    background-color: #DDDDDD;
+}
+.black {
+    background-color: black;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.purple {
+    background-color: purple;
+}
+.yellow {
+    background-color: yellow;
+}
+.orange {
+    background-color: orangered;
+}
+.red {
+    background-color: red;
+}
+
+.character {
+    display: inline-block;
+    margin-left: 10px;
+}
+.character:hover {
+    cursor: pointer;
+}
+.first {
+    margin-left: 0px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.price {
+    z-index: 3;
+    margin: 2px;
+    position: absolute;
+}
+.black-unit {
+    background-color: white;
+}

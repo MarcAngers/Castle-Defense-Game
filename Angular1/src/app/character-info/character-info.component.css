@@ -1,0 +1,72 @@
+#main-view {
+    width: 1500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #888888;
+    font-family: arial;
+    font-size: 50px;
+}
+
+button {
+    color: white;
+    font-size: 20px;
+    margin: 25px;
+    padding: 25px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.info {
+    display: inline-block;
+}
+.info-container {
+    width: 50%;
+    margin: auto;
+}
+.image-link {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    float: left;
+}
+#info-headers {
+    display: inline-block;
+    flex-direction: column;
+    font-family: arial;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 50px;
+}
+#info-values {
+    display: inline-block;
+    flex-direction: column;
+    font-family: arial;
+    font-size: 25px;
+    margin: 50px;
+}
+
+#footer {
+    margin: 0px;
+    width: 1502px;
+    height: 120px;
+    background-color: #0b912c;
+    border-radius: 0px 0px 20px 20px;
+}
+#footer-content {
+    width: 510px;
+    margin: auto;
+}
+#back {
+    background-color: #ff2222;
+    float: left;
+}
+#back:hover {
+    background-color: #ff6622;
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+<script src="~/lib/signalr/signalr.js"></script>
+
+<button [routerLink]="['/']" id="main-menu">Main Menu</button>
+<canvas id="game-canvas" width="1500" height="500" style="border: 1px solid black"></canvas>
+
+<div id="footer">
+    <div id="income">
+        Increase Income:<br/>
+        ${{ connectedPlayer.incomePrice }}
+    </div>
+    <div style="display: inline-block; height: 120px; width: 890px;">
+        <app-character-bar [side]="side" [team]="team" [id]="id" style="display: inline-block;"></app-character-bar>
+    </div>
+    <div id="health">
+        Increase Castle Health:<br/>
+        ${{ connectedPlayer.healthPrice }}
+    </div>
+</div>

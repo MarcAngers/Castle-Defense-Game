@@ -1,0 +1,39 @@
+<div id="main-view">
+    <div>
+        <h1>{{ character.name }}</h1>
+    </div>
+    <div class="info-container">
+        <div class="image" style="display: inline-block; margin: 50px; margin-top: 0px;">
+            <img src="../../assets/img/units/{{name}}1.png">
+        </div>
+        <div class="info">
+            <div id="info-headers">
+                Name:<br/>
+                Team:<br/>
+                Damage:<br/>
+                Health:<br/>
+                Speed:<br/>
+                Description:<br/>
+            </div>
+            <div id="info-values">
+                {{character.name}}<br/>
+                {{character.team}}<br/>
+                {{character.damage}}<br/>
+                {{character.health}}<br/>
+                {{character.speed}}<br/>
+                {{character.description}}<br/>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div id="footer-content">
+        <a class="image-link" [routerLink]="['/characterinfo/', team, prev]">
+            <img id="prev-info" src="../../assets/img/icons/{{prev}} icon.png">
+        </a>
+        <button id="back" [routerLink]="['/teaminfo']">Back to Team View</button>
+        <a class="image-link" [routerLink]="['/characterinfo/', team, next]">
+            <img id="next-info" src="../../assets/img/icons/{{next}} icon.png">
+        </a>
+    </div>
+</div>

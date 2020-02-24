@@ -1,0 +1,38 @@
+<div id="main-view">
+    <h2>Choose your level!</h2>
+    <div id="level-select">
+        <div class="level selected">1</div>
+        <div class="level">2</div>
+        <div class="level">3</div>
+        <div class="level">4</div>
+        <div class="level">5</div>
+        <div class="level">6</div>
+        <div class="level">7</div>
+        <div class="level">8</div>
+    </div>
+
+    <app-team-select></app-team-select>
+
+    <button [routerLink]="['../game/', id, updateTeam(), side]" id="start">Start Game!</button>
+</div>
+<div id="footer">
+    <button id="instructions">Instructions</button>
+</div>
+
+<!-- Instructions Modal -->
+<div id="instruction-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="modal-header">Instructions:</h1>
+        <p>This is a castle defense game, the aim of the game is to power up and purchase units to attack the enemy castle while keeping your own castle safe!</p>
+        <br/>
+        <h1 class="modal-header">Singleplayer:</h1>
+        <p>Choose your favorite team and battle against a variety of opponents in 8 different levels who will send units at you in a pre-defined pattern!</p>
+        <p>Be careful though! The levels get difficult very quickly!</p>
+        <br/>
+        <h1 class="modal-header">Multiplayer:</h1>
+        <p>Pit your best strategies against your friends in a 2-player battle!</p>
+        <p>Create a new game and you will be assigned a random Game ID!</p>
+        <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div id="main-view">
+    <h1>Multiplayer!</h1>
+    <app-team-select></app-team-select>
+
+    <button [routerLink]="['../game/', newId(), updateTeam(), 1]" id="ng">New Game!</button>
+
+    <button [routerLink]="['../game/', id, updateTeam(), 2]" id="jg">Join Game!</button>
+    <label for="game-id" id="game-id-label"><b>Game ID:</b></label>
+    <input type="number" min="1000" max="9999" id="game-id" placeholder="X-X-X-X" name="game-id">
+</div>
+<div id="footer">
+    <button id="instructions">Instructions</button>
+</div>
+
+<!-- Instructions Modal -->
+<div id="instruction-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="modal-header">Instructions:</h1>
+        <p>This is a castle defense game, the aim of the game is to power up and purchase units to attack the enemy castle while keeping your own castle safe!</p>
+        <br/>
+        <h1 class="modal-header">Singleplayer:</h1>
+        <p>Choose your favorite team and battle against a variety of opponents in 8 different levels who will send units at you in a pre-defined pattern!</p>
+        <p>Be careful though! The levels get difficult very quickly!</p>
+        <br/>
+        <h1 class="modal-header">Multiplayer:</h1>
+        <p>Pit your best strategies against your friends in a 2-player battle!</p>
+        <p>Create a new game and you will be assigned a random Game ID!</p>
+        <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>
+    </div>
+</div>
