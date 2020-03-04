@@ -6,6 +6,5 @@
     "speed": 0,
     "size": 0,
     "y": 1000000,
-    "team": "white",
-    "html": "<div class='character' id='unknown'><label class='price'>?</label><img src='../../assets/img/icons/question icon.png'></div>"
+    "team": "white"
 }

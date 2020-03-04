@@ -33,7 +33,7 @@ export class GameComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private gameServices: GameService) { 
     this.background = new Image();
-    this.background.src = "../../assets/img/background default.png";
+    this.background.src = "../../assets/img/background/background default.png";
   }
 
   ngOnInit() {

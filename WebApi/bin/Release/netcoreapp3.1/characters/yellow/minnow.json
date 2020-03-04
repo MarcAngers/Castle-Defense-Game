@@ -6,6 +6,5 @@
     "speed": 12,
     "size": 50,
     "y": 400,
-    "team": "yellow",
-    "html": "<div class='character' id='minnow'><label class='price'>$1</label><img src='../../assets/img/icons/minnow icon.png'></div>"
+    "team": "yellow"
 }

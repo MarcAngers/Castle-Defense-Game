@@ -6,6 +6,5 @@
     "speed": 12,
     "size": 75,
     "y": 375,
-    "team": "purple",
-    "html": "<div class='character' id='bit'><label class='price'>$12</label><img src='../../assets/img/icons/bit icon.png'></div>"
+    "team": "purple"
 }

@@ -30,21 +30,11 @@ button {
 #main-view {
     width: 1500px;
     height: 500px;
-    border: 1px solid black;
-    background-image: url('../../assets/img/background default.png');
 }
-/* add back button? (angular being difficult :/ )
-#back {
-    text-align: left;
-    display: inline-block;
-    color: gray;
-    opacity: 0.5;
+#background-canvas {
+    position: absolute;
 }
-#back:hover {
-    color: lightgray;
-    opacity: 0.75;
-}
-*/
+
 #start {
     background-color: #00ee55;
     margin-left: 671px;
@@ -64,7 +54,7 @@ button {
 
 #footer {
     margin: 0px;
-    width: 1502px;
+    width: 1500px;
     height: 120px;
     background-color: #0b912c;
     border-radius: 0px 0px 20px 20px;
@@ -72,10 +62,19 @@ button {
 }
 #instructions {
     background-color: #d38822;
-    margin-left: 674px;
 }
 #instructions:hover {
     background-color: #f5aa44;
+}
+#back {
+    background-color: #ff2222;
+}
+#back:hover {
+    background-color: #ff6622;
+}
+#footer-button-container {
+    width: 475px;
+    margin: auto;
 }
 
 /* Modal Styling... */

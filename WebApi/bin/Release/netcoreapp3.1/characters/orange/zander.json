@@ -6,6 +6,5 @@
     "speed": 14,
     "size": 75,
     "y": 375,
-    "team": "orange",
-    "html": "<div class='character' id='zander'><label class='price'>$8</label><img src='../../assets/img/icons/zander icon.png'></div>"
+    "team": "orange"
 }

@@ -1,11 +1,10 @@
 {
     "name": "cant",
     "price": 1,
-    "health": 3,
+    "health": 1,
     "damage": 8,
     "speed": 15,
     "size": 50,
     "y": 400,
-    "team": "purple",
-    "html": "<div class='character' id='cant'><label class='price'>$1</label><img src='../../assets/img/icons/cant icon.png'></div>"
+    "team": "purple"
 }

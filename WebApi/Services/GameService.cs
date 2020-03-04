@@ -15,16 +15,14 @@ namespace WebApi.Services
                 return;
             Game toInit = Startup.GetGame(id);
             
-            if (!toInit.Initialized)
+            if (toInit.State < GameState.Initialized)
             {
                 toInit.Init(team, id);
 
                 if (toInit.Id < 1000 || toInit.Id > 10000)
                     toInit.AddComputer();
             }
-            else if (toInit.InProgress)
-                return;
-            else
+            else if (toInit.State < GameState.InProgress)
                 toInit.AddPlayer(team);
         }
         public void Play(int id)

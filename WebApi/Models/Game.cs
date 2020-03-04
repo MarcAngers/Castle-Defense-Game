@@ -18,22 +18,17 @@ namespace WebApi.Models
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
         public bool Multiplayer { get; set; }
-        public bool Initialized { get; set; }
-        public bool InProgress { get; set; }
-        public bool Ended { get; set; }
-        public bool Delete { get; set; }
+        public GameState State { get; set; }
 
         public Game()
         {
             this.Id = 0;
-            this.Initialized = false;
-            this.InProgress = false;
-            this.Delete = false;
+            this.State = GameState.New;
         }
 
         public void Init(string team, int id)
         {
-            this.Initialized = true;
+            this.State = GameState.Initialized;
             this.Id = id;
             this.Player1 = new Player(team, 1);
             List<Player> playerData = new List<Player>() {
@@ -80,7 +75,7 @@ namespace WebApi.Models
 
                 _ = Task.Run(async () =>
                 {
-                    while (!this.Ended)
+                    while (this.State != GameState.Ended)
                     {
                         await Task.Delay(interval);
                         this.Buy(this.Player2, unit);
@@ -90,14 +85,14 @@ namespace WebApi.Models
         }
         public async void Play()
         {
-            this.InProgress = true;
+            this.State = GameState.InProgress;
             this.Units = new List<Character>();
             this.CharacterServices = new CharacterService();
 
             if (!this.Multiplayer)
                 this.StartComputerPlayer();
 
-            while (!this.Delete)
+            while (this.State != GameState.Delete)
             {
                 GameController.UpdateUnitsFor(this.Id, this.Units);
                 List<Player> playerData = new List<Player>() {
@@ -106,7 +101,7 @@ namespace WebApi.Models
                 };
                 GameController.UpdatePlayersFor(this.Id, playerData);
 
-                if (!this.Ended)
+                if (this.State == GameState.InProgress)
                 {
                     this.Player1.GetMoney();
                     this.Player2.GetMoney();
@@ -127,7 +122,7 @@ namespace WebApi.Models
                 if (this.Units.Count > 0)
                     this.CheckForCollisions();
 
-                if (this.Ended)
+                if (this.State >= GameState.Ended)
                 {
                     if (this.Player1.Castle.Dead)
                         GameController.EndGame(this.Id, 2);
@@ -190,12 +185,12 @@ namespace WebApi.Models
             }
 
             if (this.Player1.Castle.Dead || this.Player2.Castle.Dead)
-                this.Ended = true;
+                this.State = GameState.Ended;
         }
 
         public void Buy(Player player, string name)
         {
-            if (this.Ended)
+            if (this.State >= GameState.Ended)
                 return;
             if (name == null || name == "")
                 return;

@@ -50,7 +50,7 @@ namespace WebApi
                 var instance = Startup.GameInstances[i];
                 if (instance.Id == id)
                 {
-                    instance.Delete = true;
+                    instance.State = GameState.Delete;
                     Startup.GameInstances.Remove(instance);
                 }
             }

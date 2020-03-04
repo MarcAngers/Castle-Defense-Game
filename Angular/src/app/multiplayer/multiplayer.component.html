@@ -9,7 +9,10 @@
     <input type="number" min="1000" max="9999" id="game-id" placeholder="X-X-X-X" name="game-id">
 </div>
 <div id="footer">
-    <button id="instructions">Instructions</button>
+    <div id="footer-button-container">
+        <button id="back" [routerLink]="['']">Back to Main Menu</button>
+        <button id="instructions">Instructions</button>
+    </div>
 </div>
 
 <!-- Instructions Modal -->
