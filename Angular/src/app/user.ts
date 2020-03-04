@@ -1,12 +1,14 @@
-import { AppComponent } from './app.component';
+import { UserService } from '../services/user.service';
 
 export class User {
     credits: number;
     name: string;
     unlocks: string[];
     levelWins: boolean[];
+    userServices: UserService;
 
-    constructor(credits?: number, name?: string, unlocks?: string[], levelWins?: boolean[]) {
+    constructor(userServices: UserService, credits?: number, name?: string, unlocks?: string[], levelWins?: boolean[]) {
+        this.userServices = userServices;
         this.credits = credits || 0;
         this.name = name || "new_user";
         this.unlocks = unlocks || 
@@ -26,7 +28,7 @@ export class User {
     }
 
     public win(id: number) {
-        AppComponent.userServices.Win(this.name, id);
+        this.userServices.Win(this.name, id);
     }
 
     public static parseUser(data) {

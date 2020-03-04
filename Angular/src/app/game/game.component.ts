@@ -4,11 +4,10 @@ import { Unit } from './unit';
 import { Player } from '../player';
 import { Castle } from './castle'
 
-import { HttpClient } from '@angular/common/http';
-import { GameServices } from './gameServices';
+import { GameService } from '../../services/game.service';
 
 import { HubConnectionBuilder } from '@aspnet/signalr';
-import { AppComponent } from '../app.component';
+//import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-game',
@@ -17,8 +16,6 @@ import { AppComponent } from '../app.component';
 })
 
 export class GameComponent implements OnInit {
-  public static gameServices: GameServices;
-
   public id: number;
   public team: string;
   public side: number;
@@ -34,8 +31,7 @@ export class GameComponent implements OnInit {
 
   private ended: number = 0;
 
-  constructor(private route: ActivatedRoute, http: HttpClient) { 
-    GameComponent.gameServices = new GameServices(http);
+  constructor(private route: ActivatedRoute, private gameServices: GameService) { 
     this.background = new Image();
     this.background.src = "../../assets/img/background default.png";
   }
@@ -69,24 +65,17 @@ export class GameComponent implements OnInit {
       this.ended = side;
     });
     connection.onclose(() => {
-      GameComponent.gameServices.end(this.id);
+      document.getElementById("main-menu").style.display = "none";      
+      this.gameServices.end(this.id);
       this.reset();
+      delete(this.gameServices);
     })
 
     this.canvas = <HTMLCanvasElement> document.getElementById("game-canvas");
     this.context = this.canvas.getContext("2d");
     var menuButton = document.getElementById("main-menu");
     menuButton.onmouseup = () => {
-      menuButton.style.display = "none";
-      GameComponent.gameServices.end(this.id);
-      this.reset();
       connection.stop();
-    }
-    document.getElementById("income").onmouseup = () => {
-      GameComponent.gameServices.buy(this.id, this.side, "income");
-    }
-    document.getElementById("health").onmouseup = () => {
-      GameComponent.gameServices.buy(this.id, this.side, "health");
     }
 
     this.units = new Array<Unit>();
@@ -105,11 +94,11 @@ export class GameComponent implements OnInit {
     if (this.side == 1)
       this.init();
     else
-      GameComponent.gameServices.init(this.team, this.id);
+      this.gameServices.init(this.team, this.id);
   }
 
   public init = async() => {
-    await GameComponent.gameServices.init(this.team, this.id);
+    await this.gameServices.init(this.team, this.id);
 
     if (this.id < 1000)
       this.start();
@@ -127,7 +116,7 @@ export class GameComponent implements OnInit {
   }
 
   public start = async() => {
-    await GameComponent.gameServices.play(this.id);
+    await this.gameServices.play(this.id);
 
     window.requestAnimationFrame(() => this.draw());
   }
@@ -174,8 +163,8 @@ export class GameComponent implements OnInit {
       this.context.fillStyle = "black";
       this.context.font = "300px serif"
       this.context.fillText("VICTORY!", 100, 300, 1300);
-      if (AppComponent.user.name != "new_user")
-        AppComponent.user.win(this.id);
+      //if (AppComponent.user.name != "new_user")
+      //  AppComponent.user.win(this.id);
     }
   }
 

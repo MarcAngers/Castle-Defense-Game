@@ -1,4 +1,4 @@
-import { AppComponent } from '../app.component';
+import { CharacterService } from '../../services/character.service';
 
 export class CharacterInfo {
     health: number;
@@ -8,7 +8,7 @@ export class CharacterInfo {
     name: string;
     description: string;
 
-    constructor(team: string, name: string) {
+    constructor(team: string, name: string, private characterServices: CharacterService) {
         if (name == "unknown") {
             this.health = 0;
             this.damage = 0;
@@ -21,7 +21,7 @@ export class CharacterInfo {
     }
 
     constructAsync = async(team: string, name: string) => {
-        var data = await <any>AppComponent.characterServices.getInfo(team, name);
+        var data = await <any>this.characterServices.getInfo(team, name);
         this.health = data.health;
         this.damage = data.damage;
         this.speed = data.speed;

@@ -5,6 +5,39 @@
     margin-bottom: 0px;
     padding: 10px;
 }
+#income { 
+    float: left;
+    width: 306px;
+    height: 90px;
+    margin: 0px;
+    padding-top: 30px;
+    font-family: arial;
+    font-size: 25px;
+    background-color: #2bb14c;
+    text-align: center;
+    border-radius: 20px 0px 0px 20px;
+}
+#income:hover {
+    background-color: #5dd36e;
+    cursor: pointer;
+}
+#health {
+    float: right;
+    width: 306px;
+    height: 90px;
+    margin: 0px;
+    padding-top: 30px;
+    font-family: arial;
+    font-size: 25px;
+    background-color: #2bb14c;
+    text-align: center;
+    border-radius: 0px 20px 20px 0px;
+}
+#health:hover {
+    background-color: #5dd36e;
+    cursor: pointer;
+}
+
 .white {
     width: 868px;
     height: 98px;

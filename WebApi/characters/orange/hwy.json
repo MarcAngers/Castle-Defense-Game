@@ -6,6 +6,5 @@
     "speed": 3,
     "size": 200,
     "y": 250,
-    "team": "orange",
-    "html": "<div class='character' id='hwy'><label class='price'>$138</label><img src='../../assets/img/icons/hwy icon.png'></div>"
+    "team": "orange"
 }

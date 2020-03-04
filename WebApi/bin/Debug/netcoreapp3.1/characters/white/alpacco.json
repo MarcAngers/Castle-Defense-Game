@@ -6,6 +6,5 @@
     "speed": 10,
     "size": 75,
     "y": 375,
-    "team": "white",
-    "html": "<div class='character' id='alpacco'><label class='price'>$9</label><img src='../../assets/img/icons/alpacco icon.png'></div>"
+    "team": "white"
 }

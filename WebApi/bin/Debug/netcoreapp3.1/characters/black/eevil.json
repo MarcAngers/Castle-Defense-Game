@@ -6,6 +6,5 @@
     "speed": 15,
     "size": 50,
     "y": 400,
-    "team": "black",
-    "html": "<div class='character' id='eevil'><label class='price black-unit'>$6</label><img src='../../assets/img/icons/eevil icon.png'></div>"
+    "team": "black"
 }

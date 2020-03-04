@@ -6,6 +6,5 @@
     "speed": 4,
     "size": 200,
     "y": 250,
-    "team": "blue",
-    "html": "<div class='character' id='lightningbear'><label class='price'>$136</label><img src='../../assets/img/icons/lightningbear icon.png'></div>"
+    "team": "blue"
 }

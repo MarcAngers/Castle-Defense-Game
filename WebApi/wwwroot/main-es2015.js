@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"character-bar\">\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"income\">\n    Increase Income:<br/>\n    ${{ incomePrice }}\n</div>\n<div id=\"character-bar\" style=\"display: inline-block;\">\n    <!-- Dynamic Character icons go here -->\n    <div class=\"character first\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n</div>\n<div id=\"health\">\n    Increase Castle Health:<br/>\n    ${{ healthPrice }}\n</div>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<script src=\"~/lib/signalr/signalr.js\"></script>\n\n<button [routerLink]=\"['/']\" id=\"main-menu\">Main Menu</button>\n<canvas id=\"game-canvas\" width=\"1500\" height=\"500\" style=\"border: 1px solid black\"></canvas>\n\n<div id=\"footer\">\n    <div id=\"income\">\n        Increase Income:<br/>\n        ${{ connectedPlayer.incomePrice }}\n    </div>\n    <div style=\"display: inline-block; height: 120px; width: 890px;\">\n        <app-character-bar [side]=\"side\" [team]=\"team\" [id]=\"id\" style=\"display: inline-block;\"></app-character-bar>\n    </div>\n    <div id=\"health\">\n        Increase Castle Health:<br/>\n        ${{ connectedPlayer.healthPrice }}\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<script src=\"~/lib/signalr/signalr.js\"></script>\n\n<button [routerLink]=\"['/']\" id=\"main-menu\">Main Menu</button>\n<canvas id=\"game-canvas\" width=\"1500\" height=\"500\" style=\"border: 1px solid black\"></canvas>\n\n<app-character-bar [side]=\"side\" [team]=\"team\" [id]=\"id\" id=\"footer\"></app-character-bar>\n");
 
 /***/ }),
 
@@ -454,32 +454,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user */ "./src/app/user.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _userServices__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./userServices */ "./src/app/userServices.ts");
-/* harmony import */ var _game_characterServices__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./game/characterServices */ "./src/app/game/characterServices.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _services_character_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/character.service */ "./src/services/character.service.ts");
 var AppComponent_1;
 
 
-
-
+//import { User } from './user';
+//import { UserService } from '../services/user.service';
 
 
 let AppComponent = AppComponent_1 = class AppComponent {
-    constructor(http) {
+    constructor(http, characterServices /*, private userServices: UserService*/) {
+        this.http = http;
+        this.characterServices = characterServices;
         this.setupTeamMap = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            AppComponent_1.teamMap.set("white", yield AppComponent_1.characterServices.getTeam("white"));
-            AppComponent_1.teamMap.set("green", yield AppComponent_1.characterServices.getTeam("green"));
-            AppComponent_1.teamMap.set("blue", yield AppComponent_1.characterServices.getTeam("blue"));
-            AppComponent_1.teamMap.set("purple", yield AppComponent_1.characterServices.getTeam("purple"));
-            AppComponent_1.teamMap.set("yellow", yield AppComponent_1.characterServices.getTeam("yellow"));
-            AppComponent_1.teamMap.set("orange", yield AppComponent_1.characterServices.getTeam("orange"));
-            AppComponent_1.teamMap.set("red", yield AppComponent_1.characterServices.getTeam("red"));
-            AppComponent_1.teamMap.set("black", yield AppComponent_1.characterServices.getTeam("black"));
+            AppComponent_1.teamMap.set("white", yield this.characterServices.getTeam("white"));
+            AppComponent_1.teamMap.set("green", yield this.characterServices.getTeam("green"));
+            AppComponent_1.teamMap.set("blue", yield this.characterServices.getTeam("blue"));
+            AppComponent_1.teamMap.set("purple", yield this.characterServices.getTeam("purple"));
+            AppComponent_1.teamMap.set("yellow", yield this.characterServices.getTeam("yellow"));
+            AppComponent_1.teamMap.set("orange", yield this.characterServices.getTeam("orange"));
+            AppComponent_1.teamMap.set("red", yield this.characterServices.getTeam("red"));
+            AppComponent_1.teamMap.set("black", yield this.characterServices.getTeam("black"));
         });
-        AppComponent_1.user = new _user__WEBPACK_IMPORTED_MODULE_2__["User"]();
-        AppComponent_1.userServices = new _userServices__WEBPACK_IMPORTED_MODULE_4__["UserServices"](http);
-        AppComponent_1.characterServices = new _game_characterServices__WEBPACK_IMPORTED_MODULE_5__["CharacterServices"](http);
+        //AppComponent.user = new User(this.userServices);
     }
     ngOnInit() {
         AppComponent_1.teamMap = new Map();
@@ -487,7 +485,8 @@ let AppComponent = AppComponent_1 = class AppComponent {
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _services_character_service__WEBPACK_IMPORTED_MODULE_3__["CharacterService"] /*, private userServices: UserService*/ }
 ];
 AppComponent = AppComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -578,7 +577,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#character-bar {\r\n    width: 870px;\r\n    height: 100px;\r\n    margin-top: 0px;\r\n    margin-bottom: 0px;\r\n    padding: 10px;\r\n}\r\n.white {\r\n    width: 868px;\r\n    height: 98px;\r\n    border: 1px solid black;\r\n    background-color: #DDDDDD;\r\n}\r\n.black {\r\n    background-color: black;\r\n}\r\n.green {\r\n    background-color: green;\r\n}\r\n.blue {\r\n    background-color: blue;\r\n}\r\n.purple {\r\n    background-color: purple;\r\n}\r\n.yellow {\r\n    background-color: yellow;\r\n}\r\n.orange {\r\n    background-color: orangered;\r\n}\r\n.red {\r\n    background-color: red;\r\n}\r\n.character {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n}\r\n.character:hover {\r\n    cursor: pointer;\r\n}\r\n.first {\r\n    margin-left: 0px;\r\n}\r\n.hidden {\r\n    opacity: 0;\r\n}\r\n.price {\r\n    z-index: 3;\r\n    margin: 2px;\r\n    position: absolute;\r\n}\r\n.black-unit {\r\n    background-color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWix1QkFBdUI7SUFDdkIseUJBQXlCO0FBQzdCO0FBQ0E7SUFDSSx1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksc0JBQXNCO0FBQzFCO0FBQ0E7SUFDSSx3QkFBd0I7QUFDNUI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksMkJBQTJCO0FBQy9CO0FBQ0E7SUFDSSxxQkFBcUI7QUFDekI7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGVBQWU7QUFDbkI7QUFDQTtJQUNJLGdCQUFnQjtBQUNwQjtBQUVBO0lBQ0ksVUFBVTtBQUNkO0FBRUE7SUFDSSxVQUFVO0lBQ1YsV0FBVztJQUNYLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksdUJBQXVCO0FBQzNCIiwiZmlsZSI6InNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcmFjdGVyLWJhciB7XHJcbiAgICB3aWR0aDogODcwcHg7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMHB4O1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG4ud2hpdGUge1xyXG4gICAgd2lkdGg6IDg2OHB4O1xyXG4gICAgaGVpZ2h0OiA5OHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjREREREREO1xyXG59XHJcbi5ibGFjayB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxufVxyXG4uZ3JlZW4ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XHJcbn1cclxuLmJsdWUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmx1ZTtcclxufVxyXG4ucHVycGxlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHB1cnBsZTtcclxufVxyXG4ueWVsbG93IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcclxufVxyXG4ub3JhbmdlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZXJlZDtcclxufVxyXG4ucmVkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxufVxyXG5cclxuLmNoYXJhY3RlciB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBtYXJnaW4tbGVmdDogMTBweDtcclxufVxyXG4uY2hhcmFjdGVyOmhvdmVyIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4uZmlyc3Qge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxufVxyXG5cclxuLmhpZGRlbiB7XHJcbiAgICBvcGFjaXR5OiAwO1xyXG59XHJcblxyXG4ucHJpY2Uge1xyXG4gICAgei1pbmRleDogMztcclxuICAgIG1hcmdpbjogMnB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG59XHJcbi5ibGFjay11bml0IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#character-bar {\r\n    width: 870px;\r\n    height: 100px;\r\n    margin-top: 0px;\r\n    margin-bottom: 0px;\r\n    padding: 10px;\r\n}\r\n#income { \r\n    float: left;\r\n    width: 306px;\r\n    height: 90px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 20px 0px 0px 20px;\r\n}\r\n#income:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#health {\r\n    float: right;\r\n    width: 306px;\r\n    height: 90px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 0px 20px 20px 0px;\r\n}\r\n#health:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n.white {\r\n    width: 868px;\r\n    height: 98px;\r\n    border: 1px solid black;\r\n    background-color: #DDDDDD;\r\n}\r\n.black {\r\n    background-color: black;\r\n}\r\n.green {\r\n    background-color: green;\r\n}\r\n.blue {\r\n    background-color: blue;\r\n}\r\n.purple {\r\n    background-color: purple;\r\n}\r\n.yellow {\r\n    background-color: yellow;\r\n}\r\n.orange {\r\n    background-color: orangered;\r\n}\r\n.red {\r\n    background-color: red;\r\n}\r\n.character {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n}\r\n.character:hover {\r\n    cursor: pointer;\r\n}\r\n.first {\r\n    margin-left: 0px;\r\n}\r\n.hidden {\r\n    opacity: 0;\r\n}\r\n.price {\r\n    z-index: 3;\r\n    margin: 2px;\r\n    position: absolute;\r\n}\r\n.black-unit {\r\n    background-color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0NBQWdDO0FBQ3BDO0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWixZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0NBQWdDO0FBQ3BDO0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsZUFBZTtBQUNuQjtBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWix1QkFBdUI7SUFDdkIseUJBQXlCO0FBQzdCO0FBQ0E7SUFDSSx1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksc0JBQXNCO0FBQzFCO0FBQ0E7SUFDSSx3QkFBd0I7QUFDNUI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksMkJBQTJCO0FBQy9CO0FBQ0E7SUFDSSxxQkFBcUI7QUFDekI7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGVBQWU7QUFDbkI7QUFDQTtJQUNJLGdCQUFnQjtBQUNwQjtBQUVBO0lBQ0ksVUFBVTtBQUNkO0FBRUE7SUFDSSxVQUFVO0lBQ1YsV0FBVztJQUNYLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksdUJBQXVCO0FBQzNCIiwiZmlsZSI6InNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcmFjdGVyLWJhciB7XHJcbiAgICB3aWR0aDogODcwcHg7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMHB4O1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG4jaW5jb21lIHsgXHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIHdpZHRoOiAzMDZweDtcclxuICAgIGhlaWdodDogOTBweDtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDMwcHg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmJiMTRjO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweCAwcHggMHB4IDIwcHg7XHJcbn1cclxuI2luY29tZTpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNWRkMzZlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiNoZWFsdGgge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgd2lkdGg6IDMwNnB4O1xyXG4gICAgaGVpZ2h0OiA5MHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMjBweCAyMHB4IDBweDtcclxufVxyXG4jaGVhbHRoOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM1ZGQzNmU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi53aGl0ZSB7XHJcbiAgICB3aWR0aDogODY4cHg7XHJcbiAgICBoZWlnaHQ6IDk4cHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNEREREREQ7XHJcbn1cclxuLmJsYWNrIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG59XHJcbi5ncmVlbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxufVxyXG4uYmx1ZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibHVlO1xyXG59XHJcbi5wdXJwbGUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcHVycGxlO1xyXG59XHJcbi55ZWxsb3cge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93O1xyXG59XHJcbi5vcmFuZ2Uge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogb3JhbmdlcmVkO1xyXG59XHJcbi5yZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG59XHJcblxyXG4uY2hhcmFjdGVyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG59XHJcbi5jaGFyYWN0ZXI6aG92ZXIge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5maXJzdCB7XHJcbiAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG59XHJcblxyXG4uaGlkZGVuIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbn1cclxuXHJcbi5wcmljZSB7XHJcbiAgICB6LWluZGV4OiAzO1xyXG4gICAgbWFyZ2luOiAycHg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmJsYWNrLXVuaXQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -594,40 +593,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterBarComponent", function() { return CharacterBarComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../game/game.component */ "./src/app/game/game.component.ts");
+/* harmony import */ var _services_character_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/character.service */ "./src/services/character.service.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _services_shopService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/shopService */ "./src/services/shopService.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var CharacterBarComponent_1;
 
 
 
 
-let CharacterBarComponent = class CharacterBarComponent {
-    constructor() { }
+
+
+let CharacterBarComponent = CharacterBarComponent_1 = class CharacterBarComponent {
+    constructor(characterServices, http) {
+        this.characterServices = characterServices;
+        this.http = http;
+        this.incomePrice = -1;
+        this.healthPrice = -1;
+        this.getIncomePriceAsync = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.incomePrice = yield CharacterBarComponent_1.shopServices.getNewIncomePrice(this.id, this.side);
+            console.log(this.incomePrice);
+        });
+        this.getHealthPriceAsync = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.healthPrice = yield CharacterBarComponent_1.shopServices.getNewHealthPrice(this.id, this.side);
+        });
+    }
     ngOnInit() {
         document.getElementById("character-bar").classList.add(this.team);
+        CharacterBarComponent_1.shopServices = new _services_shopService__WEBPACK_IMPORTED_MODULE_4__["ShopService"](this.http);
         this.initBar();
-        document.addEventListener("mouseup", (e) => {
-            var testForCharacter = e;
-            if (testForCharacter.target.parentElement)
-                var target = testForCharacter.target.parentElement;
-            else
-                return;
-            if (target.id != "" && target.classList.contains("character")) {
-                _game_game_component__WEBPACK_IMPORTED_MODULE_2__["GameComponent"].gameServices.buy(this.id, this.side, target.id);
-                return;
-            }
-        });
+        document.getElementById("income").onmouseup = () => {
+            CharacterBarComponent_1.shopServices.buy(this.id, this.side, "income");
+            this.getIncomePriceAsync();
+        };
+        document.getElementById("health").onmouseup = () => {
+            CharacterBarComponent_1.shopServices.buy(this.id, this.side, "health");
+            this.getHealthPriceAsync();
+        };
     }
     initBar() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             var fullTeam = _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].teamMap.get(this.team);
             for (var i = 0; i < 8; i++) {
-                let charhtml = yield _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].characterServices.getHTML(this.team, fullTeam[i]);
-                console.log(charhtml);
-                document.getElementById("character-bar").innerHTML += charhtml;
+                let currentchar = fullTeam[i];
+                let charprice = yield this.characterServices.getPrice(this.team, currentchar);
+                let charhtml = "<label class='price";
+                if (this.team == "black")
+                    charhtml += " black-unit";
+                charhtml += "'>$" + charprice + "</label><img src='../../assets/img/icons/" + currentchar + " icon.png'>";
+                document.getElementsByClassName("character")[i].innerHTML += charhtml;
+                document.getElementsByClassName("character")[i].addEventListener("mouseup", (e) => {
+                    CharacterBarComponent_1.shopServices.buy(this.id, this.side, currentchar);
+                });
             }
+            this.getIncomePriceAsync();
+            this.getHealthPriceAsync();
         });
     }
 };
+CharacterBarComponent.ctorParameters = () => [
+    { type: _services_character_service__WEBPACK_IMPORTED_MODULE_2__["CharacterService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('side')
 ], CharacterBarComponent.prototype, "side", void 0);
@@ -637,7 +664,7 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('id')
 ], CharacterBarComponent.prototype, "id", void 0);
-CharacterBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+CharacterBarComponent = CharacterBarComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-character-bar',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./character-bar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/character-bar/character-bar.component.html")).default,
@@ -678,17 +705,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _characterInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./characterInfo */ "./src/app/character-info/characterInfo.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_character_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/character.service */ "./src/services/character.service.ts");
+
 
 
 
 
 
 let CharacterInfoComponent = class CharacterInfoComponent {
-    constructor(route) {
+    constructor(route, characterServices) {
         this.route = route;
+        this.characterServices = characterServices;
         this.team = "white";
         this.name = "doggo";
-        this.character = new _characterInfo__WEBPACK_IMPORTED_MODULE_2__["CharacterInfo"]("white", "unknown");
+        this.character = new _characterInfo__WEBPACK_IMPORTED_MODULE_2__["CharacterInfo"]("white", "unknown", this.characterServices);
         this.next = "doggo";
         this.prev = "doggo";
     }
@@ -697,7 +727,7 @@ let CharacterInfoComponent = class CharacterInfoComponent {
             var mapParams = map;
             this.team = mapParams.params.team;
             this.name = mapParams.params.name;
-            this.character = new _characterInfo__WEBPACK_IMPORTED_MODULE_2__["CharacterInfo"](this.team, this.name);
+            this.character = new _characterInfo__WEBPACK_IMPORTED_MODULE_2__["CharacterInfo"](this.team, this.name, this.characterServices);
             this.fullTeam = _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"].teamMap.get(this.team);
             var index = this.fullTeam.indexOf(this.name);
             this.next = this.fullTeam[(index + 1) % 8];
@@ -712,7 +742,8 @@ let CharacterInfoComponent = class CharacterInfoComponent {
     }
 };
 CharacterInfoComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+    { type: _services_character_service__WEBPACK_IMPORTED_MODULE_5__["CharacterService"] }
 ];
 CharacterInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -737,13 +768,12 @@ CharacterInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterInfo", function() { return CharacterInfo; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.component */ "./src/app/app.component.ts");
-
 
 class CharacterInfo {
-    constructor(team, name) {
+    constructor(team, name, characterServices) {
+        this.characterServices = characterServices;
         this.constructAsync = (team, name) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            var data = yield _app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"].characterServices.getInfo(team, name);
+            var data = yield this.characterServices.getInfo(team, name);
             this.health = data.health;
             this.damage = data.damage;
             this.speed = data.speed;
@@ -835,48 +865,6 @@ class Castle {
 
 /***/ }),
 
-/***/ "./src/app/game/characterServices.ts":
-/*!*******************************************!*\
-  !*** ./src/app/game/characterServices.ts ***!
-  \*******************************************/
-/*! exports provided: CharacterServices */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterServices", function() { return CharacterServices; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../main */ "./src/main.ts");
-
-
-class CharacterServices {
-    constructor(http) {
-        this.http = http;
-        if (_main__WEBPACK_IMPORTED_MODULE_1__["production"])
-            this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
-        else
-            this.URL = 'https://localhost:44364/';
-    }
-    getCharacter(team, name) {
-        return this.http.get(this.URL + 'api/characters/getcharacter/' + team + '/' + name).toPromise();
-    }
-    getPrice(team, name) {
-        return this.http.get(this.URL + 'api/characters/getprice/' + team + '/' + name).toPromise();
-    }
-    getHTML(team, name) {
-        return this.http.get(this.URL + 'api/characters/gethtml/' + team + '/' + name, { responseType: 'text' }).toPromise();
-    }
-    getTeam(team) {
-        return this.http.get(this.URL + 'api/characters/getteam/' + team).toPromise();
-    }
-    getInfo(team, name) {
-        return this.http.get(this.URL + 'api/characters/getinfo/' + team + '/' + name).toPromise();
-    }
-}
-
-
-/***/ }),
-
 /***/ "./src/app/game/game.component.css":
 /*!*****************************************!*\
   !*** ./src/app/game/game.component.css ***!
@@ -886,7 +874,7 @@ class CharacterServices {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    display: inline-block;\r\n}\r\n#income { \r\n    float: left;\r\n    width: 306px;\r\n    height: 90px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 20px 0px 0px 20px;\r\n}\r\n#income:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#health {\r\n    float: right;\r\n    width: 306px;\r\n    height: 90px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 0px 20px 20px 0px;\r\n}\r\n#health:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#main-menu {\r\n    display: none;\r\n    position: fixed;\r\n    z-index: 5;\r\n    left: 676px;\r\n    top: 350px;\r\n\r\n    color: white;\r\n    background-color: #00ee55;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    margin-left: 600;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n#main-menu:hover {\r\n    background-color: #22ff77;\r\n    cursor: pointer;\r\n}\r\n@keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n/* Firefox < 16 */\r\n/* Safari, Chrome and Opera > 12.1 */\r\n@-webkit-keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n/* Internet Explorer */\r\n/* Opera < 12.1 */\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2FtZS9nYW1lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsYUFBYTtJQUNiLGFBQWE7SUFDYixxQkFBcUI7QUFDekI7QUFDQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdDQUFnQztBQUNwQztBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdDQUFnQztBQUNwQztBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFFQTtJQUNJLGFBQWE7SUFDYixlQUFlO0lBQ2YsVUFBVTtJQUNWLFdBQVc7SUFDWCxVQUFVOztJQUVWLFlBQVk7SUFDWix5QkFBeUI7SUFDekIsZUFBZTtJQUNmLFlBQVk7SUFDWixnQkFBZ0I7SUFDaEIsYUFBYTtJQUNiLFdBQVc7SUFDWCxrQkFBa0I7O0lBRWxCLDRCQUE0QixFQUFFLG9DQUFvQyxFQUNwQyxpQkFBaUIsRUFDakIsc0JBQXNCLEVBQ3RCLGlCQUFpQjtZQUN2QyxvQkFBb0I7QUFDaEM7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CO0FBRUE7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2QjtBQUVBLGlCQUFpQjtBQU1qQixvQ0FBb0M7QUFDcEM7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2QjtBQUVBLHNCQUFzQjtBQU10QixpQkFBaUIiLCJmaWxlIjoic3JjL2FwcC9nYW1lL2dhbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNmb290ZXIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICB3aWR0aDogMTUwMnB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG4jaW5jb21lIHsgXHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIHdpZHRoOiAzMDZweDtcclxuICAgIGhlaWdodDogOTBweDtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDMwcHg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmJiMTRjO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweCAwcHggMHB4IDIwcHg7XHJcbn1cclxuI2luY29tZTpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNWRkMzZlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiNoZWFsdGgge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgd2lkdGg6IDMwNnB4O1xyXG4gICAgaGVpZ2h0OiA5MHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMjBweCAyMHB4IDBweDtcclxufVxyXG4jaGVhbHRoOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM1ZGQzNmU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbiNtYWluLW1lbnUge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHotaW5kZXg6IDU7XHJcbiAgICBsZWZ0OiA2NzZweDtcclxuICAgIHRvcDogMzUwcHg7XHJcblxyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwZWU1NTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIG1hcmdpbjogMjVweDtcclxuICAgIG1hcmdpbi1sZWZ0OiA2MDA7XHJcbiAgICBwYWRkaW5nOiAyNXB4O1xyXG4gICAgYm9yZGVyOiAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcblxyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAyczsgLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG4gICAgICAgLW1vei1hbmltYXRpb246IGZhZGVpbiAyczsgLyogRmlyZWZveCA8IDE2ICovXHJcbiAgICAgICAgLW1zLWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG4gICAgICAgICAtby1hbmltYXRpb246IGZhZGVpbiAyczsgLyogT3BlcmEgPCAxMi4xICovXHJcbiAgICAgICAgICAgIGFuaW1hdGlvbjogZmFkZWluIDJzO1xyXG59XHJcbiNtYWluLW1lbnU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyZmY3NztcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIEZpcmVmb3ggPCAxNiAqL1xyXG5ALW1vei1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBTYWZhcmksIENocm9tZSBhbmQgT3BlcmEgPiAxMi4xICovXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIEludGVybmV0IEV4cGxvcmVyICovXHJcbkAtbXMta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogT3BlcmEgPCAxMi4xICovXHJcbkAtby1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    display: inline-block;\r\n}\r\n\r\n#main-menu {\r\n    display: none;\r\n    position: fixed;\r\n    z-index: 5;\r\n    left: 676px;\r\n    top: 350px;\r\n\r\n    color: white;\r\n    background-color: #00ee55;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    margin-left: 600;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n\r\n#main-menu:hover {\r\n    background-color: #22ff77;\r\n    cursor: pointer;\r\n}\r\n\r\n@keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n\r\n/* Firefox < 16 */\r\n\r\n/* Safari, Chrome and Opera > 12.1 */\r\n\r\n@-webkit-keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n\r\n/* Internet Explorer */\r\n\r\n/* Opera < 12.1 */\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2FtZS9nYW1lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsYUFBYTtJQUNiLGFBQWE7SUFDYixxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxhQUFhO0lBQ2IsZUFBZTtJQUNmLFVBQVU7SUFDVixXQUFXO0lBQ1gsVUFBVTs7SUFFVixZQUFZO0lBQ1oseUJBQXlCO0lBQ3pCLGVBQWU7SUFDZixZQUFZO0lBQ1osZ0JBQWdCO0lBQ2hCLGFBQWE7SUFDYixXQUFXO0lBQ1gsa0JBQWtCOztJQUVsQiw0QkFBNEIsRUFBRSxvQ0FBb0MsRUFDcEMsaUJBQWlCLEVBQ2pCLHNCQUFzQixFQUN0QixpQkFBaUI7WUFDdkMsb0JBQW9CO0FBQ2hDOztBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2Qjs7QUFFQSxpQkFBaUI7O0FBTWpCLG9DQUFvQzs7QUFDcEM7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2Qjs7QUFFQSxzQkFBc0I7O0FBTXRCLGlCQUFpQiIsImZpbGUiOiJzcmMvYXBwL2dhbWUvZ2FtZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2Zvb3RlciB7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHdpZHRoOiAxNTAycHg7XHJcbiAgICBoZWlnaHQ6IDEyMHB4O1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcblxyXG4jbWFpbi1tZW51IHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB6LWluZGV4OiA1O1xyXG4gICAgbGVmdDogNjc2cHg7XHJcbiAgICB0b3A6IDM1MHB4O1xyXG5cclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMGVlNTU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBtYXJnaW46IDI1cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNjAwO1xyXG4gICAgcGFkZGluZzogMjVweDtcclxuICAgIGJvcmRlcjogMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG5cclxuICAgIC13ZWJraXQtYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIFNhZmFyaSwgQ2hyb21lIGFuZCBPcGVyYSA+IDEyLjEgKi9cclxuICAgICAgIC1tb3otYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIEZpcmVmb3ggPCAxNiAqL1xyXG4gICAgICAgIC1tcy1hbmltYXRpb246IGZhZGVpbiAyczsgLyogSW50ZXJuZXQgRXhwbG9yZXIgKi9cclxuICAgICAgICAgLW8tYW5pbWF0aW9uOiBmYWRlaW4gMnM7IC8qIE9wZXJhIDwgMTIuMSAqL1xyXG4gICAgICAgICAgICBhbmltYXRpb246IGZhZGVpbiAycztcclxufVxyXG4jbWFpbi1tZW51OmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyMmZmNzc7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBGaXJlZm94IDwgMTYgKi9cclxuQC1tb3ota2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG5ALW1zLWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIE9wZXJhIDwgMTIuMSAqL1xyXG5ALW8ta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufSJdfQ== */");
 
 /***/ }),
 
@@ -906,11 +894,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _unit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./unit */ "./src/app/game/unit.ts");
 /* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../player */ "./src/app/player.ts");
 /* harmony import */ var _castle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./castle */ "./src/app/game/castle.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _gameServices__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./gameServices */ "./src/app/game/gameServices.ts");
-/* harmony import */ var _aspnet_signalr__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @aspnet/signalr */ "./node_modules/@aspnet/signalr/dist/esm/index.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../app.component */ "./src/app/app.component.ts");
-var GameComponent_1;
+/* harmony import */ var _services_game_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/game.service */ "./src/services/game.service.ts");
+/* harmony import */ var _aspnet_signalr__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @aspnet/signalr */ "./node_modules/@aspnet/signalr/dist/esm/index.js");
 
 
 
@@ -919,14 +904,14 @@ var GameComponent_1;
 
 
 
-
-
-let GameComponent = GameComponent_1 = class GameComponent {
-    constructor(route, http) {
+//import { AppComponent } from '../app.component';
+let GameComponent = class GameComponent {
+    constructor(route, gameServices) {
         this.route = route;
+        this.gameServices = gameServices;
         this.ended = 0;
         this.init = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            yield GameComponent_1.gameServices.init(this.team, this.id);
+            yield this.gameServices.init(this.team, this.id);
             if (this.id < 1000)
                 this.start();
             else
@@ -940,7 +925,7 @@ let GameComponent = GameComponent_1 = class GameComponent {
                 this.start();
         });
         this.start = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            yield GameComponent_1.gameServices.play(this.id);
+            yield this.gameServices.play(this.id);
             window.requestAnimationFrame(() => this.draw());
         });
         this.reset = () => {
@@ -960,12 +945,11 @@ let GameComponent = GameComponent_1 = class GameComponent {
             });
             document.getElementById("main-menu").style.display = "none";
         };
-        GameComponent_1.gameServices = new _gameServices__WEBPACK_IMPORTED_MODULE_7__["GameServices"](http);
         this.background = new Image();
         this.background.src = "../../assets/img/background default.png";
     }
     ngOnInit() {
-        let connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_8__["HubConnectionBuilder"]()
+        let connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_7__["HubConnectionBuilder"]()
             .withUrl("/gamehub")
             .build();
         connection.start().then(() => {
@@ -989,23 +973,16 @@ let GameComponent = GameComponent_1 = class GameComponent {
             this.ended = side;
         });
         connection.onclose(() => {
-            GameComponent_1.gameServices.end(this.id);
+            document.getElementById("main-menu").style.display = "none";
+            this.gameServices.end(this.id);
             this.reset();
+            delete (this.gameServices);
         });
         this.canvas = document.getElementById("game-canvas");
         this.context = this.canvas.getContext("2d");
         var menuButton = document.getElementById("main-menu");
         menuButton.onmouseup = () => {
-            menuButton.style.display = "none";
-            GameComponent_1.gameServices.end(this.id);
-            this.reset();
             connection.stop();
-        };
-        document.getElementById("income").onmouseup = () => {
-            GameComponent_1.gameServices.buy(this.id, this.side, "income");
-        };
-        document.getElementById("health").onmouseup = () => {
-            GameComponent_1.gameServices.buy(this.id, this.side, "health");
         };
         this.units = new Array();
         this.route.paramMap.subscribe(map => {
@@ -1021,7 +998,7 @@ let GameComponent = GameComponent_1 = class GameComponent {
         if (this.side == 1)
             this.init();
         else
-            GameComponent_1.gameServices.init(this.team, this.id);
+            this.gameServices.init(this.team, this.id);
     }
     draw() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -1060,16 +1037,16 @@ let GameComponent = GameComponent_1 = class GameComponent {
             this.context.fillStyle = "black";
             this.context.font = "300px serif";
             this.context.fillText("VICTORY!", 100, 300, 1300);
-            if (_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"].user.name != "new_user")
-                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"].user.win(this.id);
+            //if (AppComponent.user.name != "new_user")
+            //  AppComponent.user.win(this.id);
         }
     }
 };
 GameComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"] }
+    { type: _services_game_service__WEBPACK_IMPORTED_MODULE_6__["GameService"] }
 ];
-GameComponent = GameComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+GameComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-game',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./game.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/game/game.component.html")).default,
@@ -1077,51 +1054,6 @@ GameComponent = GameComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
     })
 ], GameComponent);
 
-
-
-/***/ }),
-
-/***/ "./src/app/game/gameServices.ts":
-/*!**************************************!*\
-  !*** ./src/app/game/gameServices.ts ***!
-  \**************************************/
-/*! exports provided: GameServices */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GameServices", function() { return GameServices; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../main */ "./src/main.ts");
-
-
-class GameServices {
-    constructor(http) {
-        this.http = http;
-        if (_main__WEBPACK_IMPORTED_MODULE_1__["production"])
-            this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
-        else
-            this.URL = 'https://localhost:44364/';
-    }
-    getUnits() {
-        return this.http.get(this.URL + 'api/game/getunits').toPromise();
-    }
-    getPlayers() {
-        return this.http.get(this.URL + 'api/game/getplayers').toPromise();
-    }
-    init(team, id) {
-        return this.http.get(this.URL + 'api/game/init/' + team + '/' + id).toPromise();
-    }
-    play(id) {
-        return this.http.get(this.URL + 'api/game/play/' + id).toPromise();
-    }
-    end(id) {
-        return this.http.get(this.URL + 'api/game/end/' + id).toPromise();
-    }
-    buy(id, player, unit) {
-        return this.http.get(this.URL + 'api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
-    }
-}
 
 
 /***/ }),
@@ -1493,84 +1425,6 @@ TeamSelectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/user.ts":
-/*!*************************!*\
-  !*** ./src/app/user.ts ***!
-  \*************************/
-/*! exports provided: User */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-
-
-class User {
-    constructor(credits, name, unlocks, levelWins) {
-        this.credits = credits || 0;
-        this.name = name || "new_user";
-        this.unlocks = unlocks ||
-            [
-                "doggo",
-                "froggo",
-                "fishy",
-                "blobbo",
-                "ducko",
-                "derpyberd"
-            ];
-        this.levelWins = levelWins || [];
-        if (this.levelWins.length < 1)
-            for (var i = 0; i < 8; i++)
-                this.levelWins.push(false);
-    }
-    win(id) {
-        _app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"].userServices.Win(this.name, id);
-    }
-    static parseUser(data) {
-        return new User(data.credits, data.username, data.unlocks, data.levelWins);
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/userServices.ts":
-/*!*********************************!*\
-  !*** ./src/app/userServices.ts ***!
-  \*********************************/
-/*! exports provided: UserServices */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserServices", function() { return UserServices; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../main */ "./src/main.ts");
-
-
-class UserServices {
-    constructor(http) {
-        this.http = http;
-        if (_main__WEBPACK_IMPORTED_MODULE_1__["production"])
-            this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
-        else
-            this.URL = 'https://localhost:44364/';
-    }
-    Login(username, password) {
-        return this.http.get(this.URL + 'api/user/login/' + username + '/' + password).toPromise();
-    }
-    Win(username, id) {
-        if (id < 1000)
-            return this.http.get(this.URL + 'api/user/win/' + username + '/' + id).toPromise();
-        return this.http.get(this.URL + 'api/user/win/' + username + '/1000').toPromise();
-    }
-}
-
-
-/***/ }),
-
 /***/ "./src/app/welcome/welcome.component.css":
 /*!***********************************************!*\
   !*** ./src/app/welcome/welcome.component.css ***!
@@ -1701,6 +1555,145 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].produc
 }
 Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
     .catch(err => console.error(err));
+
+
+/***/ }),
+
+/***/ "./src/services/character.service.ts":
+/*!*******************************************!*\
+  !*** ./src/services/character.service.ts ***!
+  \*******************************************/
+/*! exports provided: CharacterService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterService", function() { return CharacterService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../main */ "./src/main.ts");
+
+
+
+
+let CharacterService = class CharacterService {
+    constructor(http) {
+        this.http = http;
+        this.http = http;
+        if (_main__WEBPACK_IMPORTED_MODULE_3__["production"])
+            this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
+        else
+            this.URL = 'https://localhost:44364/';
+    }
+    getCharacter(team, name) {
+        return this.http.get(this.URL + 'api/characters/getcharacter/' + team + '/' + name).toPromise();
+    }
+    getPrice(team, name) {
+        return this.http.get(this.URL + 'api/characters/getprice/' + team + '/' + name).toPromise();
+    }
+    getTeam(team) {
+        return this.http.get(this.URL + 'api/characters/getteam/' + team).toPromise();
+    }
+    getInfo(team, name) {
+        return this.http.get(this.URL + 'api/characters/getinfo/' + team + '/' + name).toPromise();
+    }
+};
+CharacterService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+CharacterService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CharacterService);
+
+
+
+/***/ }),
+
+/***/ "./src/services/game.service.ts":
+/*!**************************************!*\
+  !*** ./src/services/game.service.ts ***!
+  \**************************************/
+/*! exports provided: GameService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GameService", function() { return GameService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../main */ "./src/main.ts");
+
+
+
+
+let GameService = class GameService {
+    constructor(http) {
+        console.log("creating game service...");
+        this.http = http;
+        if (_main__WEBPACK_IMPORTED_MODULE_3__["production"])
+            this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
+        else
+            this.URL = 'https://localhost:44364/';
+    }
+    init(team, id) {
+        return this.http.get(this.URL + 'api/game/init/' + team + '/' + id).toPromise();
+    }
+    play(id) {
+        return this.http.get(this.URL + 'api/game/play/' + id).toPromise();
+    }
+    end(id) {
+        return this.http.get(this.URL + 'api/game/end/' + id).toPromise();
+    }
+};
+GameService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+GameService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], GameService);
+
+
+
+/***/ }),
+
+/***/ "./src/services/shopService.ts":
+/*!*************************************!*\
+  !*** ./src/services/shopService.ts ***!
+  \*************************************/
+/*! exports provided: ShopService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShopService", function() { return ShopService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../main */ "./src/main.ts");
+
+
+class ShopService {
+    constructor(http) {
+        this.http = http;
+        if (_main__WEBPACK_IMPORTED_MODULE_1__["production"])
+            this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
+        else
+            this.URL = 'https://localhost:44364/';
+    }
+    buy(id, player, unit) {
+        return this.http.get(this.URL + 'api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+    }
+    getNewIncomePrice(id, player) {
+        return this.http.get(this.URL + 'api/game/incomeprice/' + id + '/' + player).toPromise();
+    }
+    getNewHealthPrice(id, player) {
+        return this.http.get(this.URL + 'api/game/healthprice/' + id + '/' + player).toPromise();
+    }
+}
 
 
 /***/ }),

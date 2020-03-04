@@ -12,5 +12,7 @@ namespace WebApi.Services
         void Play(int id);
         void End(int id);
         void Buy(int id, int player, string unit);
+        int GetIncomePrice(int id, int player);
+        double GetHealthPrice(int id, int player);
     }
 }

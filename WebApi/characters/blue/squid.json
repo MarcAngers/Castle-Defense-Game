@@ -6,6 +6,5 @@
     "speed": 12,
     "size": 100,
     "y": 400,
-    "team": "blue",
-    "html": "<div class='character' id='squid'><label class='price'>$10</label><img src='../../assets/img/icons/squid icon.png'></div>"
+    "team": "blue"
 }

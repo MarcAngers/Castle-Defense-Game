@@ -32,6 +32,15 @@ namespace WebApi
             Startup.GameInstances.Add(newGame);
             return newGame;
         }
+        public static List<int> GetAllGameIDs()
+        {
+            List<int> allIDs = new List<int>();
+            for (var i = 0; i < Startup.GameInstances.Count; i++)
+            {
+                allIDs.Add(Startup.GameInstances[i].Id);
+            }
+            return allIDs;
+        }
         public static void EndGame(int id)
         {
             if (id == 0)

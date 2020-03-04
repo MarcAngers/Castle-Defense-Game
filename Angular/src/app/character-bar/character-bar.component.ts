@@ -1,6 +1,8 @@
 import { Component, Input, ViewEncapsulation, OnInit } from '@angular/core';
-import { GameComponent } from '../game/game.component';
+import { CharacterService } from '../../services/character.service'; 
 import { AppComponent } from '../app.component';
+import { ShopService } from '../../services/shopService';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-character-bar',
@@ -14,34 +16,56 @@ export class CharacterBarComponent implements OnInit {
   @Input('team') team: string;
   @Input('id') id: number;
 
-  constructor() { }
+  static shopServices: ShopService;
+
+  incomePrice: number = -1;
+  healthPrice: number = -1;
+
+  constructor(private characterServices: CharacterService, private http: HttpClient) { }
 
   ngOnInit () {
     document.getElementById("character-bar").classList.add(this.team);
 
+    CharacterBarComponent.shopServices = new ShopService(this.http);
     this.initBar();
 
-    document.addEventListener("mouseup", (e) => {
-      var testForCharacter = <any>e;
-      if (testForCharacter.target.parentElement)
-        var target = <HTMLElement> testForCharacter.target.parentElement;
-      else
-        return;
-
-      if (target.id != "" && target.classList.contains("character")) {
-        GameComponent.gameServices.buy(this.id, this.side, target.id);
-        return;
-      }
-    });
+    document.getElementById("income").onmouseup = () => {
+      CharacterBarComponent.shopServices.buy(this.id, this.side, "income");
+      this.getIncomePriceAsync();
+    }
+    document.getElementById("health").onmouseup = () => {
+      CharacterBarComponent.shopServices.buy(this.id, this.side, "health");
+      this.getHealthPriceAsync();
+    }
   }
 
   async initBar() {
     var fullTeam = AppComponent.teamMap.get(this.team); 
     
     for (var i = 0; i < 8; i++) {
-      let charhtml = await AppComponent.characterServices.getHTML(this.team, fullTeam[i]);
-      console.log(charhtml);
-      document.getElementById("character-bar").innerHTML += charhtml;
+      let currentchar = fullTeam[i];
+      let charprice = await this.characterServices.getPrice(this.team, currentchar);
+      
+      let charhtml = "<label class='price";
+      if (this.team == "black") 
+        charhtml += " black-unit";
+      charhtml += "'>$" + charprice + "</label><img src='../../assets/img/icons/" + currentchar + " icon.png'>";
+
+      document.getElementsByClassName("character")[i].innerHTML += charhtml;
+      document.getElementsByClassName("character")[i].addEventListener("mouseup", (e) => {
+        CharacterBarComponent.shopServices.buy(this.id, this.side, currentchar);
+      });
     }
+
+    this.getIncomePriceAsync();
+    this.getHealthPriceAsync();
+  }
+
+  getIncomePriceAsync = async() => {
+    this.incomePrice = await CharacterBarComponent.shopServices.getNewIncomePrice(this.id, this.side);
+    console.log(this.incomePrice);
+  }
+  getHealthPriceAsync = async() => {
+    this.healthPrice = await CharacterBarComponent.shopServices.getNewHealthPrice(this.id, this.side);
   }
 }

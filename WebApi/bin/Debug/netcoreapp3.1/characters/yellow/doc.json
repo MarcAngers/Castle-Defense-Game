@@ -6,6 +6,5 @@
     "speed": 12,
     "size": 50,
     "y": 400,
-    "team": "yellow",
-    "html": "<div class='character' id='doc'><label class='price'>$5</label><img src='../../assets/img/icons/doc icon.png'></div>"
+    "team": "yellow"
 }

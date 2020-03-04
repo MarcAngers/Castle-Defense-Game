@@ -6,6 +6,5 @@
     "speed": 2,
     "size": 200,
     "y": 250,
-    "team": "red",
-    "html": "<div class='character' id='draggo'><label class='price'>$134</label><img src='../../assets/img/icons/draggo icon.png'></div>"
+    "team": "red"
 }

@@ -71,30 +71,6 @@ namespace WebApi.Controllers
             }
         }
 
-        // Old HttpGet methods...
-        /*
-        [HttpGet("getUnits")]
-        public ActionResult<Character[]> GetUnits()
-        {
-            var units = _services.GetUnits();
-
-            if (units == null)
-                return new Character[0];
-
-            return units.ToArray();
-        }
-
-        [HttpGet("getPlayers")]
-        public ActionResult<Player[]> GetPlayers()
-        {
-            var players = _services.GetPlayers();
-
-            if (players == null || players[0] == null || players[1] == null)
-                return NotFound();
-
-            return players;
-        }*/
-
         [HttpGet("init/{team=white}/{id=1}")]
         public ActionResult<bool> Init(string team, int id)
         {
@@ -120,6 +96,19 @@ namespace WebApi.Controllers
         {
             _services.Buy(id, player, unit);
             return true;
+        }
+
+        [HttpGet("incomeprice/{id=1}/{player=1}")]
+        public ActionResult<int> GetIncomePrice(int id, int player)
+        {
+            int incomeprice = _services.GetIncomePrice(id, player);
+            return incomeprice;
+        }
+        [HttpGet("healthprice/{id=1}/{player=1}")]
+        public ActionResult<int> GetHealthPrice(int id, int player)
+        {
+            int healthprice = _services.GetHealthPrice(id, player);
+            return healthprice;
         }
 
         [HttpGet("test")]

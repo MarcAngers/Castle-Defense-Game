@@ -44,17 +44,6 @@ namespace WebApi.Controllers
             return price;
         }
 
-        [HttpGet("getHTML/{team=white}/{name=doggo}")]
-        public ActionResult<string> GetHTML(string team, string name)
-        {
-            var html = _services.GetHTML(name, team);
-
-            if (html == null)
-                return NotFound();
-
-            return html;
-        }
-
         [HttpGet("getTeam/{team=white}")]
         public ActionResult<string[]> GetTeam(string team)
         {

@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { CharacterInfo } from './characterInfo';
 import { AppComponent } from '../app.component';
 import { ActivatedRoute } from '@angular/router';
+import { CharacterService } from '../../services/character.service';
 
 @Component({
   selector: 'app-character-info',
@@ -12,12 +13,12 @@ export class CharacterInfoComponent implements OnInit, OnChanges {
   team: string = "white";
   name: string = "doggo";
   
-  character: CharacterInfo = new CharacterInfo("white", "unknown");
+  character: CharacterInfo = new CharacterInfo("white", "unknown", this.characterServices);
   fullTeam: any;
   next: string = "doggo";
   prev: string = "doggo";
   
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private characterServices: CharacterService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(map => {
@@ -25,17 +26,17 @@ export class CharacterInfoComponent implements OnInit, OnChanges {
       this.team = mapParams.params.team;
       this.name = mapParams.params.name;
 
-      this.character = new CharacterInfo(this.team, this.name);
+      this.character = new CharacterInfo(this.team, this.name, this.characterServices);
 
-    this.fullTeam = AppComponent.teamMap.get(this.team);
-    var index = this.fullTeam.indexOf(this.name);
-    this.next = this.fullTeam[(index+1)%8];
-    if (index == 0)
-      this.prev = this.fullTeam[7];
-    else
-      this.prev = this.fullTeam[index-1];
+      this.fullTeam = AppComponent.teamMap.get(this.team);
+      var index = this.fullTeam.indexOf(this.name);
+      this.next = this.fullTeam[(index+1)%8];
+      if (index == 0)
+        this.prev = this.fullTeam[7];
+      else
+        this.prev = this.fullTeam[index-1];
 
-    document.getElementById("main-view").style.backgroundColor = this.team;
+      document.getElementById("main-view").style.backgroundColor = this.team;
     });
   }
 

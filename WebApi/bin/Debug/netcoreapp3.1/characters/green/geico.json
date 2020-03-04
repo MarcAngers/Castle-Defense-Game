@@ -6,6 +6,5 @@
     "speed": 15,
     "size": 50,
     "y": 375,
-    "team": "green",
-    "html": "<div class='character' id='geico'><label class='price'>$11</label><img src='../../assets/img/icons/geico icon.png'></div>"
+    "team": "green"
 }

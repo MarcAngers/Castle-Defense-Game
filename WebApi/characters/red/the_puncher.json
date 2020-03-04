@@ -6,6 +6,5 @@
     "speed": 15,
     "size": 50,
     "y": 400,
-    "team": "red",
-    "html": "<div class='character' id='the_puncher'><label class='price'>$9</label><img src='../../assets/img/icons/the_puncher icon.png'></div>"
+    "team": "red"
 }

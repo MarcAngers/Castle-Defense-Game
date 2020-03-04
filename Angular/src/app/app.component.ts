@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
+//import { User } from './user';
+//import { UserService } from '../services/user.service';
 import { HttpClient } from '@angular/common/http';
-import { UserServices } from './userServices';
-import { CharacterServices } from './game/characterServices';
+import { CharacterService } from '../services/character.service';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +11,12 @@ import { CharacterServices } from './game/characterServices';
 })
 
 export class AppComponent implements OnInit {
-  public static user: User;
-  public static userServices: UserServices;
-  public static characterServices: CharacterServices;
+  //public static user: User;
   public static teamMap: Map<string, string[]>;
 
 
-  constructor(http: HttpClient) {
-    AppComponent.user = new User();
-    AppComponent.userServices = new UserServices(http);
-    AppComponent.characterServices = new CharacterServices(http);
+  constructor(private http: HttpClient, private characterServices: CharacterService/*, private userServices: UserService*/) {
+    //AppComponent.user = new User(this.userServices);
   }
 
   ngOnInit() {
@@ -29,13 +25,13 @@ export class AppComponent implements OnInit {
   }
 
   setupTeamMap = async() => {
-    AppComponent.teamMap.set("white", await AppComponent.characterServices.getTeam("white"));
-    AppComponent.teamMap.set("green", await AppComponent.characterServices.getTeam("green"));
-    AppComponent.teamMap.set("blue", await AppComponent.characterServices.getTeam("blue"));
-    AppComponent.teamMap.set("purple", await AppComponent.characterServices.getTeam("purple"));
-    AppComponent.teamMap.set("yellow", await AppComponent.characterServices.getTeam("yellow"));
-    AppComponent.teamMap.set("orange", await AppComponent.characterServices.getTeam("orange"));
-    AppComponent.teamMap.set("red", await AppComponent.characterServices.getTeam("red"));
-    AppComponent.teamMap.set("black", await AppComponent.characterServices.getTeam("black"));
+    AppComponent.teamMap.set("white", await this.characterServices.getTeam("white"));
+    AppComponent.teamMap.set("green", await this.characterServices.getTeam("green"));
+    AppComponent.teamMap.set("blue", await this.characterServices.getTeam("blue"));
+    AppComponent.teamMap.set("purple", await this.characterServices.getTeam("purple"));
+    AppComponent.teamMap.set("yellow", await this.characterServices.getTeam("yellow"));
+    AppComponent.teamMap.set("orange", await this.characterServices.getTeam("orange"));
+    AppComponent.teamMap.set("red", await this.characterServices.getTeam("red"));
+    AppComponent.teamMap.set("black", await this.characterServices.getTeam("black"));
   }
 }

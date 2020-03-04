@@ -10,7 +10,6 @@ namespace WebApi.Services
     {
         Character GetCharacter(string name, string team, int side);
         int GetPrice(string name, string team);
-        string GetHTML(string name, string team);
         string[] GetTeam(string team);
         CharacterInfo GetInfo(string team, string name);
     }

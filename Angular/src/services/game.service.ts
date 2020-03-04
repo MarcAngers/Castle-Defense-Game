@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { production } from '../main';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GameService {
+  private http: HttpClient;
+  private URL: string;
+
+  constructor(http: HttpClient) {
+    console.log("creating game service...");
+    this.http = http;
+
+    if (production)
+      this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
+    else
+      this.URL = 'https://localhost:44364/'
+  }
+
+  public init(team: string, id: number): Promise<boolean> {
+    return this.http.get<boolean>(this.URL + 'api/game/init/' + team + '/' + id).toPromise();
+  }
+  public play(id: number): Promise<boolean> {
+    return this.http.get<boolean>(this.URL + 'api/game/play/' + id).toPromise();
+  }
+  public end(id: number): Promise<boolean> {
+    return this.http.get<boolean>(this.URL + 'api/game/end/' + id).toPromise();
+  }
+}

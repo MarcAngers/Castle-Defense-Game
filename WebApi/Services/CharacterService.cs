@@ -41,17 +41,6 @@ namespace WebApi.Services
             }
         }
 
-        public string GetHTML(string name, string team)
-        {
-            using (StreamReader r = new StreamReader("./characters/" + team + "/" + name + ".json"))
-            {
-                var json = r.ReadToEnd();
-                var obj = Newtonsoft.Json.Linq.JObject.Parse(json);
-
-                return (string)obj.SelectToken("html");
-            }
-        }
-
         public string[] GetTeam(string team)
         {
             using (StreamReader r = new StreamReader("./characters/fullteams/" + team + ".json"))

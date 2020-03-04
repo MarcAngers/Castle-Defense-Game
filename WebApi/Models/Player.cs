@@ -45,9 +45,9 @@ namespace WebApi.Models
 
         public void AddIncome()
         {
-            this.Income += 0.07;
+            this.Income += 0.04;
             this.IncomeIncreases++;
-            this.IncomePrice = Math.Round(Math.Pow(4, (this.IncomeIncreases + 5) / 5));
+            this.IncomePrice = Math.Pow(4.0, (this.IncomeIncreases + 5.0) / 5.0);
         }
         public void AddHealth()
         {

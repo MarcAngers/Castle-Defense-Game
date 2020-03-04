@@ -6,6 +6,5 @@
     "speed": 12,
     "size": 50,
     "y": 400,
-    "team": "green",
-    "html": "<div class='character' id='minisnecko'><label class='price'>$1</label><img src='../../assets/img/icons/minisnecko icon.png'></div>"
+    "team": "green"
 }

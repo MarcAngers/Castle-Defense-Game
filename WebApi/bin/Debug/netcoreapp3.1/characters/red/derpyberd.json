@@ -6,6 +6,5 @@
     "speed": 10,
     "size": 50,
     "y": 400,
-    "team": "red",
-    "html": "<div class='character first' id='derpyberd'><label class='price'>$1</label><img src='../../assets/img/icons/derpyberd icon.png'></div>"
+    "team": "red"
 }

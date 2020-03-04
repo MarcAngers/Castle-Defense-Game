@@ -6,6 +6,5 @@
     "speed": 8,
     "size": 50,
     "y": 400,
-    "team": "purple",
-    "html": "<div class='character first' id='blobbo'><label class='price'>$3</label><img src='../../assets/img/icons/blobbo icon.png'></div>"
+    "team": "purple"
 }
