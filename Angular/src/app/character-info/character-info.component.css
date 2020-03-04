@@ -28,6 +28,7 @@ button {
 .info-container {
     width: 50%;
     margin: auto;
+    color: #888888;
 }
 .image-link {
     width: 100px;

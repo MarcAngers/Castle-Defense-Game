@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"main-view\">\n    <h2>Choose your level!</h2>\n    <div id=\"level-select\">\n        <div class=\"level selected\">1</div>\n        <div class=\"level\">2</div>\n        <div class=\"level\">3</div>\n        <div class=\"level\">4</div>\n        <div class=\"level\">5</div>\n        <div class=\"level\">6</div>\n        <div class=\"level\">7</div>\n        <div class=\"level\">8</div>\n    </div>\n\n    <app-team-select></app-team-select>\n\n    <button [routerLink]=\"['../game/', id, updateTeam(), side]\" id=\"start\">Start Game!</button>\n</div>\n<div id=\"footer\">\n    <button id=\"instructions\">Instructions</button>\n</div>\n\n<!-- Instructions Modal -->\n<div id=\"instruction-modal\" class=\"modal\">\n    <div class=\"modal-content\">\n        <span class=\"close\">&times;</span>\n        <h1 class=\"modal-header\">Instructions:</h1>\n        <p>This is a castle defense game, the aim of the game is to power up and purchase units to attack the enemy castle while keeping your own castle safe!</p>\n        <br/>\n        <h1 class=\"modal-header\">Singleplayer:</h1>\n        <p>Choose your favorite team and battle against a variety of opponents in 8 different levels who will send units at you in a pre-defined pattern!</p>\n        <p>Be careful though! The levels get difficult very quickly!</p>\n        <br/>\n        <h1 class=\"modal-header\">Multiplayer:</h1>\n        <p>Pit your best strategies against your friends in a 2-player battle!</p>\n        <p>Create a new game and you will be assigned a random Game ID!</p>\n        <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"main-view\">\n    <h2>Choose your level!</h2>\n    <div id=\"level-select\">\n        <div class=\"level selected\">1</div>\n        <div class=\"level\">2</div>\n        <div class=\"level\">3</div>\n        <div class=\"level\">4</div>\n        <div class=\"level\">5</div>\n        <div class=\"level\">6</div>\n        <div class=\"level\">7</div>\n        <div class=\"level\">8</div>\n    </div>\n\n    <app-team-select></app-team-select>\n\n    <button (click)=\"checkGame()\" id=\"start\">Start Game!</button>\n</div>\n<div id=\"footer\">\n    <button id=\"instructions\">Instructions</button>\n</div>\n\n<!-- Instructions Modal -->\n<div id=\"instruction-modal\" class=\"modal\">\n    <div class=\"modal-content\">\n        <span class=\"close\">&times;</span>\n        <h1 class=\"modal-header\">Instructions:</h1>\n        <p>This is a castle defense game, the aim of the game is to power up and purchase units to attack the enemy castle while keeping your own castle safe!</p>\n        <br/>\n        <h1 class=\"modal-header\">Singleplayer:</h1>\n        <p>Choose your favorite team and battle against a variety of opponents in 8 different levels who will send units at you in a pre-defined pattern!</p>\n        <p>Be careful though! The levels get difficult very quickly!</p>\n        <br/>\n        <h1 class=\"modal-header\">Multiplayer:</h1>\n        <p>Pit your best strategies against your friends in a 2-player battle!</p>\n        <p>Create a new game and you will be assigned a random Game ID!</p>\n        <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -612,7 +612,6 @@ let CharacterBarComponent = CharacterBarComponent_1 = class CharacterBarComponen
         this.healthPrice = -1;
         this.getIncomePriceAsync = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             this.incomePrice = yield CharacterBarComponent_1.shopServices.getNewIncomePrice(this.id, this.side);
-            console.log(this.incomePrice);
         });
         this.getHealthPriceAsync = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             this.healthPrice = yield CharacterBarComponent_1.shopServices.getNewHealthPrice(this.id, this.side);
@@ -622,14 +621,14 @@ let CharacterBarComponent = CharacterBarComponent_1 = class CharacterBarComponen
         document.getElementById("character-bar").classList.add(this.team);
         CharacterBarComponent_1.shopServices = new _services_shopService__WEBPACK_IMPORTED_MODULE_4__["ShopService"](this.http);
         this.initBar();
-        document.getElementById("income").onmouseup = () => {
-            CharacterBarComponent_1.shopServices.buy(this.id, this.side, "income");
-            this.getIncomePriceAsync();
-        };
-        document.getElementById("health").onmouseup = () => {
-            CharacterBarComponent_1.shopServices.buy(this.id, this.side, "health");
-            this.getHealthPriceAsync();
-        };
+        document.getElementById("income").onmouseup = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield CharacterBarComponent_1.shopServices.buy(this.id, this.side, "income");
+            this.incomePrice = yield CharacterBarComponent_1.shopServices.getNewIncomePrice(this.id, this.side);
+        });
+        document.getElementById("health").onmouseup = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield CharacterBarComponent_1.shopServices.buy(this.id, this.side, "health");
+            this.healthPrice = yield CharacterBarComponent_1.shopServices.getNewHealthPrice(this.id, this.side);
+        });
     }
     initBar() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -686,7 +685,7 @@ CharacterBarComponent = CharacterBarComponent_1 = tslib__WEBPACK_IMPORTED_MODULE
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#main-view {\r\n    width: 1500px;\r\n    height: 500px;\r\n    border: 1px solid black;\r\n}\r\n\r\nh1 {\r\n    text-align: center;\r\n    margin-top: 50px;\r\n    margin-bottom: 50px;\r\n    color: #888888;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n}\r\n\r\nbutton {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n}\r\n\r\n.info {\r\n    display: inline-block;\r\n}\r\n\r\n.info-container {\r\n    width: 50%;\r\n    margin: auto;\r\n}\r\n\r\n.image-link {\r\n    width: 100px;\r\n    height: 100px;\r\n    margin: 10px;\r\n    float: left;\r\n}\r\n\r\n#info-headers {\r\n    display: inline-block;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    margin: 50px;\r\n}\r\n\r\n#info-values {\r\n    display: inline-block;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    margin: 50px;\r\n}\r\n\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    background-color: #0b912c;\r\n    border-radius: 0px 0px 20px 20px;\r\n}\r\n\r\n#footer-content {\r\n    width: 510px;\r\n    margin: auto;\r\n}\r\n\r\n#back {\r\n    background-color: #ff2222;\r\n    float: left;\r\n}\r\n\r\n#back:hover {\r\n    background-color: #ff6622;\r\n    cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWluZm8vY2hhcmFjdGVyLWluZm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGFBQWE7SUFDYixhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsY0FBYztJQUNkLGtCQUFrQjtJQUNsQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksWUFBWTtJQUNaLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxxQkFBcUI7QUFDekI7O0FBQ0E7SUFDSSxVQUFVO0lBQ1YsWUFBWTtBQUNoQjs7QUFDQTtJQUNJLFlBQVk7SUFDWixhQUFhO0lBQ2IsWUFBWTtJQUNaLFdBQVc7QUFDZjs7QUFDQTtJQUNJLHFCQUFxQjtJQUNyQiw0QkFBc0I7SUFBdEIsNkJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0QixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixZQUFZO0FBQ2hCOztBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLDRCQUFzQjtJQUF0Qiw2QkFBc0I7WUFBdEIsc0JBQXNCO0lBQ3RCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxhQUFhO0lBQ2IsYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixnQ0FBZ0M7QUFDcEM7O0FBQ0E7SUFDSSxZQUFZO0lBQ1osWUFBWTtBQUNoQjs7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixXQUFXO0FBQ2Y7O0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsZUFBZTtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL2NoYXJhY3Rlci1pbmZvL2NoYXJhY3Rlci1pbmZvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFpbi12aWV3IHtcclxuICAgIHdpZHRoOiAxNTAwcHg7XHJcbiAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuXHJcbmgxIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi10b3A6IDUwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA1MHB4O1xyXG4gICAgY29sb3I6ICM4ODg4ODg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDUwcHg7XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBtYXJnaW46IDI1cHg7XHJcbiAgICBwYWRkaW5nOiAyNXB4O1xyXG4gICAgYm9yZGVyOiAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuXHJcbi5pbmZvIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG4uaW5mby1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxufVxyXG4uaW1hZ2UtbGluayB7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgbWFyZ2luOiAxMHB4O1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuI2luZm8taGVhZGVycyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBtYXJnaW46IDUwcHg7XHJcbn1cclxuI2luZm8tdmFsdWVzIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBtYXJnaW46IDUwcHg7XHJcbn1cclxuXHJcbiNmb290ZXIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICB3aWR0aDogMTUwMnB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwYjkxMmM7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcclxufVxyXG4jZm9vdGVyLWNvbnRlbnQge1xyXG4gICAgd2lkdGg6IDUxMHB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG59XHJcbiNiYWNrIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZjIyMjI7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG4jYmFjazpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmY2NjIyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#main-view {\r\n    width: 1500px;\r\n    height: 500px;\r\n    border: 1px solid black;\r\n}\r\n\r\nh1 {\r\n    text-align: center;\r\n    margin-top: 50px;\r\n    margin-bottom: 50px;\r\n    color: #888888;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n}\r\n\r\nbutton {\r\n    color: white;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n}\r\n\r\n.info {\r\n    display: inline-block;\r\n}\r\n\r\n.info-container {\r\n    width: 50%;\r\n    margin: auto;\r\n    color: #888888;\r\n}\r\n\r\n.image-link {\r\n    width: 100px;\r\n    height: 100px;\r\n    margin: 10px;\r\n    float: left;\r\n}\r\n\r\n#info-headers {\r\n    display: inline-block;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    margin: 50px;\r\n}\r\n\r\n#info-values {\r\n    display: inline-block;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n            flex-direction: column;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    margin: 50px;\r\n}\r\n\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    background-color: #0b912c;\r\n    border-radius: 0px 0px 20px 20px;\r\n}\r\n\r\n#footer-content {\r\n    width: 510px;\r\n    margin: auto;\r\n}\r\n\r\n#back {\r\n    background-color: #ff2222;\r\n    float: left;\r\n}\r\n\r\n#back:hover {\r\n    background-color: #ff6622;\r\n    cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWluZm8vY2hhcmFjdGVyLWluZm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGFBQWE7SUFDYixhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsY0FBYztJQUNkLGtCQUFrQjtJQUNsQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksWUFBWTtJQUNaLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxxQkFBcUI7QUFDekI7O0FBQ0E7SUFDSSxVQUFVO0lBQ1YsWUFBWTtJQUNaLGNBQWM7QUFDbEI7O0FBQ0E7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLFlBQVk7SUFDWixXQUFXO0FBQ2Y7O0FBQ0E7SUFDSSxxQkFBcUI7SUFDckIsNEJBQXNCO0lBQXRCLDZCQUFzQjtZQUF0QixzQkFBc0I7SUFDdEIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZixpQkFBaUI7SUFDakIsWUFBWTtBQUNoQjs7QUFDQTtJQUNJLHFCQUFxQjtJQUNyQiw0QkFBc0I7SUFBdEIsNkJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0QixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsYUFBYTtJQUNiLGFBQWE7SUFDYix5QkFBeUI7SUFDekIsZ0NBQWdDO0FBQ3BDOztBQUNBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7QUFDaEI7O0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsV0FBVztBQUNmOztBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItaW5mby9jaGFyYWN0ZXItaW5mby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI21haW4tdmlldyB7XHJcbiAgICB3aWR0aDogMTUwMHB4O1xyXG4gICAgaGVpZ2h0OiA1MDBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG59XHJcblxyXG5oMSB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiA1MHB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNTBweDtcclxuICAgIGNvbG9yOiAjODg4ODg4O1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiA1MHB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbWFyZ2luOiAyNXB4O1xyXG4gICAgcGFkZGluZzogMjVweDtcclxuICAgIGJvcmRlcjogMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG59XHJcblxyXG4uaW5mbyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuLmluZm8tY29udGFpbmVyIHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbiAgICBjb2xvcjogIzg4ODg4ODtcclxufVxyXG4uaW1hZ2UtbGluayB7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgbWFyZ2luOiAxMHB4O1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuI2luZm8taGVhZGVycyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBtYXJnaW46IDUwcHg7XHJcbn1cclxuI2luZm8tdmFsdWVzIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBtYXJnaW46IDUwcHg7XHJcbn1cclxuXHJcbiNmb290ZXIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICB3aWR0aDogMTUwMnB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwYjkxMmM7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMHB4IDIwcHggMjBweDtcclxufVxyXG4jZm9vdGVyLWNvbnRlbnQge1xyXG4gICAgd2lkdGg6IDUxMHB4O1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG59XHJcbiNiYWNrIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZjIyMjI7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG4jYmFjazpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmY2NjIyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59Il19 */");
 
 /***/ }),
 
@@ -912,7 +911,7 @@ let GameComponent = class GameComponent {
         this.ended = 0;
         this.init = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield this.gameServices.init(this.team, this.id);
-            if (this.id < 1000)
+            if (this.id < 1000 || this.id > 10000)
                 this.start();
             else
                 this.waitForPlayer2();
@@ -1135,13 +1134,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LevelSelectComponent", function() { return LevelSelectComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_services_game_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/services/game.service */ "./src/services/game.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let LevelSelectComponent = class LevelSelectComponent {
-    constructor() {
+    constructor(gameServices, router) {
+        this.gameServices = gameServices;
+        this.router = router;
         this.team = "white";
         this.id = 1;
         this.side = 1;
+        this.checkGame = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            document.getElementById("start").addEventListener("click", () => { });
+            this.updateTeam();
+            this.id = yield this.gameServices.getLevelID(this.id);
+            this.router.navigate(["../game/", this.id, this.team, this.side]);
+        });
+        this.updateTeam = () => {
+            this.team = document.getElementsByClassName("selected")[1].id;
+        };
     }
     ngOnInit() {
         var levels = document.getElementsByClassName("level");
@@ -1169,11 +1183,11 @@ let LevelSelectComponent = class LevelSelectComponent {
             }
         };
     }
-    updateTeam() {
-        this.team = document.getElementsByClassName("selected")[1].id;
-        return this.team;
-    }
 };
+LevelSelectComponent.ctorParameters = () => [
+    { type: src_services_game_service__WEBPACK_IMPORTED_MODULE_2__["GameService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 LevelSelectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-level-select',
@@ -1647,6 +1661,9 @@ let GameService = class GameService {
     }
     end(id) {
         return this.http.get(this.URL + 'api/game/end/' + id).toPromise();
+    }
+    getLevelID(id) {
+        return this.http.get(this.URL + 'api/game/getlevelid/' + id).toPromise();
     }
 };
 GameService.ctorParameters = () => [

@@ -105,10 +105,17 @@ namespace WebApi.Controllers
             return incomeprice;
         }
         [HttpGet("healthprice/{id=1}/{player=1}")]
-        public ActionResult<int> GetHealthPrice(int id, int player)
+        public ActionResult<double> GetHealthPrice(int id, int player)
         {
-            int healthprice = _services.GetHealthPrice(id, player);
+            double healthprice = _services.GetHealthPrice(id, player);
             return healthprice;
+        }
+
+        [HttpGet("getlevelid/{id=1}")]
+        public ActionResult<int> GetLevelID(int id)
+        {
+            int verifiedID = _services.GetLevelID(id);
+            return verifiedID;
         }
 
         [HttpGet("test")]

@@ -31,6 +31,8 @@ namespace WebApi.Models
 
         private void getLevelFromJSON(int id)
         {
+            if (id > 10000)
+                id %= 1000;
             using (StreamReader r = new StreamReader("./levels.json"))
             {
                 var json = r.ReadToEnd();

@@ -29,13 +29,13 @@ export class CharacterBarComponent implements OnInit {
     CharacterBarComponent.shopServices = new ShopService(this.http);
     this.initBar();
 
-    document.getElementById("income").onmouseup = () => {
-      CharacterBarComponent.shopServices.buy(this.id, this.side, "income");
-      this.getIncomePriceAsync();
+    document.getElementById("income").onmouseup = async() => {
+      await CharacterBarComponent.shopServices.buy(this.id, this.side, "income");
+      this.incomePrice = await CharacterBarComponent.shopServices.getNewIncomePrice(this.id, this.side);
     }
-    document.getElementById("health").onmouseup = () => {
-      CharacterBarComponent.shopServices.buy(this.id, this.side, "health");
-      this.getHealthPriceAsync();
+    document.getElementById("health").onmouseup = async() => {
+      await CharacterBarComponent.shopServices.buy(this.id, this.side, "health");
+      this.healthPrice = await CharacterBarComponent.shopServices.getNewHealthPrice(this.id, this.side);
     }
   }
 
@@ -63,7 +63,6 @@ export class CharacterBarComponent implements OnInit {
 
   getIncomePriceAsync = async() => {
     this.incomePrice = await CharacterBarComponent.shopServices.getNewIncomePrice(this.id, this.side);
-    console.log(this.incomePrice);
   }
   getHealthPriceAsync = async() => {
     this.healthPrice = await CharacterBarComponent.shopServices.getNewHealthPrice(this.id, this.side);

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from 'src/services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-level-select',
@@ -10,7 +12,7 @@ export class LevelSelectComponent implements OnInit {
   id = 1;
   side = 1;
 
-  constructor() { }
+  constructor(private gameServices: GameService, private router: Router) { }
 
   ngOnInit() {
     var levels = document.getElementsByClassName("level");
@@ -45,8 +47,13 @@ export class LevelSelectComponent implements OnInit {
     }
   }
 
-  updateTeam(): string {
+  checkGame = async() => {
+    document.getElementById("start").addEventListener("click", () => {});
+    this.updateTeam();
+    this.id = await this.gameServices.getLevelID(this.id);
+    this.router.navigate(["../game/", this.id, this.team, this.side]);
+  }
+  updateTeam = () => {
     this.team = document.getElementsByClassName("selected")[1].id;
-    return this.team;
   }
 }

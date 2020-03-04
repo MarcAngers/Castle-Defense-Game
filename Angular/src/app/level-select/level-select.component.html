@@ -13,7 +13,7 @@
 
     <app-team-select></app-team-select>
 
-    <button [routerLink]="['../game/', id, updateTeam(), side]" id="start">Start Game!</button>
+    <button (click)="checkGame()" id="start">Start Game!</button>
 </div>
 <div id="footer">
     <button id="instructions">Instructions</button>

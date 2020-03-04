@@ -19,7 +19,7 @@ namespace WebApi.Services
             {
                 toInit.Init(team, id);
 
-                if (toInit.Id < 1000)
+                if (toInit.Id < 1000 || toInit.Id > 10000)
                     toInit.AddComputer();
             }
             else if (toInit.InProgress)
@@ -83,6 +83,21 @@ namespace WebApi.Services
                 return toFind.Player1.HealthPrice;
             else
                 return toFind.Player2.HealthPrice;
+        }
+
+        public int GetLevelID(int id)
+        {
+            if (id <= 0)
+                return 1;
+            if (!Startup.GetAllGameIDs().Contains(id))
+                return id;
+            else
+            {
+                int i = 10000 + id;
+                while (Startup.GetAllGameIDs().Contains(i))
+                    i += 1000;
+                return i;
+            }
         }
     }
 }

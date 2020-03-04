@@ -28,4 +28,7 @@ export class GameService {
   public end(id: number): Promise<boolean> {
     return this.http.get<boolean>(this.URL + 'api/game/end/' + id).toPromise();
   }
+  public getLevelID(id: number): Promise<number> {
+    return this.http.get<number>(this.URL + 'api/game/getlevelid/' + id).toPromise();
+  }
 }

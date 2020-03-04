@@ -100,7 +100,7 @@ export class GameComponent implements OnInit {
   public init = async() => {
     await this.gameServices.init(this.team, this.id);
 
-    if (this.id < 1000)
+    if (this.id < 1000 || this.id > 10000)
       this.start();
     else
       this.waitForPlayer2();
