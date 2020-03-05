@@ -7,6 +7,7 @@ import { Castle } from './castle'
 import { GameService } from '../../services/game.service';
 
 import { HubConnectionBuilder } from '@aspnet/signalr';
+import { Cloud } from '../cloud';
 //import { AppComponent } from '../app.component';
 
 @Component({
@@ -28,6 +29,9 @@ export class GameComponent implements OnInit {
   private player1: Player;
   private player2: Player;
   private connectedPlayer: Player;
+
+  private clouds: Cloud[];
+  private nextCloud: number;
 
   private ended: number = 0;
 
@@ -78,6 +82,14 @@ export class GameComponent implements OnInit {
       connection.stop();
     }
 
+    this.clouds = [
+      new Cloud(100),
+      new Cloud(600),
+      new Cloud(900),
+      new Cloud(1300),
+    ];
+    this.nextCloud = Math.floor(Math.random() * 25);
+
     this.units = new Array<Unit>();
 
     this.route.paramMap.subscribe(map => {
@@ -123,6 +135,11 @@ export class GameComponent implements OnInit {
 
   public async draw() {
     var ctx = this.context;
+
+    if (typeof this.clouds != 'undefined')
+      this.clouds.forEach((cloud) => {
+        cloud.draw(ctx);
+      });
 
     this.draw_background();
 

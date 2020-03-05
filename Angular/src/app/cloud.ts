@@ -4,8 +4,12 @@ export class Cloud {
     speed: number;
     image: HTMLImageElement;
 
-    constructor() {
-        this.x = 1500;
+    constructor(x?: number) {
+        if (x)
+            this.x = x;
+        else
+            this.x = 1500;
+            
         this.y = Math.floor(Math.random() * 150);
         this.speed = Math.floor(Math.random() * (15 - 5) + 5);
 

@@ -1,8 +1,17 @@
+#game-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
 #footer {
     margin: 0px;
     width: 1502px;
     height: 120px;
     display: inline-block;
+    position: fixed;
+    top: 500px;
+    left: 0px;
 }
 
 #main-menu {

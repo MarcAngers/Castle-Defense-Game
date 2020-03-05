@@ -29,7 +29,12 @@ export class WelcomeComponent implements OnInit {
     this.background = new Image();
     this.background.src = "../../assets/img/background/background default.png";
 
-    this.clouds = [];
+    this.clouds = [
+      new Cloud(100),
+      new Cloud(600),
+      new Cloud(900),
+      new Cloud(1300),
+    ];
     this.nextCloud = Math.floor(Math.random() * 25);
 
     open.onclick = function() {
@@ -77,7 +82,7 @@ export class WelcomeComponent implements OnInit {
     if (typeof this.clouds != 'undefined')
       this.clouds.forEach((cloud) => {
         cloud.draw(this.context);
-      })
+      });
 
     setTimeout(this.draw_background, 100);
   }

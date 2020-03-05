@@ -7,8 +7,8 @@
 }
 #income { 
     float: left;
-    width: 306px;
-    height: 90px;
+    width: 304px;
+    height: 88px;
     margin: 0px;
     padding-top: 30px;
     font-family: arial;
@@ -16,6 +16,7 @@
     background-color: #2bb14c;
     text-align: center;
     border-radius: 20px 0px 0px 20px;
+    border: 1px solid black;
 }
 #income:hover {
     background-color: #5dd36e;
@@ -23,8 +24,8 @@
 }
 #health {
     float: right;
-    width: 306px;
-    height: 90px;
+    width: 304px;
+    height: 88px;
     margin: 0px;
     padding-top: 30px;
     font-family: arial;
@@ -32,6 +33,7 @@
     background-color: #2bb14c;
     text-align: center;
     border-radius: 0px 20px 20px 0px;
+    border: 1px solid black;
 }
 #health:hover {
     background-color: #5dd36e;

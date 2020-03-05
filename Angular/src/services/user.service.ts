@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) {
       this.http = http;
       if (production)
-          this.URL = 'https://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
+          this.URL = 'http://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
       else
           this.URL = 'https://localhost:44364/'
   }
