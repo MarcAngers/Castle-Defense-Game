@@ -32,11 +32,11 @@ h1 {
 #main-view {
     width: 1500px;
     height: 500px;
-    position: fixed;
+    position: absolute;
     z-index: 1;
 }
 #background-canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -62,7 +62,7 @@ h1 {
     background-color: #0b912c;
     border-radius: 0px 0px 20px 20px;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     top: 500px;
     left: 0px;
 }

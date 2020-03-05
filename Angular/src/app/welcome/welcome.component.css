@@ -3,7 +3,7 @@
     height: 500px;
     z-index: 1;
     display: flex;
-    position: fixed;
+    position: absolute;
     flex-direction: column;
     justify-content: center;
 
@@ -14,7 +14,7 @@
             animation: fadein 2s;
 }
 #background-canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -96,7 +96,7 @@ button {
     background-color: #0b912c;
     border-radius: 0px 0px 20px 20px;
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 500px;
     left: 0px;
     flex-direction: column;

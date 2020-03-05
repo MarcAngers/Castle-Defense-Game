@@ -1,5 +1,5 @@
 #game-canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -9,14 +9,14 @@
     width: 1502px;
     height: 120px;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     top: 500px;
     left: 0px;
 }
 
 #main-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 5;
     left: 676px;
     top: 350px;

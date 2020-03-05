@@ -31,10 +31,10 @@ button {
     width: 1500px;
     height: 500px;
     z-index: 1;
-    position: fixed;
+    position: absolute;
 }
 #background-canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -64,7 +64,7 @@ button {
     background-color: #0b912c;
     border-radius: 0px 0px 20px 20px;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     top: 500px;
     left: 0px;
 }
