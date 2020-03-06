@@ -2,9 +2,10 @@
     "name": "cant",
     "price": 1,
     "health": 1,
-    "damage": 8,
+    "damage": 6,
     "speed": 15,
     "size": 50,
     "y": 400,
-    "team": "purple"
+    "team": "purple",
+    "description": "She is armed with a poison tipped fang of the dragon she just killed. Yes, she just killed a dragon. The name is misleading."
 }

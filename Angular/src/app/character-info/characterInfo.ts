@@ -26,7 +26,7 @@ export class CharacterInfo {
         this.damage = data.damage;
         this.speed = data.speed;
         this.team = team;
-        this.name = name;
+        this.name = name.charAt(0).toUpperCase() + name.substring(1);
         this.description = data.description;
     }
 }

@@ -6,5 +6,6 @@
     "speed": 15,
     "size": 50,
     "y": 400,
-    "team": "black"
+    "team": "black",
+    "description": "Like an eel, but evil.\nHilarious."
 }

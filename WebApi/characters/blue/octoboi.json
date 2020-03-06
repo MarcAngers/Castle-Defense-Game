@@ -1,10 +1,11 @@
 {
     "name": "octoboi",
-    "price": 26,
+    "price": 52,
     "health": 79,
     "damage": 14,
     "speed": 4,
     "size": 100,
     "y": 350,
-    "team": "blue"
+    "team": "blue",
+    "description": "Straight faced. No remorse. No feelings. Lethal suction cups"
 }

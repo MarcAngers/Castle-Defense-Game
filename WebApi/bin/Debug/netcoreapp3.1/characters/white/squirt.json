@@ -6,5 +6,6 @@
     "speed": 10,
     "size": 50,
     "y": 400,
-    "team": "white"
+    "team": "white",
+    "description": "Young squirrel with many dreams and aspirations."
 }

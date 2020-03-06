@@ -1,10 +1,11 @@
 {
     "name": "lightningbear",
-    "price": 136,
+    "price": 272,
     "health": 345,
     "damage": 28,
     "speed": 4,
     "size": 200,
     "y": 250,
-    "team": "blue"
+    "team": "blue",
+    "description": "When you see a bear, you should get to the water as it is the safest place to avoid bears. When you're in the water and you hear thunder, you should get to land to be safe from the lightning... WHAT WILL YOU DO?!"
 }

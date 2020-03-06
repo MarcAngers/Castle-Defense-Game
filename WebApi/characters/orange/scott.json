@@ -6,5 +6,6 @@
     "speed": 15,
     "size": 50,
     "y": 400,
-    "team": "orange"
+    "team": "orange",
+    "description": "Can light most things on fire. Not water though."
 }

@@ -1,10 +1,11 @@
 {
     "name": "cube",
-    "price": 5,
-    "health": 10,
-    "damage": 5,
-    "speed": 10,
+    "price": 10,
+    "health": 20,
+    "damage": 10,
+    "speed": 20,
     "size": 50,
     "y": 400,
-    "team": "purple"
+    "team": "purple",
+    "description": "CUBE"
 }

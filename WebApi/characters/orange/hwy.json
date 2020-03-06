@@ -1,10 +1,11 @@
 {
     "name": "hwy",
-    "price": 138,
+    "price": 276,
     "health": 350,
     "damage": 29,
     "speed": 3,
     "size": 200,
     "y": 250,
-    "team": "orange"
+    "team": "orange",
+    "description": "He was just breathing fire. You can tell 'cause there's still a little bit there. I don't think you wanna mess with that... Like he looks scary enough, but then there's fire too? Yikes dude."
 }

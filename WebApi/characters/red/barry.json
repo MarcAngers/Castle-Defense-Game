@@ -2,9 +2,10 @@
     "name": "barry",
     "price": 5,
     "health": 17,
-    "damage": 2,
+    "damage": 3,
     "speed": 13,
     "size": 75,
     "y": 375,
-    "team": "red"
+    "team": "red",
+    "description": "He's so cool. I mean just look at those sunglasses. He's a strawberry with sunglasses. Can you be more cool?"
 }

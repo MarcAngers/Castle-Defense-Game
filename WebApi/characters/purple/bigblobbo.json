@@ -1,10 +1,11 @@
 {
     "name": "bigblobbo",
-    "price": 110,
+    "price": 220,
     "health": 400,
     "damage": 17,
     "speed": 2,
     "size": 200,
     "y": 250,
-    "team": "purple"
+    "team": "purple",
+    "description": "Large and in charge."
 }

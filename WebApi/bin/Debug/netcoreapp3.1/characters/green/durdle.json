@@ -6,5 +6,6 @@
     "speed": 2,
     "size": 75,
     "y": 400,
-    "team": "green"
+    "team": "green",
+    "description": "Slow and steady wins the race :)"
 }

@@ -6,5 +6,6 @@
     "speed": 10,
     "size": 50,
     "y": 400,
-    "team": "red"
+    "team": "red",
+    "description": "Mess with crabbo, you get the stabbo."
 }

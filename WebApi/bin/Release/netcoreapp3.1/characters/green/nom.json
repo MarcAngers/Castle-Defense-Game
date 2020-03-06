@@ -2,9 +2,10 @@
     "name": "nom",
     "price": 8,
     "health": 17,
-    "damage": 8,
+    "damage": 9,
     "speed": 12,
     "size": 50,
     "y": 400,
-    "team": "green"
+    "team": "green",
+    "description": "nomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnomnom"
 }

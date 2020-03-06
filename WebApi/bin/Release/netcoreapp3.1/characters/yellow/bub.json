@@ -6,5 +6,6 @@
     "speed": 3,
     "size": 75,
     "y": 375,
-    "team": "yellow"
+    "team": "yellow",
+    "description": "Lamp"
 }

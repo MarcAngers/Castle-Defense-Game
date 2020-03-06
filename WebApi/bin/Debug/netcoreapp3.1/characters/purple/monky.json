@@ -1,10 +1,11 @@
 {
     "name": "monky",
-    "price": 33,
+    "price": 66,
     "health": 99,
     "damage": 11,
     "speed": 7,
     "size": 100,
     "y": 350,
-    "team": "purple"
+    "team": "purple",
+    "description": "His shield is as impenetrable as his beard is luscious."
 }

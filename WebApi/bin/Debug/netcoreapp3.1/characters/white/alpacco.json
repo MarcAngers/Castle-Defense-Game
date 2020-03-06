@@ -1,10 +1,11 @@
 {
     "name": "alpacco",
-    "price": 9,
+    "price": 19,
     "health": 30,
     "damage": 12,
     "speed": 10,
     "size": 75,
     "y": 375,
-    "team": "white"
+    "team": "white",
+    "description": "Fun Alpaca Fact #42:\nDid you know that alpaca fur is fire resistant?\n:D Fun"
 }

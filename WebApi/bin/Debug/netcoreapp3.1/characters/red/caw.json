@@ -1,10 +1,11 @@
 {
     "name": "caw",
-    "price": 35,
+    "price": 70,
     "health": 108,
     "damage": 14,
     "speed": 10,
     "size": 100,
     "y": 350,
-    "team": "red"
+    "team": "red",
+    "description": "So colorful :)"
 }

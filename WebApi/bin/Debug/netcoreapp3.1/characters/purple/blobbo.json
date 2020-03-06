@@ -6,5 +6,6 @@
     "speed": 8,
     "size": 50,
     "y": 400,
-    "team": "purple"
+    "team": "purple",
+    "description": "It's a uh... blob of something..."
 }

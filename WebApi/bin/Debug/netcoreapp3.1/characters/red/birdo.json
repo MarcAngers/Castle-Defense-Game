@@ -1,10 +1,11 @@
 {
     "name": "birdo",
-    "price": 6,
+    "price": 8,
     "health": 24,
     "damage": 7,
     "speed": 12,
     "size": 50,
     "y": 400,
-    "team": "red"
+    "team": "red",
+    "description": "Her name is birdo and she is actually a bird. SMH Nintendo"
 }

@@ -6,5 +6,6 @@
     "speed": 20,
     "size": 50,
     "y": 400,
-    "team": "orange"
+    "team": "orange",
+    "description": "It's a basketball."
 }

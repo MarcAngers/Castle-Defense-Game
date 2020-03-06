@@ -1,10 +1,11 @@
 {
     "name": "judge",
-    "price": 14,
+    "price": 24,
     "health": 40,
     "damage": 12,
     "speed": 6,
     "size": 75,
     "y": 375,
-    "team": "blue"
+    "team": "blue",
+    "description": "Don't let him rain on your parade :)"
 }

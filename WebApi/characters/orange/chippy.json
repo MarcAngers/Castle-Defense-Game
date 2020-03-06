@@ -6,5 +6,6 @@
     "speed": 10,
     "size": 50,
     "y": 400,
-    "team": "orange"
+    "team": "orange",
+    "description": "He gets very mad when people try to invade his personal space."
 }

@@ -6,5 +6,6 @@
     "speed": 8,
     "size": 50,
     "y": 400,
-    "team": "green"
+    "team": "green",
+    "description": "Hippity hoppity your castle is my property"
 }

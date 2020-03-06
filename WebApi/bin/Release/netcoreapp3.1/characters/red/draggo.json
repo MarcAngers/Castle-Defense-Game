@@ -6,5 +6,6 @@
     "speed": 2,
     "size": 200,
     "y": 250,
-    "team": "red"
+    "team": "red",
+    "description": "Killing a normal dragon is difficult enough... This is a fat dragon. How you gonna kill a fat dragon? Didn't think so."
 }

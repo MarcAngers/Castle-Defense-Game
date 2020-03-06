@@ -1,10 +1,11 @@
 {
     "name": "bread",
-    "price": 10,
+    "price": 20,
     "health": 40,
     "damage": 3,
     "speed": 8,
     "size": 75,
     "y": 375,
-    "team": "white"
+    "team": "white",
+    "description": "Imagine dying to a loaf of white bread... Embarassing."
 }
