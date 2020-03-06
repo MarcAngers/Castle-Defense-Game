@@ -53,6 +53,19 @@ export class GameComponent implements OnInit {
     this.player1 = new Player(0, 0, 0, 0, 0, new Castle(0, 0, "white", 0, 0, 0));
     this.player2 = new Player(0, 0, 0, 0, 0, new Castle(0, 0, "white", 0, 0, 0));
 
+    this.route.paramMap.subscribe(map => {
+      var mapParams = <any> map;
+      this.id = mapParams.params.id;
+      this.team = mapParams.params.team;
+      this.side = mapParams.params.side;
+      if (this.side == 1)
+        this.connectedPlayer = this.player1;
+      else if (this.side == 2)
+        this.connectedPlayer = this.player2;
+      else
+        this.connectedPlayer = new Player(0, 0, 0, 0, 3, new Castle(0, 0, "white", 0, 0, 0));
+    });
+
     connection.on("test", function() {
       alert("TEST");
     });
@@ -69,11 +82,13 @@ export class GameComponent implements OnInit {
       this.ended = side;
     });
     connection.onclose(() => {
+      if (this.side >= 3)
+        return;
       document.getElementById("main-menu").style.display = "none";      
       this.gameServices.end(this.id);
       this.reset();
       delete(this.gameServices);
-    })
+    });
 
     this.canvas = <HTMLCanvasElement> document.getElementById("game-canvas");
     this.context = this.canvas.getContext("2d");
@@ -91,17 +106,6 @@ export class GameComponent implements OnInit {
     this.nextCloud = Math.floor(Math.random() * 25);
 
     this.units = new Array<Unit>();
-
-    this.route.paramMap.subscribe(map => {
-      var mapParams = <any> map;
-      this.id = mapParams.params.id;
-      this.team = mapParams.params.team;
-      this.side = mapParams.params.side;
-      if (this.side == 1)
-        this.connectedPlayer = this.player1;
-      else
-        this.connectedPlayer = this.player2;
-    });
 
     if (this.side == 1)
       this.init();
@@ -138,11 +142,6 @@ export class GameComponent implements OnInit {
 
     this.draw_background();
 
-    if (typeof this.clouds != 'undefined')
-      this.clouds.forEach((cloud) => {
-        cloud.draw(ctx);
-      });
-
     if (typeof this.units != 'undefined')
       this.units.forEach((unit) => {
         unit.draw(ctx);
@@ -154,14 +153,21 @@ export class GameComponent implements OnInit {
     
     ctx.drawImage(this.background, 0, 0)
 
-    ctx.fillStyle = "black";
-    ctx.font = "50px serif";
-    ctx.fillText("Money: $" + Math.floor(this.connectedPlayer.money), 10, 45);
-    ctx.font = "14px serif";
-    ctx.fillText("Income: $" + Math.floor(this.connectedPlayer.income * 600) + "/min", 12, 60);
-    if (this.id >= 1000) {
+    if (typeof this.clouds != 'undefined')
+      this.clouds.forEach((cloud) => {
+        cloud.draw(ctx);
+      });
+    
+    if (this.side < 3) {
+      ctx.fillStyle = "black";
+      ctx.font = "50px serif";
+      ctx.fillText("Money: $" + Math.floor(this.connectedPlayer.money), 10, 45);
       ctx.font = "14px serif";
-      ctx.fillText("Game ID: " + this.id, 1410, 15);
+      ctx.fillText("Income: $" + Math.floor(this.connectedPlayer.income * 600) + "/min", 12, 60);
+      if (this.id >= 1000) {
+        ctx.font = "14px serif";
+        ctx.fillText("Game ID: " + this.id, 1410, 15);
+      }
     }
 
     if (connected) {
@@ -176,7 +182,7 @@ export class GameComponent implements OnInit {
       ctx.font = "300px servif";
       ctx.fillText("DEFEAT!", 100, 300, 1300);
     }
-    if (this.ended != 0 && this.side == this.ended) {
+    if (this.ended != 0 && (this.side == this.ended || this.side >= 3)) {
       this.context.fillStyle = "black";
       this.context.font = "300px serif"
       this.context.fillText("VICTORY!", 100, 300, 1300);
@@ -198,8 +204,10 @@ export class GameComponent implements OnInit {
       this.side = mapParams.params.side;
       if (this.side == 1)
         this.connectedPlayer = this.player1;
-      else
+      else if (this.side == 2)
         this.connectedPlayer = this.player2;
+      else
+        this.connectedPlayer = new Player(0, 0, 0, 0, 3, new Castle(0, 0, "white", 0, 0, 0));
     });
 
     document.getElementById("main-menu").style.display = "none";

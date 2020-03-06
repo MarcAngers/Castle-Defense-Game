@@ -5,6 +5,16 @@
     margin-bottom: 0px;
     padding: 10px;
 }
+#spectate {
+    width: 1498px;
+    height: 118px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: arial;
+    font-size: 60px;
+    background-color: #2bb14c;
+    text-align: center;
+}
 #income { 
     float: left;
     width: 304px;

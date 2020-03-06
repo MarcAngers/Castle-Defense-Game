@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"income\">\n    Increase Income:<br/>\n    ${{ incomePrice }}\n</div>\n<div id=\"character-bar\" style=\"display: inline-block;\">\n    <!-- Dynamic Character icons go here -->\n    <div class=\"character first\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n    <div class=\"character\"></div>\n</div>\n<div id=\"health\">\n    Increase Castle Health:<br/>\n    ${{ healthPrice }}\n</div>";
+    __webpack_exports__["default"] = "<div *ngIf=\"side<3; else spectate\">\n    <div id=\"income\">\n        Increase Income:<br/>\n        ${{ incomePrice }}\n    </div>\n    <div id=\"character-bar\" style=\"display: inline-block;\">\n        <!-- Dynamic Character icons go here -->\n        <div class=\"character first\"></div>\n        <div class=\"character\"></div>\n        <div class=\"character\"></div>\n        <div class=\"character\"></div>\n        <div class=\"character\"></div>\n        <div class=\"character\"></div>\n        <div class=\"character\"></div>\n        <div class=\"character\"></div>\n    </div>\n    <div id=\"health\">\n        Increase Castle Health:<br/>\n        ${{ healthPrice }}\n    </div>\n</div>\n<ng-template #spectate>\n    <div id=\"spectate\">\n        Spectating Game\n    </div>\n</ng-template>";
     /***/
   },
 
@@ -1222,7 +1222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#character-bar {\r\n    width: 870px;\r\n    height: 100px;\r\n    margin-top: 0px;\r\n    margin-bottom: 0px;\r\n    padding: 10px;\r\n}\r\n#income { \r\n    float: left;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 20px 0px 0px 20px;\r\n    border: 1px solid black;\r\n}\r\n#income:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#health {\r\n    float: right;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 0px 20px 20px 0px;\r\n    border: 1px solid black;\r\n}\r\n#health:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n.white {\r\n    background-color: #DDDDDD;\r\n}\r\n.black {\r\n    background-color: black;\r\n}\r\n.green {\r\n    background-color: green;\r\n}\r\n.blue {\r\n    background-color: blue;\r\n}\r\n.purple {\r\n    background-color: purple;\r\n}\r\n.yellow {\r\n    background-color: yellow;\r\n}\r\n.orange {\r\n    background-color: orangered;\r\n}\r\n.red {\r\n    background-color: red;\r\n}\r\n.character {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n}\r\n.character:hover {\r\n    cursor: pointer;\r\n}\r\n.first {\r\n    margin-left: 0px;\r\n}\r\n.hidden {\r\n    opacity: 0;\r\n}\r\n.price {\r\n    z-index: 3;\r\n    margin: 2px;\r\n    position: absolute;\r\n}\r\n.black-unit {\r\n    background-color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0NBQWdDO0lBQ2hDLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdDQUFnQztJQUNoQyx1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CO0FBRUE7SUFDSSx5QkFBeUI7QUFDN0I7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksdUJBQXVCO0FBQzNCO0FBQ0E7SUFDSSxzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksd0JBQXdCO0FBQzVCO0FBQ0E7SUFDSSwyQkFBMkI7QUFDL0I7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUVBO0lBQ0kscUJBQXFCO0lBQ3JCLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksZ0JBQWdCO0FBQ3BCO0FBRUE7SUFDSSxVQUFVO0FBQ2Q7QUFFQTtJQUNJLFVBQVU7SUFDVixXQUFXO0lBQ1gsa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSx1QkFBdUI7QUFDM0IiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItYmFyL2NoYXJhY3Rlci1iYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjaGFyYWN0ZXItYmFyIHtcclxuICAgIHdpZHRoOiA4NzBweDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcbiNpbmNvbWUgeyBcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgd2lkdGg6IDMwNHB4O1xyXG4gICAgaGVpZ2h0OiA4OHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4IDBweCAwcHggMjBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG59XHJcbiNpbmNvbWU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzVkZDM2ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4jaGVhbHRoIHtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICAgIHdpZHRoOiAzMDRweDtcclxuICAgIGhlaWdodDogODhweDtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDMwcHg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmJiMTRjO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMHB4IDIwcHggMjBweCAwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxufVxyXG4jaGVhbHRoOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM1ZGQzNmU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi53aGl0ZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjREREREREO1xyXG59XHJcbi5ibGFjayB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxufVxyXG4uZ3JlZW4ge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XHJcbn1cclxuLmJsdWUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmx1ZTtcclxufVxyXG4ucHVycGxlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHB1cnBsZTtcclxufVxyXG4ueWVsbG93IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcclxufVxyXG4ub3JhbmdlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZXJlZDtcclxufVxyXG4ucmVkIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxufVxyXG5cclxuLmNoYXJhY3RlciB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBtYXJnaW4tbGVmdDogMTBweDtcclxufVxyXG4uY2hhcmFjdGVyOmhvdmVyIHtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG4uZmlyc3Qge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDBweDtcclxufVxyXG5cclxuLmhpZGRlbiB7XHJcbiAgICBvcGFjaXR5OiAwO1xyXG59XHJcblxyXG4ucHJpY2Uge1xyXG4gICAgei1pbmRleDogMztcclxuICAgIG1hcmdpbjogMnB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG59XHJcbi5ibGFjay11bml0IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59Il19 */";
+    __webpack_exports__["default"] = "#character-bar {\r\n    width: 870px;\r\n    height: 100px;\r\n    margin-top: 0px;\r\n    margin-bottom: 0px;\r\n    padding: 10px;\r\n}\r\n#spectate {\r\n    width: 1498px;\r\n    height: 118px;\r\n    border-radius: 20px;\r\n    border: 1px solid black;\r\n    font-family: arial;\r\n    font-size: 50px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n}\r\n#income { \r\n    float: left;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 20px 0px 0px 20px;\r\n    border: 1px solid black;\r\n}\r\n#income:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#health {\r\n    float: right;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 0px 20px 20px 0px;\r\n    border: 1px solid black;\r\n}\r\n#health:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n.white {\r\n    background-color: #DDDDDD;\r\n}\r\n.black {\r\n    background-color: black;\r\n}\r\n.green {\r\n    background-color: green;\r\n}\r\n.blue {\r\n    background-color: blue;\r\n}\r\n.purple {\r\n    background-color: purple;\r\n}\r\n.yellow {\r\n    background-color: yellow;\r\n}\r\n.orange {\r\n    background-color: orangered;\r\n}\r\n.red {\r\n    background-color: red;\r\n}\r\n.character {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n}\r\n.character:hover {\r\n    cursor: pointer;\r\n}\r\n.first {\r\n    margin-left: 0px;\r\n}\r\n.hidden {\r\n    opacity: 0;\r\n}\r\n.price {\r\n    z-index: 3;\r\n    margin: 2px;\r\n    position: absolute;\r\n}\r\n.black-unit {\r\n    background-color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YseUJBQXlCO0lBQ3pCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0NBQWdDO0lBQ2hDLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdDQUFnQztJQUNoQyx1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CO0FBRUE7SUFDSSx5QkFBeUI7QUFDN0I7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksdUJBQXVCO0FBQzNCO0FBQ0E7SUFDSSxzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksd0JBQXdCO0FBQzVCO0FBQ0E7SUFDSSwyQkFBMkI7QUFDL0I7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUVBO0lBQ0kscUJBQXFCO0lBQ3JCLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksZ0JBQWdCO0FBQ3BCO0FBRUE7SUFDSSxVQUFVO0FBQ2Q7QUFFQTtJQUNJLFVBQVU7SUFDVixXQUFXO0lBQ1gsa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSx1QkFBdUI7QUFDM0IiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItYmFyL2NoYXJhY3Rlci1iYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjaGFyYWN0ZXItYmFyIHtcclxuICAgIHdpZHRoOiA4NzBweDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcbiNzcGVjdGF0ZSB7XHJcbiAgICB3aWR0aDogMTQ5OHB4O1xyXG4gICAgaGVpZ2h0OiAxMThweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogNTBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuI2luY29tZSB7IFxyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICB3aWR0aDogMzA0cHg7XHJcbiAgICBoZWlnaHQ6IDg4cHg7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzJiYjE0YztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHggMHB4IDBweCAyMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuI2luY29tZTpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNWRkMzZlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiNoZWFsdGgge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgd2lkdGg6IDMwNHB4O1xyXG4gICAgaGVpZ2h0OiA4OHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMjBweCAyMHB4IDBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG59XHJcbiNoZWFsdGg6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzVkZDM2ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLndoaXRlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNEREREREQ7XHJcbn1cclxuLmJsYWNrIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG59XHJcbi5ncmVlbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxufVxyXG4uYmx1ZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibHVlO1xyXG59XHJcbi5wdXJwbGUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcHVycGxlO1xyXG59XHJcbi55ZWxsb3cge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93O1xyXG59XHJcbi5vcmFuZ2Uge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogb3JhbmdlcmVkO1xyXG59XHJcbi5yZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG59XHJcblxyXG4uY2hhcmFjdGVyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG59XHJcbi5jaGFyYWN0ZXI6aG92ZXIge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5maXJzdCB7XHJcbiAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG59XHJcblxyXG4uaGlkZGVuIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbn1cclxuXHJcbi5wcmljZSB7XHJcbiAgICB6LWluZGV4OiAzO1xyXG4gICAgbWFyZ2luOiAycHg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmJsYWNrLXVuaXQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn0iXX0= */";
     /***/
   },
 
@@ -1346,9 +1346,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(CharacterBarComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
+        value: function ngOnInit() {}
+      }, {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
           var _this3 = this;
 
+          if (this.side >= 3) return;
           document.getElementById("character-bar").classList.add(this.team);
           CharacterBarComponent_1.shopServices = new _services_shopService__WEBPACK_IMPORTED_MODULE_4__["ShopService"](this.http);
           this.initBar();
@@ -1759,7 +1763,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       if (x) this.x = x;else this.x = 1500;
       this.y = Math.floor(Math.random() * 150);
-      this.speed = Math.floor(Math.random() * (15 - 5) + 5);
+      this.speed = Math.floor(Math.random() * (12 - 2) + 2);
       var id = Math.floor(Math.random() * (4 - 1) + 1);
       this.image = new Image();
       this.image.src = "../../assets/img/background/clouds/cloud" + id + ".png";
@@ -2051,7 +2055,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this9.id = mapParams.params.id;
             _this9.team = mapParams.params.team;
             _this9.side = mapParams.params.side;
-            if (_this9.side == 1) _this9.connectedPlayer = _this9.player1;else _this9.connectedPlayer = _this9.player2;
+            if (_this9.side == 1) _this9.connectedPlayer = _this9.player1;else if (_this9.side == 2) _this9.connectedPlayer = _this9.player2;else _this9.connectedPlayer = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 3, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           });
 
           document.getElementById("main-menu").style.display = "none";
@@ -2073,6 +2077,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.player1 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           this.player2 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
+          this.route.paramMap.subscribe(function (map) {
+            var mapParams = map;
+            _this11.id = mapParams.params.id;
+            _this11.team = mapParams.params.team;
+            _this11.side = mapParams.params.side;
+            if (_this11.side == 1) _this11.connectedPlayer = _this11.player1;else if (_this11.side == 2) _this11.connectedPlayer = _this11.player2;else _this11.connectedPlayer = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 3, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
+          });
           connection.on("test", function () {
             alert("TEST");
           });
@@ -2091,6 +2102,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this11.ended = side;
           });
           connection.onclose(function () {
+            if (_this11.side >= 3) return;
             document.getElementById("main-menu").style.display = "none";
 
             _this11.gameServices.end(_this11.id);
@@ -2110,13 +2122,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.clouds = [new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](100), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](600), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](900), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](1300)];
           this.nextCloud = Math.floor(Math.random() * 25);
           this.units = new Array();
-          this.route.paramMap.subscribe(function (map) {
-            var mapParams = map;
-            _this11.id = mapParams.params.id;
-            _this11.team = mapParams.params.team;
-            _this11.side = mapParams.params.side;
-            if (_this11.side == 1) _this11.connectedPlayer = _this11.player1;else _this11.connectedPlayer = _this11.player2;
-          });
           if (this.side == 1) this.init();else this.gameServices.init(this.team, this.id);
         }
       }, {
@@ -2131,15 +2136,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context12.prev = _context12.next) {
                   case 0:
                     ctx = this.context;
-                    if (typeof this.clouds != 'undefined') this.clouds.forEach(function (cloud) {
-                      cloud.draw(ctx);
-                    });
                     this.draw_background();
                     if (typeof this.units != 'undefined') this.units.forEach(function (unit) {
                       unit.draw(ctx);
                     });
 
-                  case 4:
+                  case 3:
                   case "end":
                     return _context12.stop();
                 }
@@ -2153,15 +2155,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var connected = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
           var ctx = this.context;
           ctx.drawImage(this.background, 0, 0);
-          ctx.fillStyle = "black";
-          ctx.font = "50px serif";
-          ctx.fillText("Money: $" + Math.floor(this.connectedPlayer.money), 10, 45);
-          ctx.font = "14px serif";
-          ctx.fillText("Income: $" + Math.floor(this.connectedPlayer.income * 600) + "/min", 12, 60);
+          if (typeof this.clouds != 'undefined') this.clouds.forEach(function (cloud) {
+            cloud.draw(ctx);
+          });
 
-          if (this.id >= 1000) {
+          if (this.side < 3) {
+            ctx.fillStyle = "black";
+            ctx.font = "50px serif";
+            ctx.fillText("Money: $" + Math.floor(this.connectedPlayer.money), 10, 45);
             ctx.font = "14px serif";
-            ctx.fillText("Game ID: " + this.id, 1410, 15);
+            ctx.fillText("Income: $" + Math.floor(this.connectedPlayer.income * 600) + "/min", 12, 60);
+
+            if (this.id >= 1000) {
+              ctx.font = "14px serif";
+              ctx.fillText("Game ID: " + this.id, 1410, 15);
+            }
           }
 
           if (connected) {
@@ -2177,7 +2185,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             ctx.fillText("DEFEAT!", 100, 300, 1300);
           }
 
-          if (this.ended != 0 && this.side == this.ended) {
+          if (this.ended != 0 && (this.side == this.ended || this.side >= 3)) {
             this.context.fillStyle = "black";
             this.context.font = "300px serif";
             this.context.fillText("VICTORY!", 100, 300, 1300); //if (AppComponent.user.name != "new_user")
@@ -2586,11 +2594,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 2:
                     jsonData = _context14.sent;
                     obj = jsonData;
-                    console.log(obj);
                     this.allIDsandStates = obj;
                     if (Object.keys(this.allIDsandStates)) this.gameIDs = Object.keys(this.allIDsandStates);else this.gameIDs = [];
 
-                  case 7:
+                  case 6:
                   case "end":
                     return _context14.stop();
                 }
@@ -2655,27 +2662,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this14, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee15() {
+            var side;
             return regeneratorRuntime.wrap(function _callee15$(_context16) {
               while (1) {
                 switch (_context16.prev = _context16.next) {
                   case 0:
-                    _context16.next = 2;
+                    side = 2;
+                    _context16.next = 3;
                     return this.updateGamesAsync();
 
-                  case 2:
+                  case 3:
                     if (this.tryId()) {
-                      _context16.next = 5;
+                      _context16.next = 10;
                       break;
                     }
 
+                    if (!(this.allIDsandStates[this.id] == 2)) {
+                      _context16.next = 8;
+                      break;
+                    }
+
+                    side = 3;
+                    _context16.next = 10;
+                    break;
+
+                  case 8:
                     alert("The ID entered is invalid! Check to make sure the entered ID is correct.\n(or it's just a bug lol)");
                     return _context16.abrupt("return");
 
-                  case 5:
+                  case 10:
                     this.updateTeam();
-                    this.router.navigate(["../game", this.id, this.team, 2]);
+                    this.router.navigate(["../game", this.id, this.team, side]);
 
-                  case 7:
+                  case 12:
                   case "end":
                     return _context16.stop();
                 }

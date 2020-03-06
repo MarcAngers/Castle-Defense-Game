@@ -1,19 +1,26 @@
-<div id="income">
-    Increase Income:<br/>
-    ${{ incomePrice }}
+<div *ngIf="side<3; else spectate">
+    <div id="income">
+        Increase Income:<br/>
+        ${{ incomePrice }}
+    </div>
+    <div id="character-bar" style="display: inline-block;">
+        <!-- Dynamic Character icons go here -->
+        <div class="character first"></div>
+        <div class="character"></div>
+        <div class="character"></div>
+        <div class="character"></div>
+        <div class="character"></div>
+        <div class="character"></div>
+        <div class="character"></div>
+        <div class="character"></div>
+    </div>
+    <div id="health">
+        Increase Castle Health:<br/>
+        ${{ healthPrice }}
+    </div>
 </div>
-<div id="character-bar" style="display: inline-block;">
-    <!-- Dynamic Character icons go here -->
-    <div class="character first"></div>
-    <div class="character"></div>
-    <div class="character"></div>
-    <div class="character"></div>
-    <div class="character"></div>
-    <div class="character"></div>
-    <div class="character"></div>
-    <div class="character"></div>
-</div>
-<div id="health">
-    Increase Castle Health:<br/>
-    ${{ healthPrice }}
-</div>
+<ng-template #spectate>
+    <div id="spectate">
+        Spectating Game
+    </div>
+</ng-template>

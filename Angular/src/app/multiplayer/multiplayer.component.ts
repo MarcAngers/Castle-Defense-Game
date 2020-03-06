@@ -80,7 +80,6 @@ export class MultiplayerComponent implements OnInit {
   updateGamesAsync = async() => {
     var jsonData = await this.gameServices.getAllGameIDsAndStates();
     var obj = <Object>jsonData;
-    console.log(obj);
     this.allIDsandStates = obj;
     if (Object.keys(this.allIDsandStates))
       this.gameIDs = Object.keys(this.allIDsandStates);
@@ -121,14 +120,18 @@ export class MultiplayerComponent implements OnInit {
     this.router.navigate(["../game", this.id, this.team, 1]);
   }
   joinGame = async() => {
-    //let side = 2;
+    let side = 2;
     await this.updateGamesAsync();
     if (!this.tryId()) {
-      alert("The ID entered is invalid! Check to make sure the entered ID is correct.\n(or it's just a bug lol)");
-      return;
+      if (this.allIDsandStates[this.id] == 2)
+        side = 3;
+      else {
+        alert("The ID entered is invalid! Check to make sure the entered ID is correct.\n(or it's just a bug lol)");
+        return;
+      }
     }
     this.updateTeam();
-    this.router.navigate(["../game", this.id, this.team, 2]);
+    this.router.navigate(["../game", this.id, this.team, side]);
   }
 
   draw_background = () => {

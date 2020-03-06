@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, Input, ViewEncapsulation, OnInit, AfterViewInit } from '@angular/core';
 import { CharacterService } from '../../services/character.service'; 
 import { AppComponent } from '../app.component';
 import { ShopService } from '../../services/shopService';
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   encapsulation: ViewEncapsulation.None
 })
 
-export class CharacterBarComponent implements OnInit {
+export class CharacterBarComponent implements OnInit, AfterViewInit {
   @Input('side') side: number;
   @Input('team') team: string;
   @Input('id') id: number;
@@ -24,6 +24,12 @@ export class CharacterBarComponent implements OnInit {
   constructor(private characterServices: CharacterService, private http: HttpClient) { }
 
   ngOnInit () {
+    
+  }
+  ngAfterViewInit() {
+    if (this.side >= 3)
+      return;
+
     document.getElementById("character-bar").classList.add(this.team);
 
     CharacterBarComponent.shopServices = new ShopService(this.http);
