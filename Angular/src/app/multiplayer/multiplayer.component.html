@@ -3,11 +3,12 @@
     <h1>Multiplayer!</h1>
     <app-team-select></app-team-select>
 
-    <button [routerLink]="['../game/', newId(), updateTeam(), 1]" id="ng">New Game!</button>
+    <button (click)="newGame()" id="ng">New Game!</button>
 
-    <button [routerLink]="['../game/', id, updateTeam(), 2]" id="jg">Join Game!</button>
+    <button (click)="joinGame()" class="unverified" id="jg">Join Game!</button>
     <label for="game-id" id="game-id-label"><b>Game ID:</b></label>
-    <input type="number" min="1000" max="9999" id="game-id" placeholder="X-X-X-X" name="game-id">
+    <input type="number" min="1000" max="9999" id="game-id" placeholder="----" name="game-id">
+    <button id="game-browser">Game Browser</button>
 </div>
 <div id="footer">
     <div id="footer-button-container">
@@ -31,5 +32,23 @@
         <p>Pit your best strategies against your friends in a 2-player battle!</p>
         <p>Create a new game and you will be assigned a random Game ID!</p>
         <p>Once you have your ID, your friend will be able to join your game and the battle begins!</p>
+    </div>
+</div>
+
+<!-- Browser Modal -->
+<div id="game-browser-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 class="modal-header">Game Browser</h1>
+        <div *ngIf="gameIDs.length == 0; else showGameList">
+            <p>No games are currently in session :/</p>
+        </div>
+        <ng-template #showGameList>
+            <div *ngFor="let id of gameIDs" (click)="setId(id)" class="game-browser-item">
+                <span class="game-id">Game: {{id}}</span>
+                <span *ngIf="allIDsandStates[id] == 1" class="game-state">Open</span>
+                <span *ngIf="allIDsandStates[id] == 2" class="game-state">Full</span>
+            </div>
+        </ng-template>
     </div>
 </div>

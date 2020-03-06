@@ -41,6 +41,15 @@ namespace WebApi
             }
             return allIDs;
         }
+        public static Dictionary<int, int> GetAllGameIDsAndStates()
+        {
+            Dictionary<int, int> allIDsandStates = new Dictionary<int, int>();
+            for (var i = 0; i < Startup.GameInstances.Count; i++)
+            {
+                allIDsandStates.Add(Startup.GameInstances[i].Id, (int)Startup.GameInstances[i].State);
+            }
+            return allIDsandStates;
+        }
         public static void EndGame(int id)
         {
             if (id == 0)

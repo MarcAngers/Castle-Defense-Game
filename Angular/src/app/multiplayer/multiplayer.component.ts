@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cloud } from '../cloud';
+import { GameService } from 'src/services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-multiplayer',
@@ -9,7 +11,8 @@ import { Cloud } from '../cloud';
 export class MultiplayerComponent implements OnInit {
   team = "white";
   id = 1000;
-  idIsNew = false;
+  allIDsandStates = {};
+  gameIDs = [];
 
   canvas: HTMLCanvasElement;
   context: CanvasRenderingContext2D;
@@ -17,16 +20,17 @@ export class MultiplayerComponent implements OnInit {
   clouds: Cloud[];
   nextCloud: number;
 
-  constructor() { }
+  constructor(private router: Router, private gameServices: GameService) { }
 
   ngOnInit() {
-    document.getElementById("game-id").onchange = () => {
-      this.checkId();
-    }
+    this.updateGamesAsync();
 
-    var modal = document.getElementById("instruction-modal");
-    var open = document.getElementById("instructions");
-    var close = <HTMLElement>document.getElementsByClassName("close")[0];
+    var instructionModal = document.getElementById("instruction-modal");
+    var browserModal = document.getElementById("game-browser-modal");
+    var instructionOpen = document.getElementById("instructions");
+    var browserOpen = document.getElementById("game-browser");
+    var instructionClose = <HTMLElement>document.getElementsByClassName("close")[0];
+    var browserClose = <HTMLElement>document.getElementsByClassName("close")[1];
 
     this.canvas = <HTMLCanvasElement> document.getElementById("background-canvas");
     this.context = this.canvas.getContext("2d");
@@ -42,43 +46,89 @@ export class MultiplayerComponent implements OnInit {
     ];
     this.nextCloud = Math.floor(Math.random() * 25);
 
-    open.onclick = function() {
-      modal.style.display = "block";
+    instructionOpen.onclick = () => {
+      instructionModal.style.display = "block";
+    }
+    browserOpen.onclick = () => {
+      this.updateGamesAsync();
+      browserModal.style.display = "block";
     }
 
-    close.onclick = function() {
-      modal.style.display = "none";
+    instructionClose.onclick = () => {
+      instructionModal.style.display = "none";
+    }
+    browserClose.onclick = () => {
+      browserModal.style.display = "none";
     }
 
-    window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
+    window.onclick = (event) => {
+      if (event.target == instructionModal) {
+          instructionModal.style.display = "none";
       }
+      if (event.target == browserModal) {
+        browserModal.style.display = "none";
+      }
+    }
+
+    document.getElementById("game-id").onchange = () => {
+      document.getElementById("jg").classList.add("unverified");
     }
 
     this.draw_background();
   }
 
-  updateTeam(): string {
+  updateGamesAsync = async() => {
+    var jsonData = await this.gameServices.getAllGameIDsAndStates();
+    var obj = <Object>jsonData;
+    console.log(obj);
+    this.allIDsandStates = obj;
+    if (Object.keys(this.allIDsandStates))
+      this.gameIDs = Object.keys(this.allIDsandStates);
+    else
+      this.gameIDs = [];
+  }
+
+  setId = (id: number) => {
+    this.id = id;
+    document.getElementById("game-browser-modal").style.display = "none";
+    (<any>document.getElementById("game-id")).value = this.id;
+    document.getElementById("jg").classList.remove("unverified");
+  }
+  updateTeam = () => {
     this.team = document.getElementsByClassName("selected")[0].id;
-    return this.team;
   }
-  newId(): number {
-    if (this.id == 1000)
+  getNewId = () => {
+    this.id = Math.floor((Math.random() * 9000) + 1000);
+    while (this.id in this.allIDsandStates)
       this.id = Math.floor((Math.random() * 9000) + 1000);
-    return this.id;
   }
-  checkId = () => {
-    let input = <number>(<any>document.getElementById("game-id")).value;
-    if (input >= 1000 && input < 10000) {
-      console.log(input);
-      this.id = input;
-      this.idIsNew = false;
+  tryId = (): boolean => {
+    this.id = <number>(<any>document.getElementById("game-id")).value;
+    
+    if (this.id < 1000 || this.id > 9999)
+      return false;
+    if (!(this.id in this.allIDsandStates))
+      return false;
+    if (this.allIDsandStates[this.id] != 1)
+      return false;
+    return true;
+  }
+
+  newGame = async() => {
+    await this.updateGamesAsync();
+    this.getNewId();
+    this.updateTeam();
+    this.router.navigate(["../game", this.id, this.team, 1]);
+  }
+  joinGame = async() => {
+    //let side = 2;
+    await this.updateGamesAsync();
+    if (!this.tryId()) {
+      alert("The ID entered is invalid! Check to make sure the entered ID is correct.\n(or it's just a bug lol)");
+      return;
     }
-    else {
-      this.id = 10000;
-      this.idIsNew = false;
-    }
+    this.updateTeam();
+    this.router.navigate(["../game", this.id, this.team, 2]);
   }
 
   draw_background = () => {

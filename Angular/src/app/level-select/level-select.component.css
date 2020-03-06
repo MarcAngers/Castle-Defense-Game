@@ -91,7 +91,6 @@ button {
     position: fixed; /* Stay in place */
     z-index: 5; /* Sit on top */
     padding-top: 50px; /* Location of the box */
-    margin: 9px;
     left: 0;
     top: 0;
     width: 1500px; /* Full width */

@@ -29,6 +29,17 @@ h1 {
     font-size: 50px;
 }
 
+.game-browser-item {
+    border-radius: 5px;
+}
+.game-browser-item:hover {
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+.game-state {
+    margin-left: 25px;
+}
+
 #main-view {
     width: 1500px;
     height: 500px;
@@ -42,17 +53,29 @@ h1 {
     z-index: 0;
 }
 #ng {
-    margin-left: 360px;
+    margin-left: 300px;
     background-color: #0066ff;
 }
 #ng:hover {
     background-color: #2288ff;
 }
-#jg {
+#jg.unverified {
     background-color: #ff2222;
 }
-#jg:hover {
+#jg.unverified:hover {
     background-color: #ff6622;
+}
+#jg {
+    background-color: #00ee55;
+}
+#jg:hover {
+    background-color: #22ff77;
+}
+#game-browser {
+    background-color: #440088;
+}
+#game-browser:hover {
+    background-color: #4422aa;
 }
 
 #footer {
@@ -89,7 +112,6 @@ h1 {
     position: fixed; /* Stay in place */
     z-index: 5; /* Sit on top */
     padding-top: 50px; /* Location of the box */
-    margin: 9px;
     left: 0;
     top: 0;
     width: 1500px; /* Full width */

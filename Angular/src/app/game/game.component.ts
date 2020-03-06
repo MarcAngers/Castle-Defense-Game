@@ -136,12 +136,12 @@ export class GameComponent implements OnInit {
   public async draw() {
     var ctx = this.context;
 
+    this.draw_background();
+
     if (typeof this.clouds != 'undefined')
       this.clouds.forEach((cloud) => {
         cloud.draw(ctx);
       });
-
-    this.draw_background();
 
     if (typeof this.units != 'undefined')
       this.units.forEach((unit) => {

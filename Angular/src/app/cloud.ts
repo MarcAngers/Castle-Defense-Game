@@ -9,9 +9,9 @@ export class Cloud {
             this.x = x;
         else
             this.x = 1500;
-            
+
         this.y = Math.floor(Math.random() * 150);
-        this.speed = Math.floor(Math.random() * (15 - 5) + 5);
+        this.speed = Math.floor(Math.random() * (12 - 2) + 2);
 
         var id = Math.floor(Math.random() * (4 - 1) + 1);
         this.image = new Image();

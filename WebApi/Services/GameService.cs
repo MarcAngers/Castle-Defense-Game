@@ -83,6 +83,14 @@ namespace WebApi.Services
                 return toFind.Player2.HealthPrice;
         }
 
+        public int[] GetAllGameIDs()
+        {
+            return Startup.GetAllGameIDs().ToArray();
+        }
+        public Dictionary<int, int> GetAllGameIDsAndStates()
+        {
+            return Startup.GetAllGameIDsAndStates();
+        }
         public int GetLevelID(int id)
         {
             if (id <= 0)

@@ -1,7 +1,7 @@
 {
     "name": "bread",
     "price": 10,
-    "health": 30,
+    "health": 40,
     "damage": 3,
     "speed": 8,
     "size": 75,

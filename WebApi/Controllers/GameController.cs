@@ -111,6 +111,19 @@ namespace WebApi.Controllers
             return healthprice;
         }
 
+        [HttpGet("getallgameids")]
+        public ActionResult<int[]> GetAllGameIDs()
+        {
+            int[] allIDs = _services.GetAllGameIDs();
+            return allIDs;
+        }
+        [HttpGet("getallgameidsandstates")]
+        public ActionResult<string> GetAllGameIDsAndStates()
+        {
+            Dictionary<int, int> allIDsandStates = _services.GetAllGameIDsAndStates();
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(allIDsandStates);
+            return json;
+        }
         [HttpGet("getlevelid/{id=1}")]
         public ActionResult<int> GetLevelID(int id)
         {
