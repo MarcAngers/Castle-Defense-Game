@@ -23,10 +23,11 @@ button {
 }
 
 .info {
-    display: inline-block;
+    width: 75%;
+    float: right;
 }
 .info-container {
-    width: 50%;
+    width: 60%;
     margin: auto;
     color: #888888;
 }
@@ -37,7 +38,7 @@ button {
     float: left;
 }
 #info-headers {
-    display: inline-block;
+    float: left;
     flex-direction: column;
     font-family: arial;
     font-size: 25px;
@@ -50,6 +51,7 @@ button {
     font-family: arial;
     font-size: 25px;
     margin: 50px;
+    width: 50%;
 }
 
 #footer {

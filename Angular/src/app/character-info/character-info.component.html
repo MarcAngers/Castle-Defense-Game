@@ -4,7 +4,10 @@
     </div>
     <div class="info-container">
         <div class="image" style="display: inline-block; margin: 50px; margin-top: 0px;">
-            <img src="../../assets/img/units/{{name}}1.png">
+            <img *ngIf="name != corn; else showIcon" src="../../assets/img/units/{{name}}1.png">
+            <ng-template #showIcon>
+                <img src="../../assets/img/units/{{name}} icon.png">
+            </ng-template>
         </div>
         <div class="info">
             <div id="info-headers">
