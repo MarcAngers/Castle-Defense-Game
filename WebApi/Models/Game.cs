@@ -142,6 +142,7 @@ namespace WebApi.Models
             Character lead1 = new Character(1);
             Character lead2 = new Character(2);
 
+            // Find the lead characters on each team
             for (var i = 0; i < this.Units.Count; i++)
             {
                 var unit = this.Units[i];
@@ -157,14 +158,24 @@ namespace WebApi.Models
                 }
             }
 
+            // Collision detection
             if (lead1pos > 0 || lead2pos < 1450)
             {
+                // Unit/Unit collision
                 if (lead2pos - lead1pos < 3)
                 {
                     lead1.Collide(lead2);
                     lead2.Collide(lead1);
+                    for (var i = 0; i < this.Units.Count; i++)
+                    {
+                        if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
+                            this.Units[i].Recoil();
+                        if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
+                            this.Units[i].Recoil();
+                    }
                     return;
                 }
+                // Unit/Castle collision
                 // Hardcoded Castle positions... might want to change later
                 if (1375 - (lead1pos + lead1.Size) < 3)
                 {
