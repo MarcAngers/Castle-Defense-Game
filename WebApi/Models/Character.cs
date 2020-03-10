@@ -10,9 +10,10 @@ namespace WebApi.Models
     {
         public string Name { get; set; }
         public int Price { get; set; }
-        public int Health { get; set; }
-        public int MaxHealth { get; set; }
+        public double Health { get; set; }
+        public double MaxHealth { get; set; }
         public int Damage { get; set; }
+        public string Type { get; set; }
         public int Speed { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
@@ -21,7 +22,6 @@ namespace WebApi.Models
         public bool Dead { get; set; }
         public string Team { get; set; }
         public int Side { get; set; }
-        public string HTML { get; set; }
 
 
         public Character(int side)
@@ -44,16 +44,16 @@ namespace WebApi.Models
 
             this.Name = "weirdo";
             this.Price = 0;
-            this.Health = (int)(Math.Ceiling(r.NextDouble() * 10) + price);
+            this.Health = Math.Ceiling(r.NextDouble() * 10) + price;
             this.MaxHealth = this.Health;
             this.Damage = (int)(Math.Ceiling(r.NextDouble() * 10) + price);
+            string[] tempteams = { "white", "black", "green", "blue", "purple", "yellow", "orange", "red" };
+            this.Type = tempteams[r.Next(tempteams.Length)];
             this.Speed = (int)(r.NextDouble() * 14) + 3;
             this.Size = 100;
             this.Y = 350;
             this.Y = this.Y + (-25 + r.Next(51));
             this.Team = "black";
-            this.HTML = "<div class='character' id='weirdo'><label class='price black-unit'>$?</label><img src='../../assets/img/icons/weirdo icon.png'></div>";
-
             this.Stopped = false;
             this.Dead = false;
         }
@@ -76,16 +76,16 @@ namespace WebApi.Models
 
                 this.Name = name;
                 this.Price = (int)obj.SelectToken("price");
-                this.Health = (int)obj.SelectToken("health");
+                this.Health = (double)obj.SelectToken("health");
                 this.MaxHealth = this.Health;
                 this.Damage = (int)obj.SelectToken("damage");
+                this.Type = (string)obj.SelectToken("type");
                 this.Speed = (int)obj.SelectToken("speed");
                 this.Size = (int)obj.SelectToken("size");
                 this.Y = (int)obj.SelectToken("y");
                 Random rand = new Random();
                 this.Y = this.Y + (-25 + rand.Next(51));
                 this.Team = (string)obj.SelectToken("team");
-                this.HTML = (string)obj.SelectToken("html");
             }
         }
 
@@ -116,7 +116,18 @@ namespace WebApi.Models
             if (opponent.Dead)
                 return;
 
-            this.Health -= opponent.Damage;
+            string[] advantaged;
+            Game.Advantages.TryGetValue(opponent.Type, out advantaged);
+            string disadvantaged;
+            Game.Disadvantages.TryGetValue(opponent.Type, out disadvantaged);
+
+            if (advantaged.Contains(this.Team))
+                this.Health -= opponent.Damage * 1.5;
+            else if (disadvantaged == this.Team)
+                this.Health -= opponent.Damage * 0.67;
+            else 
+                this.Health -= opponent.Damage;
+            
             this.Recoil();
         }
         public void Recoil()

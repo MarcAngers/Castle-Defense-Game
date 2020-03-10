@@ -6,6 +6,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LevelSelectComponent } from './level-select/level-select.component';
 import { MultiplayerComponent } from './multiplayer/multiplayer.component';
 import { TeamInfoComponent } from './team-info/team-info.component';
+import { TypeinfoComponent } from './typeinfo/typeinfo.component';
 import { CharacterInfoComponent } from './character-info/character-info.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "multiplayer", component: MultiplayerComponent },
   { path: "game/10000", component: MultiplayerComponent },
   { path: "teaminfo", component: TeamInfoComponent },
+  { path: "typeinfo", component: TypeinfoComponent },
   { path: "characterinfo/:team/:name", component: CharacterInfoComponent },
   { path: "", component: WelcomeComponent },
   { path: "**", component: WelcomeComponent }
@@ -31,5 +33,6 @@ export const routingComponents = [
   LevelSelectComponent,
   MultiplayerComponent,
   TeamInfoComponent,
+  TypeinfoComponent,
   CharacterInfoComponent
 ];

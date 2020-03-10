@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
@@ -13,6 +14,8 @@ namespace WebApi.Models
     {
         public CharacterService CharacterServices { get; set; }
 
+        public static Dictionary<string, string[]> Advantages { get; set; }
+        public static Dictionary<string, string> Disadvantages { get; set; }
         public List<Character> Units { get; set; }
         public int Id { get; set; }
         public Player Player1 { get; set; }
@@ -41,8 +44,8 @@ namespace WebApi.Models
             this.Multiplayer = true;
             this.Player2 = new Player(team, 2);
             // Multiplayer castle health increase (move to somewhere else?)
-            this.Player1.Castle.SetHealth(1000);
-            this.Player2.Castle.SetHealth(1000);
+            this.Player1.Castle.SetMultiplayerHealth();
+            this.Player2.Castle.SetMultiplayerHealth();
 
             List<Player> playerData = new List<Player>() {
                     this.Player1,

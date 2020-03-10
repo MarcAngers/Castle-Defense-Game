@@ -3,6 +3,7 @@
     "price": 66,
     "health": 99,
     "damage": 11,
+    "type": "purple",
     "speed": 7,
     "size": 100,
     "y": 350,

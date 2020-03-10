@@ -11,6 +11,7 @@ import { LevelSelectComponent } from './level-select/level-select.component';
 import { MultiplayerComponent } from './multiplayer/multiplayer.component';
 import { CharacterInfoComponent } from './character-info/character-info.component';
 import { TeamInfoComponent } from './team-info/team-info.component';
+import { TypeinfoComponent } from './typeinfo/typeinfo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TeamInfoComponent } from './team-info/team-info.component';
     LevelSelectComponent,
     MultiplayerComponent,
     CharacterInfoComponent,
-    TeamInfoComponent
+    TeamInfoComponent,
+    TypeinfoComponent
   ],
   imports: [
     BrowserModule,

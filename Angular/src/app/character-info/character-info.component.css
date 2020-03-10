@@ -22,14 +22,14 @@ button {
     border-radius: 5px;
 }
 
-.info {
-    width: 75%;
-    float: right;
-}
 .info-container {
     width: 60%;
     margin: auto;
     color: #888888;
+}
+.info {
+    width: 700px;
+    float: right;
 }
 .image-link {
     width: 100px;
@@ -44,6 +44,8 @@ button {
     font-size: 25px;
     font-weight: bold;
     margin: 50px;
+    margin-top: 0px;
+    width: 30%;
 }
 #info-values {
     display: inline-block;
@@ -51,7 +53,14 @@ button {
     font-family: arial;
     font-size: 25px;
     margin: 50px;
-    width: 50%;
+    margin-top: 0px;
+    width: 40%;
+}
+#damage-type {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    border: 1px solid black;
 }
 
 #footer {
