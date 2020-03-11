@@ -116,14 +116,22 @@ namespace WebApi.Models
             if (opponent.Dead)
                 return;
 
+            bool max = false;
+            string type = opponent.Type;
+            if (type.Substring(type.Length - 4) == "_MAX")
+            {
+                max = true;
+                type = type.Substring(0, (type.Length - 4));
+            }
+
             string[] advantaged;
-            Game.Advantages.TryGetValue(opponent.Type, out advantaged);
+            Game.Advantages.TryGetValue(type, out advantaged);
             string disadvantaged;
-            Game.Disadvantages.TryGetValue(opponent.Type, out disadvantaged);
+            Game.Disadvantages.TryGetValue(type, out disadvantaged);
 
             if (advantaged.Contains(this.Team))
                 this.Health -= opponent.Damage * 1.5;
-            else if (disadvantaged == this.Team)
+            else if (disadvantaged == this.Team && !max)
                 this.Health -= opponent.Damage * 0.67;
             else 
                 this.Health -= opponent.Damage;
