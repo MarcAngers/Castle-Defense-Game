@@ -43,8 +43,6 @@ button {
     font-family: arial;
     font-size: 25px;
     font-weight: bold;
-    margin: 50px;
-    margin-top: 0px;
     width: 30%;
 }
 #info-values {
@@ -52,9 +50,7 @@ button {
     flex-direction: column;
     font-family: arial;
     font-size: 25px;
-    margin: 50px;
-    margin-top: 0px;
-    width: 40%;
+    width: 70%;
 }
 #damage-type {
     width: 22px;

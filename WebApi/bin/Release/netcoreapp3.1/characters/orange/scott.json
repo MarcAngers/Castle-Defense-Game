@@ -3,6 +3,7 @@
     "price": 8,
     "health": 17,
     "damage": 8,
+    "type": "orange",
     "speed": 15,
     "size": 50,
     "y": 400,

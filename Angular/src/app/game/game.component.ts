@@ -157,6 +157,12 @@ export class GameComponent implements OnInit {
       this.clouds.forEach((cloud) => {
         cloud.draw(ctx);
       });
+    if (this.nextCloud > 0)
+      this.nextCloud--;
+    else {
+      this.nextCloud = Math.floor(Math.random() * 40);
+      this.clouds.push(new Cloud());
+    }
     
     if (this.side < 3) {
       ctx.fillStyle = "black";

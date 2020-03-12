@@ -1,6 +1,6 @@
 {
     "name": "evilbirdo",
-    "price": 6,
+    "price": 9,
     "health": 25,
     "damage": 8,
     "type": "red",

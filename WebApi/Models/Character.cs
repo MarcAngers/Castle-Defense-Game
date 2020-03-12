@@ -22,6 +22,8 @@ namespace WebApi.Models
         public bool Dead { get; set; }
         public string Team { get; set; }
         public int Side { get; set; }
+        public CollisionEffect AttackEffect { get; set; }
+        public CollisionEffect DefendEffect { get; set; }
 
 
         public Character(int side)
@@ -31,12 +33,18 @@ namespace WebApi.Models
                 this.X = 150;
             else
                 this.X = 1300;
+
+            this.AttackEffect = new CollisionEffect();
+            this.DefendEffect = new CollisionEffect();
         }
         public Character(string name, string team)
         {
             this.GetCharacterFromJSON(name, team);
             this.Stopped = false;
             this.Dead = false;
+
+            this.AttackEffect = new CollisionEffect();
+            this.DefendEffect = new CollisionEffect();
         }
         public Character(int price, int side) : this(side)
         {
@@ -96,6 +104,18 @@ namespace WebApi.Models
                 this.Die();
                 return;
             }
+            if (this.AttackEffect.Stance != "None")
+            {
+                this.AttackEffect.Linger--;
+                if (this.AttackEffect.Linger <= 0)
+                    this.AttackEffect = new CollisionEffect();
+            }
+            if (this.DefendEffect.Stance != "None")
+            {
+                this.DefendEffect.Linger--;
+                if (this.DefendEffect.Linger <= 0)
+                    this.DefendEffect = new CollisionEffect();
+            }
             this.Move();   
         }
         private void Move()
@@ -118,7 +138,7 @@ namespace WebApi.Models
 
             bool max = false;
             string type = opponent.Type;
-            if (type.Substring(type.Length - 4) == "_MAX")
+            if (type.Substring(Math.Max(0, type.Length - 4)) == "_MAX")
             {
                 max = true;
                 type = type.Substring(0, (type.Length - 4));
@@ -130,22 +150,43 @@ namespace WebApi.Models
             Game.Disadvantages.TryGetValue(type, out disadvantaged);
 
             if (advantaged.Contains(this.Team))
+            {
                 this.Health -= opponent.Damage * 1.5;
+                this.DefendEffect = new CollisionEffect("defend", CollisionResult.Enhanced, this.Team);
+                opponent.AttackEffect = new CollisionEffect("attack", CollisionResult.Enhanced, opponent.Type);
+                this.Recoil(CollisionResult.Enhanced);
+                return;
+            }
             else if (disadvantaged == this.Team && !max)
+            {
                 this.Health -= opponent.Damage * 0.67;
-            else 
+                this.DefendEffect = new CollisionEffect("defend", CollisionResult.Mitigated, this.Team);
+                opponent.AttackEffect = new CollisionEffect("attack", CollisionResult.Mitigated, opponent.Type);
+                this.Recoil(CollisionResult.Mitigated);
+                return;
+            }
+            else
+            {
                 this.Health -= opponent.Damage;
-            
-            this.Recoil();
+                this.DefendEffect = new CollisionEffect();
+                opponent.AttackEffect = new CollisionEffect();
+                this.Recoil(CollisionResult.Normal);
+                return;
+            }
         }
-        public void Recoil()
+        public void Recoil(CollisionResult collisionResult)
         {
             this.Stopped = true;
 
-            if (this.Side == 1)
-                this.X -= 2 * this.Speed;
-            else
-                this.X += 2 * this.Speed;
+            int operation(int side, int magnitude)
+            {
+                if (side == 1)
+                    return this.X - (magnitude * this.Speed);
+                else
+                    return this.X + (magnitude * this.Speed);
+            }
+
+            this.X = operation(this.Side, (int)collisionResult);
         }
         public void Die()
         {

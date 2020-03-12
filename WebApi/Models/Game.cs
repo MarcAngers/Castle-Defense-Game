@@ -172,9 +172,9 @@ namespace WebApi.Models
                     for (var i = 0; i < this.Units.Count; i++)
                     {
                         if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                         if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                     }
                     return;
                 }
@@ -183,18 +183,18 @@ namespace WebApi.Models
                 if (1375 - (lead1pos + lead1.Size) < 3)
                 {
                     this.Player2.Castle.Siege(lead1);
-                    lead1.Recoil();
+                    lead1.Recoil(CollisionResult.Normal);
                     for (var i = 0; i < this.Units.Count; i++)
                         if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                 }
                 if (lead2pos - 125 < 3)
                 {
                     this.Player1.Castle.Siege(lead2);
-                    lead2.Recoil();
+                    lead2.Recoil(CollisionResult.Normal);
                     for (var i = 0; i < this.Units.Count; i++)
                         if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                 }
             }
 

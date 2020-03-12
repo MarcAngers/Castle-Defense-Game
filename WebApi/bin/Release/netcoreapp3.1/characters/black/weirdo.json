@@ -3,9 +3,10 @@
     "price": 1,
     "health": 1,
     "damage": 1,
+    "type": "black",
     "speed": 1,
     "size": 100,
     "y": 350,
     "team": "black",
-    "description": "No one knows what it is or where it comes from..."
+    "description": "No one knows what it is or where it comes from...\nThis character will cost a random amount of money based on how much money you currently have (minimum of $2)\nAll of the units stats (including damage type) are randomly generated based on how much money is spent on it."
 }
