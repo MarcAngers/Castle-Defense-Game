@@ -3,6 +3,7 @@
     "price": 276,
     "health": 350,
     "damage": 29,
+    "type": "orange_MAX",
     "speed": 3,
     "size": 200,
     "y": 250,

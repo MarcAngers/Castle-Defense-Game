@@ -1,0 +1,44 @@
+{
+    "white": [
+        "red",
+        "yellow",
+        "green"
+    ],
+    "black": [
+        "yellow",
+        "orange"
+    ],
+    "green": [
+        "purple",
+        "red"
+    ],
+    "blue": [
+        "orange",
+        "purple",
+        "black"
+    ],
+    "purple": [
+        "white",
+        "blue"
+    ],
+    "yellow": [
+        "black",
+        "blue",
+        "orange"
+    ],
+    "orange": [
+        "black",
+        "green"
+    ],
+    "red": [
+        "white",
+        "green",
+        "purple"
+    ],
+    "castle": [
+        "black",
+        "purple",
+        "green",
+        "orange"
+    ]
+}

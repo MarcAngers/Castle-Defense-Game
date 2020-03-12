@@ -10,6 +10,7 @@ namespace WebApi.Models
     {
         public int Health { get; set; }
         public int Damage { get; set; }
+        public string Type { get; set; }
         public int Speed { get; set; }
         public string Team { get; set; }
         public string Name { get; set; }
@@ -24,6 +25,7 @@ namespace WebApi.Models
 
                 this.Health = (int)obj.SelectToken("health");
                 this.Damage = (int)obj.SelectToken("damage");
+                this.Type = (string)obj.SelectToken("type");
                 this.Speed = (int)obj.SelectToken("speed");
                 this.Description = (string)obj.SelectToken("description");
             }

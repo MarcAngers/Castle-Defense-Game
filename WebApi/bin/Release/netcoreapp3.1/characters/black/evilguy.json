@@ -3,6 +3,7 @@
     "price": 230,
     "health": 375,
     "damage": 15,
+    "type": "black_MAX",
     "speed": 2,
     "size": 200,
     "y": 250,

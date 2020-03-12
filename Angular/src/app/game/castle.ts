@@ -1,3 +1,5 @@
+import { CollisionEffect } from './collisioneffect';
+
 export class Castle {  
   x: number;
   y: number;
@@ -11,7 +13,9 @@ export class Castle {
 
   img: HTMLImageElement;
 
-  constructor(x: number, y: number, team: string, side: number, health = 100, maxHealth = 100, dead = false) { 
+  defendEffect: CollisionEffect;
+
+  constructor(x: number, y: number, team: string, side: number, health = 100, maxHealth = 100, dead = false, deffect?: CollisionEffect) { 
     this.x = x;
     this.y = y;
     this.team = team;
@@ -20,15 +24,19 @@ export class Castle {
     this.maxHealth = maxHealth;
     this.dead = dead;
 
+    this.defendEffect = deffect;
+
     this.img = new Image();
     this.img.src = "../assets/img/castles/" + team + " castle.png";
-   }
+  }
 
   public draw(context) {
     if (this.health <= 0) {
       this.drawDead(context);
       return;
     }
+
+    this.defendEffect.draw(context, this.x, this.y);
 
     var ctx = context;
     let x = this.x;
@@ -68,6 +76,15 @@ export class Castle {
   }
 
   public static parseCastle(data): Castle {   
-    return new Castle((data.side == 1) ? 50 : 1250, 250, data.team, data.side, data.health, data.maxHealth, data.dead);
+    return new Castle(
+      (data.side == 1) ? 50 : 1250,
+      250,
+      data.team,
+      data.side,
+      data.health,
+      data.maxHealth,
+      data.dead,
+      CollisionEffect.parseCollisionEffect(data.defendEffect)
+    );
   }
 }

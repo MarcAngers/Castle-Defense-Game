@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
@@ -13,6 +14,8 @@ namespace WebApi.Models
     {
         public CharacterService CharacterServices { get; set; }
 
+        public static Dictionary<string, string[]> Advantages { get; set; }
+        public static Dictionary<string, string> Disadvantages { get; set; }
         public List<Character> Units { get; set; }
         public int Id { get; set; }
         public Player Player1 { get; set; }
@@ -41,8 +44,8 @@ namespace WebApi.Models
             this.Multiplayer = true;
             this.Player2 = new Player(team, 2);
             // Multiplayer castle health increase (move to somewhere else?)
-            this.Player1.Castle.SetHealth(1000);
-            this.Player2.Castle.SetHealth(1000);
+            this.Player1.Castle.SetMultiplayerHealth();
+            this.Player2.Castle.SetMultiplayerHealth();
 
             List<Player> playerData = new List<Player>() {
                     this.Player1,
@@ -169,9 +172,9 @@ namespace WebApi.Models
                     for (var i = 0; i < this.Units.Count; i++)
                     {
                         if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                         if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                     }
                     return;
                 }
@@ -180,18 +183,18 @@ namespace WebApi.Models
                 if (1375 - (lead1pos + lead1.Size) < 3)
                 {
                     this.Player2.Castle.Siege(lead1);
-                    lead1.Recoil();
+                    lead1.Recoil(CollisionResult.Normal);
                     for (var i = 0; i < this.Units.Count; i++)
                         if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                 }
                 if (lead2pos - 125 < 3)
                 {
                     this.Player1.Castle.Siege(lead2);
-                    lead2.Recoil();
+                    lead2.Recoil(CollisionResult.Normal);
                     for (var i = 0; i < this.Units.Count; i++)
                         if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
-                            this.Units[i].Recoil();
+                            this.Units[i].Recoil(CollisionResult.Normal);
                 }
             }
 

@@ -3,6 +3,7 @@
     "price": 10,
     "health": 20,
     "damage": 10,
+    "type": "black",
     "speed": 20,
     "size": 50,
     "y": 400,

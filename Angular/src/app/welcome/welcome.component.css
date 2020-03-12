@@ -120,8 +120,14 @@ button {
 #character-stats:hover {
     background-color: #f5aa44;
 }
+#type-effects {
+    background-color: #d38822;
+}
+#type-effects:hover {
+    background-color: #f5aa44;
+}
 #footer-button-container {
-    width: 450px;
+    width: 710px;
     margin: auto;
 }
 

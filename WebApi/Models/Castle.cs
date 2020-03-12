@@ -7,19 +7,24 @@ namespace WebApi.Models
 {
     public class Castle
     {
+        public static string[] DefensiveTeams = { "white", "yellow", "blue", "red" };
         public int Side { get; set; }
         public string Team { get; set; }
-        public int Health { get; set; }
-        public int MaxHealth { get; set; }
+        public double Health { get; set; }
+        public double MaxHealth { get; set; }
         public bool Dead { get; set; }
+        public CollisionEffect DefendEffect { get; set; }
 
         public Castle(string team, int side)
         {
             this.Team = team;
             this.Side = side;
             this.Health = 100;
-            this.MaxHealth = 100;
+            if (Castle.DefensiveTeams.Contains(this.Team))
+                this.Health = this.Health * 1.5;
+            this.MaxHealth = this.Health;
             this.Dead = false;
+            this.DefendEffect = new CollisionEffect();
         }
         public Castle(string team, int side, int health) : this(team, side)
         {
@@ -32,15 +37,37 @@ namespace WebApi.Models
             if (opponent.Dead)
                 return;
 
-            this.Health -= opponent.Damage;
-            if (this.Health <= 0)
-                this.Dead = true;
+            string[] castleAdvantages;
+            Game.Advantages.TryGetValue("castle", out castleAdvantages);
+            if (castleAdvantages.Contains(opponent.Type))
+            {
+                this.Health -= opponent.Damage * 1.5;
+                this.DefendEffect = new CollisionEffect("defend", CollisionResult.Enhanced, "castle");
+                opponent.AttackEffect = new CollisionEffect("attack", CollisionResult.Enhanced, opponent.Type);
+                _ = Task.Run(async () =>
+                {
+                    await Task.Delay(3000);
+                    this.DefendEffect = new CollisionEffect();
+                });
+                if (this.Health <= 0)
+                    this.Dead = true;
+                return;
+            }
+            else
+            {
+                this.Health -= opponent.Damage;
+                if (this.Health <= 0)
+                    this.Dead = true;
+                return;
+            }
         }
 
-        public void SetHealth(int newHealth)
+        public void SetMultiplayerHealth()
         {
-            this.Health = newHealth;
-            this.MaxHealth = newHealth;
+            this.Health = 1000;
+            if (Castle.DefensiveTeams.Contains(this.Team))
+                this.Health = this.Health * 1.5;
+            this.MaxHealth = this.Health;
         }
     }
 }

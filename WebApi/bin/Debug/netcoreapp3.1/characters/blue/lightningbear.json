@@ -3,6 +3,7 @@
     "price": 272,
     "health": 345,
     "damage": 28,
+    "type": "blue_MAX",
     "speed": 4,
     "size": 200,
     "y": 250,

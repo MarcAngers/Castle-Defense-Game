@@ -70,6 +70,16 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             Startup.GameInstances = new List<Game>();
+            using (StreamReader r = new StreamReader("./characters/typeadvantages.json"))
+            {
+                var json = r.ReadToEnd();
+                Game.Advantages = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string[]>>(json);
+            }
+            using (StreamReader r = new StreamReader("./characters/typedisadvantages.json"))
+            {
+                var json = r.ReadToEnd();
+                Game.Disadvantages = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            }
             services.AddControllers();
             services.AddCors(options => options.AddPolicy("CorsPolicy",
             builder =>

@@ -3,6 +3,7 @@
     "price": 52,
     "health": 79,
     "damage": 14,
+    "type": "blue",
     "speed": 4,
     "size": 100,
     "y": 350,

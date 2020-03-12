@@ -3,6 +3,7 @@
     "price": 268,
     "health": 345,
     "damage": 21,
+    "type": "red_MAX",
     "speed": 2,
     "size": 200,
     "y": 250,

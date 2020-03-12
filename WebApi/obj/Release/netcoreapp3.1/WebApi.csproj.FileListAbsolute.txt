@@ -327,3 +327,5 @@ C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\orange\hwy.json
 C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\red\draggo.json
 C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\white\corn.json
 C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\yellow\lyon.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\typeadvantages.json
+C:\repos\WebApi\WebApi\bin\Release\netcoreapp3.1\characters\typedisadvantages.json

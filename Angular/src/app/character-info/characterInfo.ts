@@ -3,6 +3,7 @@ import { CharacterService } from '../../services/character.service';
 export class CharacterInfo {
     health: number;
     damage: number;
+    type: string;
     speed: number;
     team: string;
     name: string;
@@ -12,6 +13,7 @@ export class CharacterInfo {
         if (name == "unknown") {
             this.health = 0;
             this.damage = 0;
+            this.type = "-";
             this.speed = 0;
             this.team = "-";
             this.name = "Loading...";
@@ -22,8 +24,11 @@ export class CharacterInfo {
 
     constructAsync = async(team: string, name: string) => {
         var data = await <any>this.characterServices.getInfo(team, name);
+        console.log(data);
         this.health = data.health;
         this.damage = data.damage;
+        this.type = data.type;
+        document.getElementById("damage-type").style.backgroundColor = this.type;
         this.speed = data.speed;
         this.team = team;
         this.name = name.charAt(0).toUpperCase() + name.substring(1);

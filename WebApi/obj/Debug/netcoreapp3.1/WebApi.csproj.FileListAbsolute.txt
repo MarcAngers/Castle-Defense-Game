@@ -327,3 +327,5 @@ C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.RazorTargetAssemblyInfo.ca
 C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CopyComplete
 C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.dll
 C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.pdb
+C:\repos\WebApi\WebApi\bin\Debug\netcoreapp3.1\characters\typeadvantages.json
+C:\repos\WebApi\WebApi\bin\Debug\netcoreapp3.1\characters\typedisadvantages.json
