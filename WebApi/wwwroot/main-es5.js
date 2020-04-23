@@ -1333,12 +1333,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.healthPrice = -1;
 
         this.addCooldown = function (name) {
-          console.log("adding cooldown for " + name);
           document.getElementById(name + "cooldown").style.display = "inline-block";
         };
 
         this.removeCooldown = function (name) {
-          console.log("removing cooldown for " + name);
           document.getElementById(name + "cooldown").style.display = "none";
         };
 
@@ -2245,6 +2243,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this13.player2.updatePlayer(playerData, 1);
           });
           connection.on("EndGame", function (side) {
+            var stats = _this13.gameServices.getPlayerStats(_this13.id, 1);
+
+            console.log(stats);
             _this13.ended = side;
           });
           connection.onclose(function () {
@@ -3728,6 +3729,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "end",
         value: function end(id) {
           return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/end/' + id).toPromise();
+        }
+      }, {
+        key: "getPlayerStats",
+        value: function getPlayerStats(id, player) {
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/getPlayerStats/' + id + '/' + player).toPromise();
         }
       }, {
         key: "getAllGameIDs",

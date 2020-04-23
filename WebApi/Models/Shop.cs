@@ -51,6 +51,7 @@ namespace WebApi.Models
                 if (this.CheckCooldown(player.Side, name, price) && price >= 2 && player.SpendMoney(price))
                 {
                     this.AddUnitCooldown(player.Side, name);
+                    player.BuyUnit(name);
                     this.Game.AddUnit(this.CharacterServices.GetWeirdo((int)price, player.Side));
                 }
             }
@@ -59,6 +60,7 @@ namespace WebApi.Models
             if (this.CheckCooldown(player.Side, name, price) && player.SpendMoney(price))
             {
                 this.AddUnitCooldown(player.Side, name);
+                player.BuyUnit(name);
                 this.Game.AddUnit(this.CharacterServices.GetCharacter(name, player.Team, player.Side));
             }
         }

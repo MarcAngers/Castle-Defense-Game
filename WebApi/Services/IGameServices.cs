@@ -17,5 +17,6 @@ namespace WebApi.Services
         int[] GetAllGameIDs();
         Dictionary<int, int> GetAllGameIDsAndStates();
         int GetLevelID(int id);
+        Dictionary<string, Tuple<string, int>> GetPlayerStats(int id, int player);
     }
 }

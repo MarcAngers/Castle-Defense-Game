@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using WebApi.Controllers;
 
@@ -90,6 +91,7 @@ namespace WebApi.Models
         {
             this.State = GameState.InProgress;
             this.Units = new List<Character>();
+            bool notifiedEnding = false;
 
             while (this.State != GameState.Delete)
             {
@@ -110,7 +112,13 @@ namespace WebApi.Models
                 {
                     var unit = this.Units[i];
                     if (unit.Dead)
+                    {
+                        if (unit.Side == 1)
+                            Player1.AddStats(unit);
+                        else
+                            Player2.AddStats(unit);
                         this.Units.Remove(unit);
+                    }
                     if (unit.X < -100 || unit.X > 1600)
                         this.Units.Remove(unit);
                 }
@@ -123,13 +131,18 @@ namespace WebApi.Models
 
                 if (this.State >= GameState.Ended)
                 {
-                    if (this.Player1.Castle.Dead)
-                        GameController.EndGame(this.Id, 2);
-                    else
-                        GameController.EndGame(this.Id, 1);
+                    if (!notifiedEnding)
+                    {
+                        if (this.Player1.Castle.Dead)
+                            GameController.EndGame(this.Id, 2);
+                        else
+                            GameController.EndGame(this.Id, 1);
 
-                    for (var i = 0; i < this.Units.Count; i++)
-                        this.Units[i].Damage = 0;
+                        for (var i = 0; i < this.Units.Count; i++)
+                            this.Units[i].Damage = 0;
+
+                        notifiedEnding = true;
+                    }
                 }
                 this.Shop.Refresh();
                 this.Tick++;
@@ -188,7 +201,7 @@ namespace WebApi.Models
                     this.Player2.Castle.Siege(lead1);
                     lead1.Recoil(CollisionResult.Normal);
                     for (var i = 0; i < this.Units.Count; i++)
-                        if (this.Units[i].X + this.Units[i].Size >= lead1pos && this.Units[i].Side == 1)
+                        if (this.Units[i].X + this.Units[i].Size + this.Units[i].Speed > lead1pos && this.Units[i].Side == 1)
                             this.Units[i].Recoil(CollisionResult.Normal);
                 }
                 if (lead2pos - 125 < 3)
@@ -196,13 +209,22 @@ namespace WebApi.Models
                     this.Player1.Castle.Siege(lead2);
                     lead2.Recoil(CollisionResult.Normal);
                     for (var i = 0; i < this.Units.Count; i++)
-                        if (this.Units[i].X <= lead2pos && this.Units[i].Side == 2)
+                        if (this.Units[i].X - this.Units[i].Speed < lead2pos && this.Units[i].Side == 2)
                             this.Units[i].Recoil(CollisionResult.Normal);
                 }
             }
 
             if (this.Player1.Castle.Dead || this.Player2.Castle.Dead)
+            {
                 this.State = GameState.Ended;
+                for (int i = 0; i < this.Units.Count; i++)
+                {
+                    if (this.Units[i].Side == 1)
+                        this.Player1.AddStats(this.Units[i]);
+                    else
+                        this.Player2.AddStats(this.Units[i]);
+                }     
+            }
         }
 
         public void AddUnit(Character character)

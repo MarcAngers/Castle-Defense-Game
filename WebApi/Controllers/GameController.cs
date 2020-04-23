@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using WebApi.Hubs;
@@ -156,6 +157,13 @@ namespace WebApi.Controllers
         {
             int verifiedID = _services.GetLevelID(id);
             return verifiedID;
+        }
+        [HttpGet("getPlayerStats/{id=1}/{player=1}")]
+        public ActionResult<string> GetPlayerStats(int id, int player)
+        {
+            Dictionary<string, Tuple<string, int>> playerStats = _services.GetPlayerStats(id, player);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(playerStats);
+            return json;
         }
 
         [HttpGet("test")]

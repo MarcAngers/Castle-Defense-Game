@@ -22,6 +22,9 @@ export class GameService {
   public end(id: number): Promise<boolean> {
     return this.http.get<boolean>(environment.apiURL + 'api/game/end/' + id).toPromise();
   }
+  public getPlayerStats(id: number, player: number):Promise<string> {
+    return this.http.get<string>(environment.apiURL + 'api/game/getPlayerStats/' + id + '/' + player).toPromise();
+  }
   public getAllGameIDs(): Promise<number[]> {
     return this.http.get<number[]>(environment.apiURL + 'api/game/getallgameids').toPromise();
   }

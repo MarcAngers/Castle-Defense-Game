@@ -69,11 +69,9 @@ export class CharacterBarComponent implements OnInit, AfterViewInit {
   }
 
   addCooldown = (name) => {
-    console.log("adding cooldown for " + name);
     document.getElementById(name+"cooldown").style.display = "inline-block";
   }
   removeCooldown = (name) => {
-    console.log("removing cooldown for " + name);
     document.getElementById(name+"cooldown").style.display = "none";
   }
 

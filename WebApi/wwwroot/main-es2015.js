@@ -631,11 +631,9 @@ let CharacterBarComponent = CharacterBarComponent_1 = class CharacterBarComponen
         this.incomePrice = -1;
         this.healthPrice = -1;
         this.addCooldown = (name) => {
-            console.log("adding cooldown for " + name);
             document.getElementById(name + "cooldown").style.display = "inline-block";
         };
         this.removeCooldown = (name) => {
-            console.log("removing cooldown for " + name);
             document.getElementById(name + "cooldown").style.display = "none";
         };
         this.getIncomePriceAsync = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -1119,6 +1117,8 @@ let GameComponent = class GameComponent {
             this.player2.updatePlayer(playerData, 1);
         });
         connection.on("EndGame", (side) => {
+            var stats = this.gameServices.getPlayerStats(this.id, 1);
+            console.log(stats);
             this.ended = side;
         });
         connection.onclose(() => {
@@ -2018,6 +2018,9 @@ let GameService = class GameService {
     }
     end(id) {
         return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/end/' + id).toPromise();
+    }
+    getPlayerStats(id, player) {
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/getPlayerStats/' + id + '/' + player).toPromise();
     }
     getAllGameIDs() {
         return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/getallgameids').toPromise();

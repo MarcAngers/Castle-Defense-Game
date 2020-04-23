@@ -23,6 +23,10 @@ namespace WebApi.Models
         public CollisionEffect AttackEffect { get; set; }
         public CollisionEffect DefendEffect { get; set; }
 
+        public int UnitsKilled { get; set; }
+        public double DamageDone { get; set; }
+        public double CastleDamageDone { get; set; }
+
 
         public Character(int side)
         {
@@ -34,6 +38,10 @@ namespace WebApi.Models
 
             this.AttackEffect = new CollisionEffect();
             this.DefendEffect = new CollisionEffect();
+
+            this.UnitsKilled = 0;
+            this.DamageDone = 0;
+            this.CastleDamageDone = 0;
         }
         public Character(string name, string team)
         {
@@ -142,14 +150,15 @@ namespace WebApi.Models
                 type = type.Substring(0, (type.Length - 4));
             }
 
-            string[] advantaged;
-            Game.Advantages.TryGetValue(type, out advantaged);
-            string disadvantaged;
-            Game.Disadvantages.TryGetValue(type, out disadvantaged);
+            Game.Advantages.TryGetValue(type, out string[] advantaged);
+            Game.Disadvantages.TryGetValue(type, out string disadvantaged);
 
             if (advantaged.Contains(this.Team))
             {
                 this.Health -= opponent.Damage * 1.5;
+                opponent.DamageDone += opponent.Damage * 1.5;
+                if (this.Health <= 0)
+                    opponent.UnitsKilled++;
                 this.DefendEffect = new CollisionEffect("defend", CollisionResult.Enhanced, this.Team);
                 opponent.AttackEffect = new CollisionEffect("attack", CollisionResult.Enhanced, opponent.Type);
                 this.Recoil(CollisionResult.Enhanced);
@@ -158,6 +167,9 @@ namespace WebApi.Models
             else if (disadvantaged == this.Team && !max)
             {
                 this.Health -= opponent.Damage * 0.67;
+                opponent.DamageDone += opponent.Damage * 0.67;
+                if (this.Health <= 0)
+                    opponent.UnitsKilled++;
                 this.DefendEffect = new CollisionEffect("defend", CollisionResult.Mitigated, this.Team);
                 opponent.AttackEffect = new CollisionEffect("attack", CollisionResult.Mitigated, opponent.Type);
                 this.Recoil(CollisionResult.Mitigated);
@@ -166,6 +178,9 @@ namespace WebApi.Models
             else
             {
                 this.Health -= opponent.Damage;
+                opponent.DamageDone += opponent.Damage;
+                if (this.Health <= 0)
+                    opponent.UnitsKilled++;
                 this.DefendEffect = new CollisionEffect();
                 opponent.AttackEffect = new CollisionEffect();
                 this.Recoil(CollisionResult.Normal);

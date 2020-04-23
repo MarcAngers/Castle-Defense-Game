@@ -97,6 +97,8 @@ export class GameComponent implements OnInit, AfterViewInit {
     });
   
     connection.on("EndGame", (side) => {
+      var stats = this.gameServices.getPlayerStats(this.id, 1);
+      console.log(stats);
       this.ended = side;
     });
     connection.onclose(() => {

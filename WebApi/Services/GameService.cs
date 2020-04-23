@@ -102,5 +102,18 @@ namespace WebApi.Services
                 return i;
             }
         }
+        public Dictionary<string, Tuple<string, int>> GetPlayerStats(int id, int player)
+        {
+            if (id <= 0)
+                return new Dictionary<string, Tuple<string, int>>();
+            if (!Startup.GetAllGameIDs().Contains(id))
+                return new Dictionary<string, Tuple<string, int>>();
+
+            Game toGet = Startup.GetGame(id);
+
+            if (player == 1)
+                return toGet.Player1.GetAllStats();
+            return toGet.Player2.GetAllStats();
+        }
     }
 }

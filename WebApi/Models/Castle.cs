@@ -42,6 +42,7 @@ namespace WebApi.Models
             if (castleAdvantages.Contains(opponent.Type))
             {
                 this.Health -= opponent.Damage * 1.5;
+                opponent.CastleDamageDone += opponent.Damage * 1.5;
                 this.DefendEffect = new CollisionEffect("defend", CollisionResult.Enhanced, "castle");
                 opponent.AttackEffect = new CollisionEffect("attack", CollisionResult.Enhanced, opponent.Type);
                 _ = Task.Run(async () =>
@@ -56,6 +57,7 @@ namespace WebApi.Models
             else
             {
                 this.Health -= opponent.Damage;
+                opponent.CastleDamageDone += opponent.Damage;
                 if (this.Health <= 0)
                     this.Dead = true;
                 return;

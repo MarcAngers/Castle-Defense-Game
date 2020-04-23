@@ -55,7 +55,7 @@
     },
     "3": {
         "team": "red",
-        "income": 4,
+        "income": 3,
         "health": 0,
         "units": [
             "barry",
@@ -78,7 +78,7 @@
     },
     "4": {
         "team": "blue",
-        "income": 2,
+        "income": 4,
         "health": 50,
         "units": [
             "fishy",
@@ -105,7 +105,7 @@
     },
     "5": {
         "team": "orange",
-        "income": 2,
+        "income": 5,
         "health": 300,
         "units": [
             "phil",
@@ -147,7 +147,7 @@
         ]},
     "6": {
         "team": "yellow",
-        "income": 3,
+        "income": 6,
         "health": 650,
         "units": [
             "ducko",
@@ -190,7 +190,7 @@
     },
     "7": {
         "team": "purple",
-        "income": 5,
+        "income": 7,
         "health": 900,
         "units": [
             "cant",
