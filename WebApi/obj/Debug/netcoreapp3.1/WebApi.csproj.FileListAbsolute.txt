@@ -329,3 +329,5 @@ C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.dll
 C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.pdb
 C:\repos\WebApi\WebApi\bin\Debug\netcoreapp3.1\characters\typeadvantages.json
 C:\repos\WebApi\WebApi\bin\Debug\netcoreapp3.1\characters\typedisadvantages.json
+C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
+C:\repos\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.genruntimeconfig.cache

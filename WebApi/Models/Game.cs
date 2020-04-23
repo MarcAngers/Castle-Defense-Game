@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.SignalR;
 using WebApi.Controllers;
-using WebApi.Hubs;
-using WebApi.Services;
 
 namespace WebApi.Models
 {
     public class Game
     {
-        public CharacterService CharacterServices { get; set; }
-
+        public Shop Shop { get; set; }
         public static Dictionary<string, string[]> Advantages { get; set; }
         public static Dictionary<string, string> Disadvantages { get; set; }
-        public List<Character> Units { get; set; }
+        private List<Character> Units { get; set; }
         public int Id { get; set; }
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
-        public bool Multiplayer { get; set; }
+        private bool Multiplayer { get; set; }
         public GameState State { get; set; }
 
         public Game()
@@ -34,6 +27,7 @@ namespace WebApi.Models
             this.State = GameState.Initialized;
             this.Id = id;
             this.Player1 = new Player(team, 1);
+            this.Shop = new Shop(this);
             List<Player> playerData = new List<Player>() {
                     this.Player1
             };
@@ -68,7 +62,7 @@ namespace WebApi.Models
                 _ = Task.Run(async () =>
                 {
                       await Task.Delay(time);
-                      this.Buy(this.Player2, unit);
+                      this.Shop.Buy(this.Player2, unit);
                 });
             }
             for (var i = 0; i < ((ComputerPlayer)(this.Player2)).Level.Recurring.Length; i++)
@@ -81,7 +75,7 @@ namespace WebApi.Models
                     while (this.State != GameState.Ended)
                     {
                         await Task.Delay(interval);
-                        this.Buy(this.Player2, unit);
+                        this.Shop.Buy(this.Player2, unit);
                     }
                 });
             }
@@ -90,7 +84,6 @@ namespace WebApi.Models
         {
             this.State = GameState.InProgress;
             this.Units = new List<Character>();
-            this.CharacterServices = new CharacterService();
 
             if (!this.Multiplayer)
                 this.StartComputerPlayer();
@@ -135,6 +128,7 @@ namespace WebApi.Models
                     for (var i = 0; i < this.Units.Count; i++)
                         this.Units[i].Damage = 0;
                 }
+                this.Shop.Refresh();
                 await Task.Delay(100);
             }
         }
@@ -202,44 +196,18 @@ namespace WebApi.Models
                 this.State = GameState.Ended;
         }
 
-        public void Buy(Player player, string name)
+        public void AddUnit(Character character)
         {
-            if (this.State >= GameState.Ended)
-                return;
-            if (name == null || name == "")
-                return;
+            this.Units.Add(character);
+        }
 
-            double price = 1000000;
-
-            if (name == "income")
-            {
-                price = player.IncomePrice;
-                if (player.SpendMoney(price))
-                    player.AddIncome();
-                return;
-            }
-            if (name == "health")
-            {
-                price = player.HealthPrice;
-                if (player.SpendMoney(price))
-                    player.AddHealth();
-                return;
-            }
-
-            // Special logic for weirdo
-            if (name == "weirdo")
-            {
-                Random r = new Random();
-                price = r.NextDouble() * player.Money;
-                if (price >= 2 && player.SpendMoney(price))
-                    this.Units.Add(this.CharacterServices.GetWeirdo((int)price, player.Side));
-            }
-
-            price = this.CharacterServices.GetPrice(name, player.Team);
-            if (player.SpendMoney(price))
-            {
-                this.Units.Add(this.CharacterServices.GetCharacter(name, player.Team, player.Side));
-            }
+        public void AddCooldown(int side, string name)
+        {
+            GameController.AddCooldown(this.Id, side, name);
+        }
+        public void RemoveCooldown(int side, string name)
+        {
+            GameController.RemoveCooldown(this.Id, side, name);
         }
     }
 }

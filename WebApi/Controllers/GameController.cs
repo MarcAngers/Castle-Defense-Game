@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using WebApi.Hubs;
@@ -52,6 +48,37 @@ namespace WebApi.Controllers
             foreach (string key in keys)
             {
                 _hubContext.Clients.Client(key).SendAsync("UpdateUnits", unitData);
+            }
+        }
+
+        public static void AddCooldown(int gameId, int side, string name)
+        {
+            List<string> keys = new List<string>();
+
+            foreach (KeyValuePair<string, int> pair in GameHub._connections)
+            {
+                if (pair.Value == gameId)
+                    keys.Add(pair.Key);
+            }
+
+            foreach (string key in keys)
+            {
+                _hubContext.Clients.Client(key).SendAsync("AddCooldown", side, name);
+            }
+        }
+        public static void RemoveCooldown(int gameId, int side, string name)
+        {
+            List<string> keys = new List<string>();
+
+            foreach (KeyValuePair<string, int> pair in GameHub._connections)
+            {
+                if (pair.Value == gameId)
+                    keys.Add(pair.Key);
+            }
+
+            foreach (string key in keys)
+            {
+                _hubContext.Clients.Client(key).SendAsync("RemoveCooldown", side, name);
             }
         }
 

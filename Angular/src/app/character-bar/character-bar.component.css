@@ -82,6 +82,14 @@
 .character:hover {
     cursor: pointer;
 }
+.cooldown {
+    display: none;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    opacity: 0.5;
+}
 .first {
     margin-left: 0px;
 }

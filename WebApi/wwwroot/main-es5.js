@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div *ngIf=\"side<3; else spectate\">\r\n    <div id=\"income\">\r\n        Increase Income:<br/>\r\n        ${{ incomePrice }}\r\n    </div>\r\n    <div id=\"character-bar\" style=\"display: inline-block;\">\r\n        <!-- Dynamic Character icons go here -->\r\n        <div class=\"character first\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"character\"></div>\r\n    </div>\r\n    <div id=\"health\">\r\n        Increase Castle Health:<br/>\r\n        ${{ healthPrice }}\r\n    </div>\r\n</div>\r\n<ng-template #spectate>\r\n    <div id=\"spectate\">\r\n        Spectating Game\r\n    </div>\r\n</ng-template>";
+    __webpack_exports__["default"] = "<div *ngIf=\"side<3; else spectate\">\r\n    <div id=\"income\">\r\n        Increase Income:<br/>\r\n        ${{ incomePrice }}\r\n    </div>\r\n    <div id=\"character-bar\" style=\"display: inline-block;\">\r\n        <!-- Dynamic Character icons go here -->\r\n        <div class=\"character first\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 316px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 426px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 536px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 646px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 756px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 866px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 976px;\"></div>\r\n        <div class=\"character\"></div>\r\n        <div class=\"cooldown\" style=\"top: 10px; left: 1086px;\"></div>\r\n    </div>\r\n    <div id=\"health\">\r\n        Increase Castle Health:<br/>\r\n        ${{ healthPrice }}\r\n    </div>\r\n</div>\r\n<ng-template #spectate>\r\n    <div id=\"spectate\">\r\n        Spectating Game\r\n    </div>\r\n</ng-template>";
     /***/
   },
 
@@ -91,7 +91,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"main-view\">\n    <div>\n        <h1>{{ character.name }}</h1>\n    </div>\n    <div class=\"info-container\">\n        <div class=\"image\" style=\"float: left; margin: 0px; width: 200px;\">\n            <img *ngIf=\"name != corn; else showIcon\" src=\"../../assets/img/units/{{name}}1.png\">\n            <ng-template #showIcon>\n                <img src=\"../../assets/img/units/{{name}} icon.png\">\n            </ng-template>\n        </div>\n        <div class=\"info\">\n            <div id=\"info-headers\">\n                Name:<br/>\n                Team:<br/>\n                Damage:<br/>\n                Damage Type:<br/>\n                Health:<br/>\n                Speed:<br/>\n                Description:<br/>\n            </div>\n            <div id=\"info-values\">\n                {{character.name}}<br/>\n                {{character.team}}<br/>\n                {{character.damage}}<br/>\n                {{character.type}} <div id=\"damage-type\"></div><br/>\n                {{character.health}}<br/>\n                {{character.speed}}<br/>\n                {{character.description}}<br/>\n            </div>\n        </div>\n    </div>\n</div>\n<div id=\"footer\">\n    <div id=\"footer-content\">\n        <a class=\"image-link\" [routerLink]=\"['/characterinfo/', team, prev]\">\n            <img id=\"prev-info\" src=\"../../assets/img/icons/{{prev}} icon.png\">\n        </a>\n        <button id=\"back\" [routerLink]=\"['/teaminfo']\">Back to Team View</button>\n        <a class=\"image-link\" [routerLink]=\"['/characterinfo/', team, next]\">\n            <img id=\"next-info\" src=\"../../assets/img/icons/{{next}} icon.png\">\n        </a>\n    </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div id=\"main-view\">\r\n    <div>\r\n        <h1>{{ character.name }}</h1>\r\n    </div>\r\n    <div class=\"info-container\">\r\n        <div class=\"image\" style=\"float: left; margin: 0px; width: 200px;\">\r\n            <img *ngIf=\"name != corn; else showIcon\" src=\"../../assets/img/units/{{name}}1.png\">\r\n            <ng-template #showIcon>\r\n                <img src=\"../../assets/img/units/{{name}} icon.png\">\r\n            </ng-template>\r\n        </div>\r\n        <div class=\"info\">\r\n            <div id=\"info-headers\">\r\n                Name:<br/>\r\n                Team:<br/>\r\n                Damage:<br/>\r\n                Damage Type:<br/>\r\n                Health:<br/>\r\n                Speed:<br/>\r\n                Description:<br/>\r\n            </div>\r\n            <div id=\"info-values\">\r\n                {{character.name}}<br/>\r\n                {{character.team}}<br/>\r\n                {{character.damage}}<br/>\r\n                {{character.type}} <div id=\"damage-type\"></div><br/>\r\n                {{character.health}}<br/>\r\n                {{character.speed}}<br/>\r\n                {{character.description}}<br/>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div id=\"footer\">\r\n    <div id=\"footer-content\">\r\n        <a class=\"image-link\" [routerLink]=\"['/characterinfo/', team, prev]\">\r\n            <img id=\"prev-info\" src=\"../../assets/img/icons/{{prev}} icon.png\">\r\n        </a>\r\n        <button id=\"back\" [routerLink]=\"['/teaminfo']\">Back to Team View</button>\r\n        <a class=\"image-link\" [routerLink]=\"['/characterinfo/', team, next]\">\r\n            <img id=\"next-info\" src=\"../../assets/img/icons/{{next}} icon.png\">\r\n        </a>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -211,7 +211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"type-info-view\">\n\n</div>\n<div id=\"footer\">\n    <div id=\"footer-button-container\">\n        <button id=\"back\" [routerLink]=\"['']\">Back to Main Menu</button>\n    </div>\n</div>\n\n<!-- Instructions Modal -->\n<div id=\"instruction-modal\" class=\"modal\">\n    <div class=\"modal-content\">\n        <span class=\"close\">&times;</span>\n        <h1 class=\"modal-header\">Type Effects:</h1>\n        <p>In the game each unit is a member of a colored team, but will attack with a specific type of attack.</p>\n        <p>A unit does not necessarily attack with the same type of damage as its team!</p>\n        <p>Different teams are strong or weak against attacks of different types, so knowing these effects can be a great asset in battle!</p>\n        <p>Some Attack types do bonus damage to towers as well, while other teams will gain a bonus to the HP of their castle at the beginning of the game!</p>\n        <p>This page lists all the type effects in the game.</p>\n        <h1 class=\"modal-header\">Legend:</h1>\n        <p>Colors on the left side of an arrow are attacking colors</p>\n        <p>Colors on the right side of an arrow are defending colors</p>\n        <p>A normal arrow denotes a type ADVANTAGE (enhanced damage)</p>\n        <p>An X'd arrow denotes a type DISADVANTAGE (mitigated damage)</p>\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<div id=\"type-info-view\">\r\n\r\n</div>\r\n<div id=\"footer\">\r\n    <div id=\"footer-button-container\">\r\n        <button id=\"back\" [routerLink]=\"['']\">Back to Main Menu</button>\r\n    </div>\r\n</div>\r\n\r\n<!-- Instructions Modal -->\r\n<div id=\"instruction-modal\" class=\"modal\">\r\n    <div class=\"modal-content\">\r\n        <span class=\"close\">&times;</span>\r\n        <h1 class=\"modal-header\">Type Effects:</h1>\r\n        <p>In the game each unit is a member of a colored team, but will attack with a specific type of attack.</p>\r\n        <p>A unit does not necessarily attack with the same type of damage as its team!</p>\r\n        <p>Different teams are strong or weak against attacks of different types, so knowing these effects can be a great asset in battle!</p>\r\n        <p>Some Attack types do bonus damage to towers as well, while other teams will gain a bonus to the HP of their castle at the beginning of the game!</p>\r\n        <p>This page lists all the type effects in the game.</p>\r\n        <h1 class=\"modal-header\">Legend:</h1>\r\n        <p>Colors on the left side of an arrow are attacking colors</p>\r\n        <p>Colors on the right side of an arrow are defending colors</p>\r\n        <p>A normal arrow denotes a type ADVANTAGE (enhanced damage)</p>\r\n        <p>An X'd arrow denotes a type DISADVANTAGE (mitigated damage)</p>\r\n    </div>\r\n</div>";
     /***/
   },
 
@@ -1257,7 +1257,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#character-bar {\r\n    width: 870px;\r\n    height: 100px;\r\n    margin-top: 0px;\r\n    margin-bottom: 0px;\r\n    padding: 10px;\r\n}\r\n#spectate {\r\n    width: 1498px;\r\n    height: 118px;\r\n    border-radius: 20px;\r\n    border: 1px solid black;\r\n    font-family: arial;\r\n    font-size: 60px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n}\r\n#income { \r\n    float: left;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 20px 0px 0px 20px;\r\n    border: 1px solid black;\r\n}\r\n#income:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#health {\r\n    float: right;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 0px 20px 20px 0px;\r\n    border: 1px solid black;\r\n}\r\n#health:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n.white {\r\n    background-color: #DDDDDD;\r\n}\r\n.black {\r\n    background-color: black;\r\n}\r\n.green {\r\n    background-color: green;\r\n}\r\n.blue {\r\n    background-color: blue;\r\n}\r\n.purple {\r\n    background-color: purple;\r\n}\r\n.yellow {\r\n    background-color: yellow;\r\n}\r\n.orange {\r\n    background-color: orangered;\r\n}\r\n.red {\r\n    background-color: red;\r\n}\r\n.character {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n}\r\n.character:hover {\r\n    cursor: pointer;\r\n}\r\n.first {\r\n    margin-left: 0px;\r\n}\r\n.hidden {\r\n    opacity: 0;\r\n}\r\n.price {\r\n    z-index: 3;\r\n    margin: 2px;\r\n    position: absolute;\r\n}\r\n.black-unit {\r\n    background-color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YseUJBQXlCO0lBQ3pCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0NBQWdDO0lBQ2hDLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdDQUFnQztJQUNoQyx1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CO0FBRUE7SUFDSSx5QkFBeUI7QUFDN0I7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksdUJBQXVCO0FBQzNCO0FBQ0E7SUFDSSxzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksd0JBQXdCO0FBQzVCO0FBQ0E7SUFDSSwyQkFBMkI7QUFDL0I7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUVBO0lBQ0kscUJBQXFCO0lBQ3JCLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksZ0JBQWdCO0FBQ3BCO0FBRUE7SUFDSSxVQUFVO0FBQ2Q7QUFFQTtJQUNJLFVBQVU7SUFDVixXQUFXO0lBQ1gsa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSx1QkFBdUI7QUFDM0IiLCJmaWxlIjoic3JjL2FwcC9jaGFyYWN0ZXItYmFyL2NoYXJhY3Rlci1iYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjaGFyYWN0ZXItYmFyIHtcclxuICAgIHdpZHRoOiA4NzBweDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwcHg7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG59XHJcbiNzcGVjdGF0ZSB7XHJcbiAgICB3aWR0aDogMTQ5OHB4O1xyXG4gICAgaGVpZ2h0OiAxMThweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogNjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuI2luY29tZSB7IFxyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICB3aWR0aDogMzA0cHg7XHJcbiAgICBoZWlnaHQ6IDg4cHg7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzJiYjE0YztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHggMHB4IDBweCAyMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuI2luY29tZTpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNWRkMzZlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbiNoZWFsdGgge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgd2lkdGg6IDMwNHB4O1xyXG4gICAgaGVpZ2h0OiA4OHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBwYWRkaW5nLXRvcDogMzBweDtcclxuICAgIGZvbnQtZmFtaWx5OiBhcmlhbDtcclxuICAgIGZvbnQtc2l6ZTogMjVweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYmIxNGM7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAwcHggMjBweCAyMHB4IDBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG59XHJcbiNoZWFsdGg6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzVkZDM2ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLndoaXRlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNEREREREQ7XHJcbn1cclxuLmJsYWNrIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG59XHJcbi5ncmVlbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmVlbjtcclxufVxyXG4uYmx1ZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibHVlO1xyXG59XHJcbi5wdXJwbGUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcHVycGxlO1xyXG59XHJcbi55ZWxsb3cge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93O1xyXG59XHJcbi5vcmFuZ2Uge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogb3JhbmdlcmVkO1xyXG59XHJcbi5yZWQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmVkO1xyXG59XHJcblxyXG4uY2hhcmFjdGVyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG59XHJcbi5jaGFyYWN0ZXI6aG92ZXIge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5maXJzdCB7XHJcbiAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG59XHJcblxyXG4uaGlkZGVuIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbn1cclxuXHJcbi5wcmljZSB7XHJcbiAgICB6LWluZGV4OiAzO1xyXG4gICAgbWFyZ2luOiAycHg7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuLmJsYWNrLXVuaXQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn0iXX0= */";
+    __webpack_exports__["default"] = "#character-bar {\r\n    width: 870px;\r\n    height: 100px;\r\n    margin-top: 0px;\r\n    margin-bottom: 0px;\r\n    padding: 10px;\r\n}\r\n#spectate {\r\n    width: 1498px;\r\n    height: 118px;\r\n    border-radius: 20px;\r\n    border: 1px solid black;\r\n    font-family: arial;\r\n    font-size: 60px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n}\r\n#income { \r\n    float: left;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 20px 0px 0px 20px;\r\n    border: 1px solid black;\r\n}\r\n#income:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n#health {\r\n    float: right;\r\n    width: 304px;\r\n    height: 88px;\r\n    margin: 0px;\r\n    padding-top: 30px;\r\n    font-family: arial;\r\n    font-size: 25px;\r\n    background-color: #2bb14c;\r\n    text-align: center;\r\n    border-radius: 0px 20px 20px 0px;\r\n    border: 1px solid black;\r\n}\r\n#health:hover {\r\n    background-color: #5dd36e;\r\n    cursor: pointer;\r\n}\r\n.white {\r\n    background-color: #DDDDDD;\r\n}\r\n.black {\r\n    background-color: black;\r\n}\r\n.green {\r\n    background-color: green;\r\n}\r\n.blue {\r\n    background-color: blue;\r\n}\r\n.purple {\r\n    background-color: purple;\r\n}\r\n.yellow {\r\n    background-color: yellow;\r\n}\r\n.orange {\r\n    background-color: orangered;\r\n}\r\n.red {\r\n    background-color: red;\r\n}\r\n.character {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n}\r\n.character:hover {\r\n    cursor: pointer;\r\n}\r\n.cooldown {\r\n    display: none;\r\n    position: absolute;\r\n    height: 100px;\r\n    width: 100px;\r\n    background-color: black;\r\n    opacity: 0.5;\r\n}\r\n.first {\r\n    margin-left: 0px;\r\n}\r\n.hidden {\r\n    opacity: 0;\r\n}\r\n.price {\r\n    z-index: 3;\r\n    margin: 2px;\r\n    position: absolute;\r\n}\r\n.black-unit {\r\n    background-color: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcmFjdGVyLWJhci9jaGFyYWN0ZXItYmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtJQUNiLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLGFBQWE7SUFDYixtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YseUJBQXlCO0lBQ3pCLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixZQUFZO0lBQ1osV0FBVztJQUNYLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0NBQWdDO0lBQ2hDLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFDQTtJQUNJLFlBQVk7SUFDWixZQUFZO0lBQ1osWUFBWTtJQUNaLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdDQUFnQztJQUNoQyx1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CO0FBRUE7SUFDSSx5QkFBeUI7QUFDN0I7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksdUJBQXVCO0FBQzNCO0FBQ0E7SUFDSSxzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHdCQUF3QjtBQUM1QjtBQUNBO0lBQ0ksd0JBQXdCO0FBQzVCO0FBQ0E7SUFDSSwyQkFBMkI7QUFDL0I7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUVBO0lBQ0kscUJBQXFCO0lBQ3JCLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksYUFBYTtJQUNiLGtCQUFrQjtJQUNsQixhQUFhO0lBQ2IsWUFBWTtJQUNaLHVCQUF1QjtJQUN2QixZQUFZO0FBQ2hCO0FBQ0E7SUFDSSxnQkFBZ0I7QUFDcEI7QUFFQTtJQUNJLFVBQVU7QUFDZDtBQUVBO0lBQ0ksVUFBVTtJQUNWLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLHVCQUF1QjtBQUMzQiIsImZpbGUiOiJzcmMvYXBwL2NoYXJhY3Rlci1iYXIvY2hhcmFjdGVyLWJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2NoYXJhY3Rlci1iYXIge1xyXG4gICAgd2lkdGg6IDg3MHB4O1xyXG4gICAgaGVpZ2h0OiAxMDBweDtcclxuICAgIG1hcmdpbi10b3A6IDBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDBweDtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbn1cclxuI3NwZWN0YXRlIHtcclxuICAgIHdpZHRoOiAxNDk4cHg7XHJcbiAgICBoZWlnaHQ6IDExOHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiA2MHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzJiYjE0YztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4jaW5jb21lIHsgXHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIHdpZHRoOiAzMDRweDtcclxuICAgIGhlaWdodDogODhweDtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgcGFkZGluZy10b3A6IDMwcHg7XHJcbiAgICBmb250LWZhbWlseTogYXJpYWw7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmJiMTRjO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweCAwcHggMHB4IDIwcHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxufVxyXG4jaW5jb21lOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM1ZGQzNmU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuI2hlYWx0aCB7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICB3aWR0aDogMzA0cHg7XHJcbiAgICBoZWlnaHQ6IDg4cHg7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHBhZGRpbmctdG9wOiAzMHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzJiYjE0YztcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDBweCAyMHB4IDIwcHggMHB4O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuI2hlYWx0aDpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNWRkMzZlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4ud2hpdGUge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0RERERERDtcclxufVxyXG4uYmxhY2sge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbn1cclxuLmdyZWVuIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGdyZWVuO1xyXG59XHJcbi5ibHVlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsdWU7XHJcbn1cclxuLnB1cnBsZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBwdXJwbGU7XHJcbn1cclxuLnllbGxvdyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB5ZWxsb3c7XHJcbn1cclxuLm9yYW5nZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBvcmFuZ2VyZWQ7XHJcbn1cclxuLnJlZCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XHJcbn1cclxuXHJcbi5jaGFyYWN0ZXIge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbn1cclxuLmNoYXJhY3Rlcjpob3ZlciB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmNvb2xkb3duIHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICBvcGFjaXR5OiAwLjU7XHJcbn1cclxuLmZpcnN0IHtcclxuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbn1cclxuXHJcbi5oaWRkZW4ge1xyXG4gICAgb3BhY2l0eTogMDtcclxufVxyXG5cclxuLnByaWNlIHtcclxuICAgIHotaW5kZXg6IDM7XHJcbiAgICBtYXJnaW46IDJweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxufVxyXG4uYmxhY2stdW5pdCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufSJdfQ== */";
     /***/
   },
 
@@ -1331,6 +1331,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.http = http;
         this.incomePrice = -1;
         this.healthPrice = -1;
+
+        this.addCooldown = function (name) {
+          console.log("adding cooldown for " + name);
+          document.getElementById(name + "cooldown").style.display = "inline-block";
+        };
+
+        this.removeCooldown = function (name) {
+          console.log("removing cooldown for " + name);
+          document.getElementById(name + "cooldown").style.display = "none";
+        };
 
         this.getIncomePriceAsync = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this2, void 0, void 0,
@@ -1479,11 +1489,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                               if (_this4.team == "black") charhtml += " black-unit";
                               charhtml += "'>$" + charprice + "</label><img src='../../assets/img/icons/" + currentchar + " icon.png'>";
                               document.getElementsByClassName("character")[i].innerHTML += charhtml;
+                              document.getElementsByClassName("cooldown")[i].id = currentchar + "cooldown";
                               document.getElementsByClassName("character")[i].addEventListener("mouseup", function (e) {
                                 CharacterBarComponent_1.shopServices.buy(_this4.id, _this4.side, currentchar);
                               });
 
-                            case 9:
+                            case 10:
                             case "end":
                               return _context6.stop();
                           }
@@ -2081,7 +2092,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _cloud__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../cloud */
-    "./src/app/cloud.ts"); //import { AppComponent } from '../app.component';
+    "./src/app/cloud.ts");
+    /* harmony import */
+
+
+    var _character_bar_character_bar_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ../character-bar/character-bar.component */
+    "./src/app/character-bar/character-bar.component.ts"); //import { AppComponent } from '../app.component';
 
 
     var GameComponent =
@@ -2192,11 +2209,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           var _this12 = this;
 
-          var connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_7__["HubConnectionBuilder"]().withUrl("/gamehub").build();
-          connection.start().then(function () {
-            console.log("connected!");
-            connection.invoke("connectedto", _this12.id);
-          });
           this.player1 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           this.player2 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           this.route.paramMap.subscribe(function (map) {
@@ -2206,32 +2218,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this12.side = mapParams.params.side;
             if (_this12.side == 1) _this12.connectedPlayer = _this12.player1;else if (_this12.side == 2) _this12.connectedPlayer = _this12.player2;else _this12.connectedPlayer = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 3, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           });
-          connection.on("test", function () {
-            alert("TEST");
+          this.clouds = [new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](100), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](600), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](900), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](1300)];
+          this.nextCloud = Math.floor(Math.random() * 25);
+          this.units = new Array();
+          if (this.side == 1) this.init();else this.gameServices.init(this.team, this.id);
+        }
+      }, {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          var _this13 = this;
+
+          var connection = new _aspnet_signalr__WEBPACK_IMPORTED_MODULE_7__["HubConnectionBuilder"]().withUrl("/gamehub").build();
+          connection.start().then(function () {
+            console.log("connected!");
+            connection.invoke("connectedto", _this13.id);
           });
           connection.on("UpdateUnits", function (unitData) {
-            _this12.units = _unit__WEBPACK_IMPORTED_MODULE_3__["Unit"].parseUnits(unitData);
+            _this13.units = _unit__WEBPACK_IMPORTED_MODULE_3__["Unit"].parseUnits(unitData);
             window.requestAnimationFrame(function () {
-              return _this12.draw();
+              return _this13.draw();
             });
           });
           connection.on("UpdatePlayers", function (playerData) {
-            _this12.player1.updatePlayer(playerData, 0);
+            _this13.player1.updatePlayer(playerData, 0);
 
-            _this12.player2.updatePlayer(playerData, 1);
+            _this13.player2.updatePlayer(playerData, 1);
           });
           connection.on("EndGame", function (side) {
-            _this12.ended = side;
+            _this13.ended = side;
           });
           connection.onclose(function () {
-            if (_this12.side >= 3) return;
+            if (_this13.side >= 3) return;
             document.getElementById("main-menu").style.display = "none";
 
-            _this12.gameServices.end(_this12.id);
+            _this13.gameServices.end(_this13.id);
 
-            _this12.reset();
+            _this13.reset();
 
-            delete _this12.gameServices;
+            delete _this13.gameServices;
           });
           this.canvas = document.getElementById("game-canvas");
           this.context = this.canvas.getContext("2d");
@@ -2241,10 +2265,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             connection.stop();
           };
 
-          this.clouds = [new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](100), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](600), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](900), new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"](1300)];
-          this.nextCloud = Math.floor(Math.random() * 25);
-          this.units = new Array();
-          if (this.side == 1) this.init();else this.gameServices.init(this.team, this.id);
+          connection.on("AddCooldown", function (side, name) {
+            if (_this13.connectedPlayer.side != side) return;
+
+            _this13.characterbar.addCooldown(name);
+          });
+          connection.on("RemoveCooldown", function (side, name) {
+            if (_this13.connectedPlayer.side != side) return;
+
+            _this13.characterbar.removeCooldown(name);
+          });
         }
       }, {
         key: "draw",
@@ -2281,7 +2311,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             cloud.draw(ctx);
           });
           if (this.nextCloud > 0) this.nextCloud--;else {
-            this.nextCloud = Math.floor(Math.random() * 40);
+            this.nextCloud = Math.floor(Math.random() * 50);
             this.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_8__["Cloud"]());
           }
 
@@ -2331,6 +2361,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }];
     };
 
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_character_bar_character_bar_component__WEBPACK_IMPORTED_MODULE_9__["CharacterBarComponent"], {
+      static: false
+    })], GameComponent.prototype, "characterbar", void 0);
     GameComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-game',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -2381,7 +2414,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function Unit(name, side, health, maxHealth, size, x) {
-        var _this13 = this;
+        var _this14 = this;
 
         var y = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 400;
         var aeffect = arguments.length > 7 ? arguments[7] : undefined;
@@ -2390,7 +2423,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, Unit);
 
         this.equals = function (obj) {
-          if (_this13.side == obj.side && _this13.name == obj.name && _this13.maxHealth == obj.maxHealth && _this13.size == obj.size && _this13.x == obj.x && _this13.y == obj.y) return true;
+          if (_this14.side == obj.side && _this14.name == obj.name && _this14.maxHealth == obj.maxHealth && _this14.size == obj.size && _this14.x == obj.x && _this14.y == obj.y) return true;
           return false;
         };
 
@@ -2513,7 +2546,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function LevelSelectComponent(gameServices, router) {
-        var _this14 = this;
+        var _this15 = this;
 
         _classCallCheck(this, LevelSelectComponent);
 
@@ -2524,7 +2557,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.side = 1;
 
         this.checkGame = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this14, void 0, void 0,
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this15, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee12() {
             return regeneratorRuntime.wrap(function _callee12$(_context13) {
@@ -2550,36 +2583,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
 
         this.updateTeam = function () {
-          _this14.team = document.getElementsByClassName("selected")[1].id;
+          _this15.team = document.getElementsByClassName("selected")[1].id;
         };
 
         this.draw_background = function () {
-          if (_this14.nextCloud > 0) _this14.nextCloud--;else {
-            _this14.nextCloud = Math.floor(Math.random() * 40);
+          if (_this15.nextCloud > 0) _this15.nextCloud--;else {
+            _this15.nextCloud = Math.floor(Math.random() * 40);
 
-            _this14.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_4__["Cloud"]());
+            _this15.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_4__["Cloud"]());
           }
 
-          _this14.context.drawImage(_this14.background, 0, 0);
+          _this15.context.drawImage(_this15.background, 0, 0);
 
-          if (typeof _this14.clouds != 'undefined') _this14.clouds.forEach(function (cloud) {
-            cloud.draw(_this14.context);
+          if (typeof _this15.clouds != 'undefined') _this15.clouds.forEach(function (cloud) {
+            cloud.draw(_this15.context);
           });
-          setTimeout(_this14.draw_background, 100);
+          setTimeout(_this15.draw_background, 100);
         };
       }
 
       _createClass(LevelSelectComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this15 = this;
+          var _this16 = this;
 
           var levels = document.getElementsByClassName("level");
 
           for (var i = 0; i < levels.length; i++) {
             levels[i].addEventListener("click", function (e) {
               var level = e.target;
-              _this15.id = Number(level.innerText);
+              _this16.id = Number(level.innerText);
 
               for (var i = 0; i < levels.length; i++) {
                 levels[i].classList.remove("selected");
@@ -2714,7 +2747,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function MultiplayerComponent(router, gameServices) {
-        var _this16 = this;
+        var _this17 = this;
 
         _classCallCheck(this, MultiplayerComponent);
 
@@ -2726,7 +2759,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.gameIDs = [];
 
         this.updateGamesAsync = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this16, void 0, void 0,
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this17, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee13() {
             var jsonData, obj;
@@ -2753,34 +2786,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
 
         this.setId = function (id) {
-          _this16.id = id;
+          _this17.id = id;
           document.getElementById("game-browser-modal").style.display = "none";
-          document.getElementById("game-id").value = _this16.id;
+          document.getElementById("game-id").value = _this17.id;
           document.getElementById("jg").classList.remove("unverified");
         };
 
         this.updateTeam = function () {
-          _this16.team = document.getElementsByClassName("selected")[0].id;
+          _this17.team = document.getElementsByClassName("selected")[0].id;
         };
 
         this.getNewId = function () {
-          _this16.id = Math.floor(Math.random() * 9000 + 1000);
+          _this17.id = Math.floor(Math.random() * 9000 + 1000);
 
-          while (_this16.id in _this16.allIDsandStates) {
-            _this16.id = Math.floor(Math.random() * 9000 + 1000);
+          while (_this17.id in _this17.allIDsandStates) {
+            _this17.id = Math.floor(Math.random() * 9000 + 1000);
           }
         };
 
         this.tryId = function () {
-          _this16.id = document.getElementById("game-id").value;
-          if (_this16.id < 1000 || _this16.id > 9999) return false;
-          if (!(_this16.id in _this16.allIDsandStates)) return false;
-          if (_this16.allIDsandStates[_this16.id] != 1) return false;
+          _this17.id = document.getElementById("game-id").value;
+          if (_this17.id < 1000 || _this17.id > 9999) return false;
+          if (!(_this17.id in _this17.allIDsandStates)) return false;
+          if (_this17.allIDsandStates[_this17.id] != 1) return false;
           return true;
         };
 
         this.newGame = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this16, void 0, void 0,
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this17, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee14() {
             return regeneratorRuntime.wrap(function _callee14$(_context15) {
@@ -2805,7 +2838,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
 
         this.joinGame = function () {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this16, void 0, void 0,
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this17, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee15() {
             var side;
@@ -2850,25 +2883,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
 
         this.draw_background = function () {
-          if (_this16.nextCloud > 0) _this16.nextCloud--;else {
-            _this16.nextCloud = Math.floor(Math.random() * 40);
+          if (_this17.nextCloud > 0) _this17.nextCloud--;else {
+            _this17.nextCloud = Math.floor(Math.random() * 40);
 
-            _this16.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_2__["Cloud"]());
+            _this17.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_2__["Cloud"]());
           }
 
-          _this16.context.drawImage(_this16.background, 0, 0);
+          _this17.context.drawImage(_this17.background, 0, 0);
 
-          if (typeof _this16.clouds != 'undefined') _this16.clouds.forEach(function (cloud) {
-            cloud.draw(_this16.context);
+          if (typeof _this17.clouds != 'undefined') _this17.clouds.forEach(function (cloud) {
+            cloud.draw(_this17.context);
           });
-          setTimeout(_this16.draw_background, 100);
+          setTimeout(_this17.draw_background, 100);
         };
       }
 
       _createClass(MultiplayerComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this17 = this;
+          var _this18 = this;
 
           this.updateGamesAsync();
           var instructionModal = document.getElementById("instruction-modal");
@@ -2889,7 +2922,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
 
           browserOpen.onclick = function () {
-            _this17.updateGamesAsync();
+            _this18.updateGamesAsync();
 
             browserModal.style.display = "block";
           };
@@ -3075,28 +3108,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function TeamInfoComponent() {
-        var _this18 = this;
+        var _this19 = this;
 
         _classCallCheck(this, TeamInfoComponent);
 
         this.currentTeam = "white";
 
         this.updateTeam = function () {
-          _this18.currentTeam = document.getElementsByClassName("selected")[0].id;
-          _this18.currentUnits = _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"].teamMap.get(_this18.currentTeam);
-          document.getElementById("team-info-view").style.backgroundColor = "" + _this18.currentTeam;
+          _this19.currentTeam = document.getElementsByClassName("selected")[0].id;
+          _this19.currentUnits = _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"].teamMap.get(_this19.currentTeam);
+          document.getElementById("team-info-view").style.backgroundColor = "" + _this19.currentTeam;
         };
       }
 
       _createClass(TeamInfoComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this19 = this;
+          var _this20 = this;
 
           this.updateTeam();
 
           document.getElementById("team-info-view").onmouseup = function () {
-            _this19.updateTeam();
+            _this20.updateTeam();
           };
         }
       }]);
@@ -3366,25 +3399,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function WelcomeComponent() {
-        var _this20 = this;
+        var _this21 = this;
 
         _classCallCheck(this, WelcomeComponent);
 
         this.loggedIn = false;
 
         this.draw_background = function () {
-          if (_this20.nextCloud > 0) _this20.nextCloud--;else {
-            _this20.nextCloud = Math.floor(Math.random() * 40);
+          if (_this21.nextCloud > 0) _this21.nextCloud--;else {
+            _this21.nextCloud = Math.floor(Math.random() * 40);
 
-            _this20.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_2__["Cloud"]());
+            _this21.clouds.push(new _cloud__WEBPACK_IMPORTED_MODULE_2__["Cloud"]());
           }
 
-          _this20.context.drawImage(_this20.background, 0, 0);
+          _this21.context.drawImage(_this21.background, 0, 0);
 
-          if (typeof _this20.clouds != 'undefined') _this20.clouds.forEach(function (cloud) {
-            cloud.draw(_this20.context);
+          if (typeof _this21.clouds != 'undefined') _this21.clouds.forEach(function (cloud) {
+            cloud.draw(_this21.context);
           });
-          setTimeout(_this20.draw_background, 100);
+          setTimeout(_this21.draw_background, 100);
         };
       }
 
@@ -3476,17 +3509,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var environment = {
-      production: false
+      production: false,
+      apiURL: 'https://localhost:44364/'
     };
-    /*
-     * For easier debugging in development mode, you can import the following file
-     * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
-     *
-     * This import should be commented out in production mode because it will have a negative impact
-     * on performance if an error is thrown.
-     */
-    // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
     /***/
   },
 
@@ -3496,19 +3521,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/main.ts ***!
     \*********************/
 
-  /*! exports provided: production */
+  /*! no exports provided */
 
   /***/
   function srcMainTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "production", function () {
-      return production;
-    });
     /* harmony import */
 
 
@@ -3539,8 +3558,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./environments/environment */
     "./src/environments/environment.ts");
-
-    var production = true;
 
     if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
       Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
@@ -3592,9 +3609,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../main */
-    "./src/main.ts");
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../environments/environment */
+    "./src/environments/environment.ts");
 
     var CharacterService =
     /*#__PURE__*/
@@ -3604,28 +3621,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.http = http;
         this.http = http;
-        if (_main__WEBPACK_IMPORTED_MODULE_3__["production"]) this.URL = 'http://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';else this.URL = 'https://localhost:44364/';
       }
 
       _createClass(CharacterService, [{
         key: "getCharacter",
         value: function getCharacter(team, name) {
-          return this.http.get(this.URL + 'api/characters/getcharacter/' + team + '/' + name).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/characters/getcharacter/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getPrice",
         value: function getPrice(team, name) {
-          return this.http.get(this.URL + 'api/characters/getprice/' + team + '/' + name).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/characters/getprice/' + team + '/' + name).toPromise();
         }
       }, {
         key: "getTeam",
         value: function getTeam(team) {
-          return this.http.get(this.URL + 'api/characters/getteam/' + team).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/characters/getteam/' + team).toPromise();
         }
       }, {
         key: "getInfo",
         value: function getInfo(team, name) {
-          return this.http.get(this.URL + 'api/characters/getinfo/' + team + '/' + name).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/characters/getinfo/' + team + '/' + name).toPromise();
         }
       }]);
 
@@ -3684,9 +3700,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../main */
-    "./src/main.ts");
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../environments/environment */
+    "./src/environments/environment.ts");
 
     var GameService =
     /*#__PURE__*/
@@ -3696,38 +3712,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         console.log("creating game service...");
         this.http = http;
-        if (_main__WEBPACK_IMPORTED_MODULE_3__["production"]) this.URL = 'http://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';else this.URL = 'https://localhost:44364/';
       }
 
       _createClass(GameService, [{
         key: "init",
         value: function init(team, id) {
-          return this.http.get(this.URL + 'api/game/init/' + team + '/' + id).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/init/' + team + '/' + id).toPromise();
         }
       }, {
         key: "play",
         value: function play(id) {
-          return this.http.get(this.URL + 'api/game/play/' + id).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/play/' + id).toPromise();
         }
       }, {
         key: "end",
         value: function end(id) {
-          return this.http.get(this.URL + 'api/game/end/' + id).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/end/' + id).toPromise();
         }
       }, {
         key: "getAllGameIDs",
         value: function getAllGameIDs() {
-          return this.http.get(this.URL + 'api/game/getallgameids').toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/getallgameids').toPromise();
         }
       }, {
         key: "getAllGameIDsAndStates",
         value: function getAllGameIDsAndStates() {
-          return this.http.get(this.URL + 'api/game/getallgameidsandstates').toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/getallgameidsandstates').toPromise();
         }
       }, {
         key: "getLevelID",
         value: function getLevelID(id) {
-          return this.http.get(this.URL + 'api/game/getlevelid/' + id).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + 'api/game/getlevelid/' + id).toPromise();
         }
       }]);
 
@@ -3774,9 +3789,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../main */
-    "./src/main.ts");
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../environments/environment */
+    "./src/environments/environment.ts");
 
     var ShopService =
     /*#__PURE__*/
@@ -3785,23 +3800,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, ShopService);
 
         this.http = http;
-        if (_main__WEBPACK_IMPORTED_MODULE_1__["production"]) this.URL = 'http://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';else this.URL = 'https://localhost:44364/';
       }
 
       _createClass(ShopService, [{
         key: "buy",
         value: function buy(id, player, unit) {
-          return this.http.get(this.URL + 'api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiURL + 'api/game/buy/' + id + '/' + player + '/' + unit).toPromise();
         }
       }, {
         key: "getNewIncomePrice",
         value: function getNewIncomePrice(id, player) {
-          return this.http.get(this.URL + 'api/game/incomeprice/' + id + '/' + player).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiURL + 'api/game/incomeprice/' + id + '/' + player).toPromise();
         }
       }, {
         key: "getNewHealthPrice",
         value: function getNewHealthPrice(id, player) {
-          return this.http.get(this.URL + 'api/game/healthprice/' + id + '/' + player).toPromise();
+          return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiURL + 'api/game/healthprice/' + id + '/' + player).toPromise();
         }
       }]);
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Unit } from './unit';
 import { Player } from '../player';
@@ -8,6 +8,7 @@ import { GameService } from '../../services/game.service';
 
 import { HubConnectionBuilder } from '@aspnet/signalr';
 import { Cloud } from '../cloud';
+import { CharacterBarComponent } from '../character-bar/character-bar.component';
 //import { AppComponent } from '../app.component';
 
 @Component({
@@ -16,7 +17,7 @@ import { Cloud } from '../cloud';
   styleUrls: ['./game.component.css', '../character-bar/character-bar.component.css']
 })
 
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, AfterViewInit {
   public id: number;
   public team: string;
   public side: number;
@@ -40,16 +41,10 @@ export class GameComponent implements OnInit {
     this.background.src = "../../assets/img/background/background default.png";
   }
 
+  @ViewChild(CharacterBarComponent, {static: false}) 
+    characterbar: CharacterBarComponent;
+
   ngOnInit() {
-    let connection = new HubConnectionBuilder()
-      .withUrl("/gamehub")
-      .build();
-
-    connection.start().then(() => {
-      console.log("connected!");
-      connection.invoke("connectedto", this.id);
-    });
-
     this.player1 = new Player(0, 0, 0, 0, 0, new Castle(0, 0, "white", 0, 0, 0));
     this.player2 = new Player(0, 0, 0, 0, 0, new Castle(0, 0, "white", 0, 0, 0));
 
@@ -66,8 +61,30 @@ export class GameComponent implements OnInit {
         this.connectedPlayer = new Player(0, 0, 0, 0, 3, new Castle(0, 0, "white", 0, 0, 0));
     });
 
-    connection.on("test", function() {
-      alert("TEST");
+    this.clouds = [
+      new Cloud(100),
+      new Cloud(600),
+      new Cloud(900),
+      new Cloud(1300),
+    ];
+    this.nextCloud = Math.floor(Math.random() * 25);
+
+    this.units = new Array<Unit>();
+
+    if (this.side == 1)
+      this.init();
+    else
+      this.gameServices.init(this.team, this.id);
+  }
+
+  ngAfterViewInit() {
+    let connection = new HubConnectionBuilder()
+      .withUrl("/gamehub")
+      .build();
+
+    connection.start().then(() => {
+      console.log("connected!");
+      connection.invoke("connectedto", this.id);
     });
 
     connection.on("UpdateUnits", (unitData) => {
@@ -78,6 +95,7 @@ export class GameComponent implements OnInit {
       this.player1.updatePlayer(playerData, 0);
       this.player2.updatePlayer(playerData, 1);
     });
+  
     connection.on("EndGame", (side) => {
       this.ended = side;
     });
@@ -97,20 +115,16 @@ export class GameComponent implements OnInit {
       connection.stop();
     }
 
-    this.clouds = [
-      new Cloud(100),
-      new Cloud(600),
-      new Cloud(900),
-      new Cloud(1300),
-    ];
-    this.nextCloud = Math.floor(Math.random() * 25);
-
-    this.units = new Array<Unit>();
-
-    if (this.side == 1)
-      this.init();
-    else
-      this.gameServices.init(this.team, this.id);
+    connection.on("AddCooldown", (side, name) => {
+      if (this.connectedPlayer.side != side)
+        return;
+      this.characterbar.addCooldown(name);
+    });
+    connection.on("RemoveCooldown", (side, name) => {
+      if (this.connectedPlayer.side != side)
+        return;
+      this.characterbar.removeCooldown(name);
+    })
   }
 
   public init = async() => {
@@ -160,7 +174,7 @@ export class GameComponent implements OnInit {
     if (this.nextCloud > 0)
       this.nextCloud--;
     else {
-      this.nextCloud = Math.floor(Math.random() * 40);
+      this.nextCloud = Math.floor(Math.random() * 50);
       this.clouds.push(new Cloud());
     }
     

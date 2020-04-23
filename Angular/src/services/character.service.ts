@@ -1,35 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { production } from '../main';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterService {
-  private URL: string;
-
   constructor(private http: HttpClient) {
     this.http = http;
-
-    if (production)
-      this.URL = 'http://CastleDefenseGame-env-2.acznmbp2nz.us-east-1.elasticbeanstalk.com/';
-    else
-      this.URL = 'https://localhost:44364/'
   }
 
   public getCharacter(team: string, name: string): Promise<string> {
-    return this.http.get<string>(this.URL + 'api/characters/getcharacter/' + team + '/' + name).toPromise();
+    return this.http.get<string>(environment.apiURL + 'api/characters/getcharacter/' + team + '/' + name).toPromise();
   }
 
   public getPrice(team: string, name: string): Promise<number> {
-    return this.http.get<number>(this.URL + 'api/characters/getprice/' + team + '/' + name).toPromise();
+    return this.http.get<number>(environment.apiURL + 'api/characters/getprice/' + team + '/' + name).toPromise();
   }
 
   public getTeam(team: string): Promise<string[]> {
-    return this.http.get<string[]>(this.URL + 'api/characters/getteam/' + team).toPromise();
+    return this.http.get<string[]>(environment.apiURL + 'api/characters/getteam/' + team).toPromise();
   }
 
   public getInfo(team: string, name: string) {
-    return this.http.get<number>(this.URL + 'api/characters/getinfo/' + team + '/' + name).toPromise();
+    return this.http.get<number>(environment.apiURL + 'api/characters/getinfo/' + team + '/' + name).toPromise();
   }
 }

@@ -58,6 +58,7 @@ export class CharacterBarComponent implements OnInit, AfterViewInit {
       charhtml += "'>$" + charprice + "</label><img src='../../assets/img/icons/" + currentchar + " icon.png'>";
 
       document.getElementsByClassName("character")[i].innerHTML += charhtml;
+      document.getElementsByClassName("cooldown")[i].id = currentchar + "cooldown";
       document.getElementsByClassName("character")[i].addEventListener("mouseup", (e) => {
         CharacterBarComponent.shopServices.buy(this.id, this.side, currentchar);
       });
@@ -65,6 +66,15 @@ export class CharacterBarComponent implements OnInit, AfterViewInit {
 
     this.getIncomePriceAsync();
     this.getHealthPriceAsync();
+  }
+
+  addCooldown = (name) => {
+    console.log("adding cooldown for " + name);
+    document.getElementById(name+"cooldown").style.display = "inline-block";
+  }
+  removeCooldown = (name) => {
+    console.log("removing cooldown for " + name);
+    document.getElementById(name+"cooldown").style.display = "none";
   }
 
   getIncomePriceAsync = async() => {

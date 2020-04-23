@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebApi.Controllers;
 using WebApi.Models;
 
 namespace WebApi.Services
@@ -49,9 +46,9 @@ namespace WebApi.Services
             Game toBuy = Startup.GetGame(id);
 
             if (player == 1)
-                toBuy.Buy(toBuy.Player1, unit);
+                toBuy.Shop.Buy(toBuy.Player1, unit);
             else
-                toBuy.Buy(toBuy.Player2, unit);
+                toBuy.Shop.Buy(toBuy.Player2, unit);
         }
 
         public int GetIncomePrice(int id, int player)
