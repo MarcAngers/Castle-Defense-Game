@@ -15,9 +15,13 @@ namespace WebApi.Models
         public Player Player2 { get; set; }
         private bool Multiplayer { get; set; }
         public GameState State { get; set; }
+        private int Tick { get; set; }
+        private int ComputerUnit { get; set; }
 
         public Game()
         {
+            this.Tick = 0;
+            this.ComputerUnit = 0;
             this.Id = 0;
             this.State = GameState.New;
         }
@@ -52,41 +56,40 @@ namespace WebApi.Models
             this.Multiplayer = false;
             this.Player2 = new ComputerPlayer(this.Id);
         }
-        public void StartComputerPlayer()
-        {
-            for (var i = 0; i < ((ComputerPlayer)(this.Player2)).Level.Units.Length; i++)
-            {
-                var unit = ((ComputerPlayer)(this.Player2)).Level.Units[i];
-                var time = ((ComputerPlayer)(this.Player2)).Level.Times[i];
 
-                _ = Task.Run(async () =>
-                {
-                      await Task.Delay(time);
-                      this.Shop.Buy(this.Player2, unit);
-                });
+        public void CheckComputerUnit()
+        {
+            int gameTime = this.Tick * 100;
+
+            if (this.ComputerUnit >= ((ComputerPlayer)this.Player2).Level.Times.Length)
+                return;
+
+            var unit = ((ComputerPlayer)(this.Player2)).Level.Units[this.ComputerUnit];
+            var time = ((ComputerPlayer)(this.Player2)).Level.Times[this.ComputerUnit];
+
+            if (gameTime >= time)
+            {
+                this.Shop.Buy(this.Player2, unit);
+                this.ComputerUnit++;
             }
+        }
+        public void CheckComputerIntervals()
+        {
+            int gameTime = this.Tick * 100;
+
             for (var i = 0; i < ((ComputerPlayer)(this.Player2)).Level.Recurring.Length; i++)
             {
                 var unit = ((ComputerPlayer)(this.Player2)).Level.Recurring[i];
                 var interval = ((ComputerPlayer)(this.Player2)).Level.Intervals[i];
 
-                _ = Task.Run(async () =>
-                {
-                    while (this.State != GameState.Ended)
-                    {
-                        await Task.Delay(interval);
-                        this.Shop.Buy(this.Player2, unit);
-                    }
-                });
+                if (gameTime % interval == 0)
+                    this.Shop.Buy(this.Player2, unit);
             }
         }
         public async void Play()
         {
             this.State = GameState.InProgress;
             this.Units = new List<Character>();
-
-            if (!this.Multiplayer)
-                this.StartComputerPlayer();
 
             while (this.State != GameState.Delete)
             {
@@ -129,6 +132,12 @@ namespace WebApi.Models
                         this.Units[i].Damage = 0;
                 }
                 this.Shop.Refresh();
+                this.Tick++;
+                if (!this.Multiplayer)
+                {
+                    this.CheckComputerUnit();
+                    this.CheckComputerIntervals();
+                }
                 await Task.Delay(100);
             }
         }
