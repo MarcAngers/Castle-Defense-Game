@@ -34,7 +34,31 @@ export class GameComponent implements OnInit, AfterViewInit {
   private clouds: Cloud[];
   private nextCloud: number;
 
-  private ended: number = 0;
+  private gameResult: string = "";
+  private player1Stats: Object = {
+    TotalIncome: {Item1: "-", Item2: "0"},
+    UnitsBought: {Item1: "-", Item2: "0"},
+    FavoriteUnit: {Item1: "-", Item2: "0"},
+    MostKills: {Item1: "-", Item2: "0"},
+    MostDamage: {Item1: "-", Item2: "0"},
+    MostCastleDamage: {Item1: "-", Item2: "0"},
+  };
+  private player2Stats: Object = {
+    TotalIncome: {Item1: "-", Item2: "0"},
+    UnitsBought: {Item1: "-", Item2: "0"},
+    FavoriteUnit: {Item1: "-", Item2: "0"},
+    MostKills: {Item1: "-", Item2: "0"},
+    MostDamage: {Item1: "-", Item2: "0"},
+    MostCastleDamage: {Item1: "-", Item2: "0"},
+  };
+  private player1FavoriteUnitIcon: string = "../../assets/img/icons/question icon.png";
+  private player1MostKillsIcon: string = "../../assets/img/icons/question icon.png";
+  private player1MostDamageIcon: string = "../../assets/img/icons/question icon.png";
+  private player1MostCastleDamageIcon: string = "../../assets/img/icons/question icon.png";
+  private player2FavoriteUnitIcon: string = "../../assets/img/icons/question icon.png";
+  private player2MostKillsIcon: string = "../../assets/img/icons/question icon.png";
+  private player2MostDamageIcon: string = "../../assets/img/icons/question icon.png";
+  private player2MostCastleDamageIcon: string = "../../assets/img/icons/question icon.png";
 
   constructor(private route: ActivatedRoute, private gameServices: GameService) { 
     this.background = new Image();
@@ -96,15 +120,37 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.player2.updatePlayer(playerData, 1);
     });
   
-    connection.on("EndGame", (side) => {
-      var stats = this.gameServices.getPlayerStats(this.id, 1);
-      console.log(stats);
-      this.ended = side;
+    connection.on("EndGame", async(side) => {
+      this.player1Stats = await this.gameServices.getPlayerStats(this.id, 1);
+      this.player2Stats = await this.gameServices.getPlayerStats(this.id, 2);
+      
+      this.player1FavoriteUnitIcon = "../../assets/img/icons/" + (<any>this.player1Stats).FavoriteUnit.Item1 + " icon.png";
+      this.player1MostKillsIcon = "../../assets/img/icons/" + (<any>this.player1Stats).MostKills.Item1 + " icon.png";
+      this.player1MostDamageIcon = "../../assets/img/icons/" + (<any>this.player1Stats).MostDamage.Item1 + " icon.png";
+      this.player1MostCastleDamageIcon = "../../assets/img/icons/" + (<any>this.player1Stats).MostCastleDamage.Item1 + " icon.png";
+      this.player2FavoriteUnitIcon = "../../assets/img/icons/" + (<any>this.player2Stats).FavoriteUnit.Item1 + " icon.png";
+      this.player2MostKillsIcon = "../../assets/img/icons/" + (<any>this.player2Stats).MostKills.Item1 + " icon.png";
+      this.player2MostDamageIcon = "../../assets/img/icons/" + (<any>this.player2Stats).MostDamage.Item1 + " icon.png";
+      this.player2MostCastleDamageIcon = "../../assets/img/icons/" + (<any>this.player2Stats).MostCastleDamage.Item1 + " icon.png";
+
+      if (side == this.side) {
+        this.gameResult = "VICTORY";
+        document.getElementById("endgame-modal-content").style.backgroundColor = "#ccffcc";
+      }
+      else if (this.side > 2)
+        this.gameResult = "PLAYER " + side + " WINS";
+      else {
+        this.gameResult = "DEFEAT";
+        document.getElementById("endgame-modal-content").style.backgroundColor = "#ffcccc";
+      }
+
+      document.getElementById("endgame-modal").style.display = "block";
     });
+
     connection.onclose(() => {
       if (this.side >= 3)
         return;
-      document.getElementById("main-menu").style.display = "none";      
+      document.getElementById("endgame-modal").style.display = "none";      
       this.gameServices.end(this.id);
       this.reset();
       delete(this.gameServices);
@@ -196,28 +242,12 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.player1.castle.draw(ctx);
       this.player2.castle.draw(ctx);
     }
-
-    if (this.ended)
-      document.getElementById("main-menu").style.display = "block";
-    if (this.ended != 0 && this.side != this.ended) {
-      ctx.fillStyle = "red";
-      ctx.font = "300px servif";
-      ctx.fillText("DEFEAT!", 100, 300, 1300);
-    }
-    if (this.ended != 0 && (this.side == this.ended || this.side >= 3)) {
-      this.context.fillStyle = "black";
-      this.context.font = "300px serif"
-      this.context.fillText("VICTORY!", 100, 300, 1300);
-      //if (AppComponent.user.name != "new_user")
-      //  AppComponent.user.win(this.id);
-    }
   }
 
   reset = () => {
     this.player1 = new Player(0, 0, 0, 0, 0, new Castle(0, 0, "white", 0, 0, 0));
     this.player2 = new Player(0, 0, 0, 0, 0, new Castle(0, 0, "white", 0, 0, 0));
     this.units = new Array<Unit>();
-    this.ended = 0;
 
     this.route.paramMap.subscribe(map => {
       var mapParams = <any> map;

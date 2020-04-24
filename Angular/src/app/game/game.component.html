@@ -1,6 +1,91 @@
 <script src="~/lib/signalr/signalr.js"></script>
 
-<button [routerLink]="['/']" id="main-menu">Main Menu</button>
 <canvas id="game-canvas" width="1500" height="500"></canvas>
 
 <app-character-bar [side]="side" [team]="team" [id]="id" id="footer"></app-character-bar>
+
+<!-- Endgame Modal -->
+<div id="endgame-modal" class="modal">
+    <div class="modal-content" id="endgame-modal-content">
+        <div id="endgame-header">
+            <h1>{{ gameResult }}</h1>
+        </div>
+        <div id="endgame-stats">
+            <div id="player1-stats">
+                <h2>Player 1:</h2>
+                <table>
+                    <tr>
+                        <td>Total Income:</td>
+                        <td>{{ player1Stats.TotalIncome.Item2 }}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Units Bought:</td>
+                        <td>{{ player1Stats.UnitsBought.Item2 }}</td>
+                        <td></td>
+                    </tr>
+                    <tr class="contains-icon">
+                        <td>Favorite Unit:</td>
+                        <td>{{ player1Stats.FavoriteUnit.Item2 }}</td>
+                        <td>
+                            <img src="{{player1FavoriteUnitIcon}}"/>
+                        </td>
+                    </tr>
+                    <tr class="contains-icon">
+                        <td>Most Damage:</td>
+                        <td>{{ player1Stats.MostDamage.Item2 }}</td>
+                        <td>
+                            <img src="{{player1MostDamageIcon}}"/>
+                        </td>
+                    </tr>
+                    <tr class="contains-icon">
+                        <td>Most Castle Damage:</td>
+                        <td>{{ player1Stats.MostCastleDamage.Item2 }}</td>
+                        <td>
+                            <img src="{{player1MostCastleDamageIcon}}"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="player2-stats">
+                <h2>Player 2:</h2>
+                <table>
+                    <tr>
+                        <td>Total Income:</td>
+                        <td>{{ player2Stats.TotalIncome.Item2 }}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Units Bought:</td>
+                        <td>{{ player2Stats.UnitsBought.Item2 }}</td>
+                        <td></td>
+                    </tr>
+                    <tr class="contains-icon">
+                        <td>Favorite Unit:</td>
+                        <td>{{ player2Stats.FavoriteUnit.Item2 }}</td>
+                        <td>
+                            <img src="{{player2FavoriteUnitIcon}}"/>
+                        </td>
+                    </tr>
+                    <tr class="contains-icon">
+                        <td>Most Damage:</td>
+                        <td>{{ player2Stats.MostDamage.Item2 }}</td>
+                        <td>
+                            <img src="{{player2MostDamageIcon}}"/>
+                        </td>
+                    </tr>
+                    <tr class="contains-icon">
+                        <td>Most Castle Damage:</td>
+                        <td>{{ player2Stats.MostCastleDamage.Item2 }}</td>
+                        <td>
+                            <img src="{{player2MostCastleDamageIcon}}"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="endgame-button">
+            <button [routerLink]="['/']" id="main-menu">Main Menu</button>
+        </div>
+    </div>
+</div>

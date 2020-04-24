@@ -111,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<script src=\"~/lib/signalr/signalr.js\"></script>\n\n<button [routerLink]=\"['/']\" id=\"main-menu\">Main Menu</button>\n<canvas id=\"game-canvas\" width=\"1500\" height=\"500\"></canvas>\n\n<app-character-bar [side]=\"side\" [team]=\"team\" [id]=\"id\" id=\"footer\"></app-character-bar>\n";
+    __webpack_exports__["default"] = "<script src=\"~/lib/signalr/signalr.js\"></script>\n\n<canvas id=\"game-canvas\" width=\"1500\" height=\"500\"></canvas>\n\n<app-character-bar [side]=\"side\" [team]=\"team\" [id]=\"id\" id=\"footer\"></app-character-bar>\n\n<!-- Endgame Modal -->\n<div id=\"endgame-modal\" class=\"modal\">\n    <div class=\"modal-content\" id=\"endgame-modal-content\">\n        <div id=\"endgame-header\">\n            <h1>{{ gameResult }}</h1>\n        </div>\n        <div id=\"endgame-stats\">\n            <div id=\"player1-stats\">\n                <h2>Player 1:</h2>\n                <table>\n                    <tr>\n                        <td>Total Income:</td>\n                        <td>{{ player1Stats.TotalIncome.Item2 }}</td>\n                        <td></td>\n                    </tr>\n                    <tr>\n                        <td>Units Bought:</td>\n                        <td>{{ player1Stats.UnitsBought.Item2 }}</td>\n                        <td></td>\n                    </tr>\n                    <tr class=\"contains-icon\">\n                        <td>Favorite Unit:</td>\n                        <td>{{ player1Stats.FavoriteUnit.Item2 }}</td>\n                        <td>\n                            <img src=\"{{player1FavoriteUnitIcon}}\"/>\n                        </td>\n                    </tr>\n                    <tr class=\"contains-icon\">\n                        <td>Most Damage:</td>\n                        <td>{{ player1Stats.MostDamage.Item2 }}</td>\n                        <td>\n                            <img src=\"{{player1MostDamageIcon}}\"/>\n                        </td>\n                    </tr>\n                    <tr class=\"contains-icon\">\n                        <td>Most Castle Damage:</td>\n                        <td>{{ player1Stats.MostCastleDamage.Item2 }}</td>\n                        <td>\n                            <img src=\"{{player1MostCastleDamageIcon}}\"/>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n            <div id=\"player2-stats\">\n                <h2>Player 2:</h2>\n                <table>\n                    <tr>\n                        <td>Total Income:</td>\n                        <td>{{ player2Stats.TotalIncome.Item2 }}</td>\n                        <td></td>\n                    </tr>\n                    <tr>\n                        <td>Units Bought:</td>\n                        <td>{{ player2Stats.UnitsBought.Item2 }}</td>\n                        <td></td>\n                    </tr>\n                    <tr class=\"contains-icon\">\n                        <td>Favorite Unit:</td>\n                        <td>{{ player2Stats.FavoriteUnit.Item2 }}</td>\n                        <td>\n                            <img src=\"{{player2FavoriteUnitIcon}}\"/>\n                        </td>\n                    </tr>\n                    <tr class=\"contains-icon\">\n                        <td>Most Damage:</td>\n                        <td>{{ player2Stats.MostDamage.Item2 }}</td>\n                        <td>\n                            <img src=\"{{player2MostDamageIcon}}\"/>\n                        </td>\n                    </tr>\n                    <tr class=\"contains-icon\">\n                        <td>Most Castle Damage:</td>\n                        <td>{{ player2Stats.MostCastleDamage.Item2 }}</td>\n                        <td>\n                            <img src=\"{{player2MostCastleDamageIcon}}\"/>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n        <div id=\"endgame-button\">\n            <button [routerLink]=\"['/']\" id=\"main-menu\">Main Menu</button>\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -2014,7 +2014,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#game-canvas {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 0;\r\n}\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    display: inline-block;\r\n    position: absolute;\r\n    top: 500px;\r\n    left: 0px;\r\n}\r\n#main-menu {\r\n    display: none;\r\n    position: absolute;\r\n    z-index: 5;\r\n    left: 676px;\r\n    top: 350px;\r\n\r\n    color: white;\r\n    background-color: #00ee55;\r\n    font-size: 20px;\r\n    margin: 25px;\r\n    margin-left: 600;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n#main-menu:hover {\r\n    background-color: #22ff77;\r\n    cursor: pointer;\r\n}\r\n@keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n/* Firefox < 16 */\r\n/* Safari, Chrome and Opera > 12.1 */\r\n@-webkit-keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n/* Internet Explorer */\r\n/* Opera < 12.1 */\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2FtZS9nYW1lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7SUFDbEIsTUFBTTtJQUNOLE9BQU87SUFDUCxVQUFVO0FBQ2Q7QUFDQTtJQUNJLFdBQVc7SUFDWCxhQUFhO0lBQ2IsYUFBYTtJQUNiLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFNBQVM7QUFDYjtBQUVBO0lBQ0ksYUFBYTtJQUNiLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YsV0FBVztJQUNYLFVBQVU7O0lBRVYsWUFBWTtJQUNaLHlCQUF5QjtJQUN6QixlQUFlO0lBQ2YsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixhQUFhO0lBQ2IsV0FBVztJQUNYLGtCQUFrQjs7SUFFbEIsNEJBQTRCLEVBQUUsb0NBQW9DLEVBQ3BDLGlCQUFpQixFQUNqQixzQkFBc0IsRUFDdEIsaUJBQWlCO1lBQ3ZDLG9CQUFvQjtBQUNoQztBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGVBQWU7QUFDbkI7QUFFQTtJQUNJLE9BQU8sVUFBVSxFQUFFO0lBQ25CLE9BQU8sVUFBVSxFQUFFO0FBQ3ZCO0FBRUEsaUJBQWlCO0FBTWpCLG9DQUFvQztBQUNwQztJQUNJLE9BQU8sVUFBVSxFQUFFO0lBQ25CLE9BQU8sVUFBVSxFQUFFO0FBQ3ZCO0FBRUEsc0JBQXNCO0FBTXRCLGlCQUFpQiIsImZpbGUiOiJzcmMvYXBwL2dhbWUvZ2FtZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2dhbWUtY2FudmFzIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogMDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB6LWluZGV4OiAwO1xyXG59XHJcbiNmb290ZXIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICB3aWR0aDogMTUwMnB4O1xyXG4gICAgaGVpZ2h0OiAxMjBweDtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAwcHg7XHJcbiAgICBsZWZ0OiAwcHg7XHJcbn1cclxuXHJcbiNtYWluLW1lbnUge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHotaW5kZXg6IDU7XHJcbiAgICBsZWZ0OiA2NzZweDtcclxuICAgIHRvcDogMzUwcHg7XHJcblxyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwZWU1NTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIG1hcmdpbjogMjVweDtcclxuICAgIG1hcmdpbi1sZWZ0OiA2MDA7XHJcbiAgICBwYWRkaW5nOiAyNXB4O1xyXG4gICAgYm9yZGVyOiAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcblxyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAyczsgLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG4gICAgICAgLW1vei1hbmltYXRpb246IGZhZGVpbiAyczsgLyogRmlyZWZveCA8IDE2ICovXHJcbiAgICAgICAgLW1zLWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG4gICAgICAgICAtby1hbmltYXRpb246IGZhZGVpbiAyczsgLyogT3BlcmEgPCAxMi4xICovXHJcbiAgICAgICAgICAgIGFuaW1hdGlvbjogZmFkZWluIDJzO1xyXG59XHJcbiNtYWluLW1lbnU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyZmY3NztcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIEZpcmVmb3ggPCAxNiAqL1xyXG5ALW1vei1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBTYWZhcmksIENocm9tZSBhbmQgT3BlcmEgPiAxMi4xICovXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIEludGVybmV0IEV4cGxvcmVyICovXHJcbkAtbXMta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogT3BlcmEgPCAxMi4xICovXHJcbkAtby1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59Il19 */";
+    __webpack_exports__["default"] = "table {\r\n    width: 100%;\r\n}\r\ntd {\r\n    font-weight: 600;\r\n}\r\nh2 {\r\n    margin: 0px;\r\n    margin-bottom: 10px;\r\n}\r\n.contains-icon {\r\n    height: 100px;\r\n}\r\n#game-canvas {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 0;\r\n}\r\n#footer {\r\n    margin: 0px;\r\n    width: 1502px;\r\n    height: 120px;\r\n    display: inline-block;\r\n    position: absolute;\r\n    top: 500px;\r\n    left: 0px;\r\n}\r\n#endgame-stats {\r\n    border-top: 1px solid black;\r\n}\r\n#player1-stats {\r\n    display: inline-block;\r\n    width: 50%;\r\n}\r\n#player2-stats {\r\n    display: inline-block;\r\n    width: 50%;\r\n}\r\n#main-menu {\r\n    color: white;\r\n    background-color: #00ee55;\r\n    font-size: 20px;\r\n    padding: 25px;\r\n    border: 0px;\r\n    border-radius: 5px;\r\n\r\n    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 2s;\r\n}\r\n#main-menu:hover {\r\n    background-color: #22ff77;\r\n    cursor: pointer;\r\n}\r\n@keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n/* Firefox < 16 */\r\n/* Safari, Chrome and Opera > 12.1 */\r\n@-webkit-keyframes fadein {\r\n    from { opacity: 0; }\r\n    to   { opacity: 1; }\r\n}\r\n/* Internet Explorer */\r\n/* Opera < 12.1 */\r\n/* Modal Styling... */\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 5; /* Sit on top */\r\n    padding-top: 15px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 1500px; /* Full width */\r\n    height: 605px; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n    border-radius: 0px 0px 20px 20px;\r\n}\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    border-radius: 20px;\r\n    width: 85%;\r\n    height: 90%;\r\n    font-family: arial;\r\n    font-size: 15px;\r\n    text-align: center;\r\n}\r\n.modal-header {\r\n      margin-top: 0px;\r\n      font-size: 20px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2FtZS9nYW1lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0FBQ2Y7QUFDQTtJQUNJLGdCQUFnQjtBQUNwQjtBQUNBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksYUFBYTtBQUNqQjtBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLE1BQU07SUFDTixPQUFPO0lBQ1AsVUFBVTtBQUNkO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsYUFBYTtJQUNiLGFBQWE7SUFDYixxQkFBcUI7SUFDckIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixTQUFTO0FBQ2I7QUFFQTtJQUNJLDJCQUEyQjtBQUMvQjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLFVBQVU7QUFDZDtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLFVBQVU7QUFDZDtBQUVBO0lBQ0ksWUFBWTtJQUNaLHlCQUF5QjtJQUN6QixlQUFlO0lBQ2YsYUFBYTtJQUNiLFdBQVc7SUFDWCxrQkFBa0I7O0lBRWxCLDRCQUE0QixFQUFFLG9DQUFvQyxFQUNwQyxpQkFBaUIsRUFDakIsc0JBQXNCLEVBQ3RCLGlCQUFpQjtZQUN2QyxvQkFBb0I7QUFDaEM7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixlQUFlO0FBQ25CO0FBRUE7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2QjtBQUVBLGlCQUFpQjtBQU1qQixvQ0FBb0M7QUFDcEM7SUFDSSxPQUFPLFVBQVUsRUFBRTtJQUNuQixPQUFPLFVBQVUsRUFBRTtBQUN2QjtBQUVBLHNCQUFzQjtBQU10QixpQkFBaUI7QUFNakIscUJBQXFCO0FBQ3JCO0lBQ0ksYUFBYSxFQUFFLHNCQUFzQjtJQUNyQyxlQUFlLEVBQUUsa0JBQWtCO0lBQ25DLFVBQVUsRUFBRSxlQUFlO0lBQzNCLGlCQUFpQixFQUFFLHdCQUF3QjtJQUMzQyxPQUFPO0lBQ1AsTUFBTTtJQUNOLGFBQWEsRUFBRSxlQUFlO0lBQzlCLGFBQWEsRUFBRSxnQkFBZ0I7SUFDL0IsY0FBYyxFQUFFLDRCQUE0QjtJQUM1Qyw0QkFBNEIsRUFBRSxtQkFBbUI7SUFDakQsaUNBQWlDLEVBQUUscUJBQXFCO0lBQ3hELGdDQUFnQztBQUNwQztBQUVFLGtCQUFrQjtBQUNwQjtJQUNJLHlCQUF5QjtJQUN6QixZQUFZO0lBQ1osYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixtQkFBbUI7SUFDbkIsVUFBVTtJQUNWLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLGtCQUFrQjtBQUN0QjtBQUNBO01BQ00sZUFBZTtNQUNmLGVBQWU7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9nYW1lL2dhbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcbnRkIHtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuaDIge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG59XHJcbi5jb250YWlucy1pY29uIHtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbn1cclxuXHJcbiNnYW1lLWNhbnZhcyB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgei1pbmRleDogMDtcclxufVxyXG4jZm9vdGVyIHtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgd2lkdGg6IDE1MDJweDtcclxuICAgIGhlaWdodDogMTIwcHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDUwMHB4O1xyXG4gICAgbGVmdDogMHB4O1xyXG59XHJcblxyXG4jZW5kZ2FtZS1zdGF0cyB7XHJcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuI3BsYXllcjEtc3RhdHMge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgd2lkdGg6IDUwJTtcclxufVxyXG4jcGxheWVyMi1zdGF0cyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNTAlO1xyXG59XHJcblxyXG4jbWFpbi1tZW51IHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMGVlNTU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBwYWRkaW5nOiAyNXB4O1xyXG4gICAgYm9yZGVyOiAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcblxyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAyczsgLyogU2FmYXJpLCBDaHJvbWUgYW5kIE9wZXJhID4gMTIuMSAqL1xyXG4gICAgICAgLW1vei1hbmltYXRpb246IGZhZGVpbiAyczsgLyogRmlyZWZveCA8IDE2ICovXHJcbiAgICAgICAgLW1zLWFuaW1hdGlvbjogZmFkZWluIDJzOyAvKiBJbnRlcm5ldCBFeHBsb3JlciAqL1xyXG4gICAgICAgICAtby1hbmltYXRpb246IGZhZGVpbiAyczsgLyogT3BlcmEgPCAxMi4xICovXHJcbiAgICAgICAgICAgIGFuaW1hdGlvbjogZmFkZWluIDJzO1xyXG59XHJcbiNtYWluLW1lbnU6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyZmY3NztcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIEZpcmVmb3ggPCAxNiAqL1xyXG5ALW1vei1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBTYWZhcmksIENocm9tZSBhbmQgT3BlcmEgPiAxMi4xICovXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7IG9wYWNpdHk6IDA7IH1cclxuICAgIHRvICAgeyBvcGFjaXR5OiAxOyB9XHJcbn1cclxuXHJcbi8qIEludGVybmV0IEV4cGxvcmVyICovXHJcbkAtbXMta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHsgb3BhY2l0eTogMDsgfVxyXG4gICAgdG8gICB7IG9wYWNpdHk6IDE7IH1cclxufVxyXG5cclxuLyogT3BlcmEgPCAxMi4xICovXHJcbkAtby1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20geyBvcGFjaXR5OiAwOyB9XHJcbiAgICB0byAgIHsgb3BhY2l0eTogMTsgfVxyXG59XHJcblxyXG4vKiBNb2RhbCBTdHlsaW5nLi4uICovXHJcbi5tb2RhbCB7XHJcbiAgICBkaXNwbGF5OiBub25lOyAvKiBIaWRkZW4gYnkgZGVmYXVsdCAqL1xyXG4gICAgcG9zaXRpb246IGZpeGVkOyAvKiBTdGF5IGluIHBsYWNlICovXHJcbiAgICB6LWluZGV4OiA1OyAvKiBTaXQgb24gdG9wICovXHJcbiAgICBwYWRkaW5nLXRvcDogMTVweDsgLyogTG9jYXRpb24gb2YgdGhlIGJveCAqL1xyXG4gICAgbGVmdDogMDtcclxuICAgIHRvcDogMDtcclxuICAgIHdpZHRoOiAxNTAwcHg7IC8qIEZ1bGwgd2lkdGggKi9cclxuICAgIGhlaWdodDogNjA1cHg7IC8qIEZ1bGwgaGVpZ2h0ICovXHJcbiAgICBvdmVyZmxvdzogYXV0bzsgLyogRW5hYmxlIHNjcm9sbCBpZiBuZWVkZWQgKi9cclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigwLDAsMCk7IC8qIEZhbGxiYWNrIGNvbG9yICovXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7IC8qIEJsYWNrIHcvIG9wYWNpdHkgKi9cclxuICAgIGJvcmRlci1yYWRpdXM6IDBweCAwcHggMjBweCAyMHB4O1xyXG59XHJcbiAgXHJcbiAgLyogTW9kYWwgQ29udGVudCAqL1xyXG4ubW9kYWwtY29udGVudCB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM4ODg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgd2lkdGg6IDg1JTtcclxuICAgIGhlaWdodDogOTAlO1xyXG4gICAgZm9udC1mYW1pbHk6IGFyaWFsO1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbi5tb2RhbC1oZWFkZXIge1xyXG4gICAgICBtYXJnaW4tdG9wOiAwcHg7XHJcbiAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxufSJdfQ== */";
     /***/
   },
 
@@ -2109,7 +2109,67 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.route = route;
         this.gameServices = gameServices;
-        this.ended = 0;
+        this.gameResult = "";
+        this.player1Stats = {
+          TotalIncome: {
+            Item1: "-",
+            Item2: "0"
+          },
+          UnitsBought: {
+            Item1: "-",
+            Item2: "0"
+          },
+          FavoriteUnit: {
+            Item1: "-",
+            Item2: "0"
+          },
+          MostKills: {
+            Item1: "-",
+            Item2: "0"
+          },
+          MostDamage: {
+            Item1: "-",
+            Item2: "0"
+          },
+          MostCastleDamage: {
+            Item1: "-",
+            Item2: "0"
+          }
+        };
+        this.player2Stats = {
+          TotalIncome: {
+            Item1: "-",
+            Item2: "0"
+          },
+          UnitsBought: {
+            Item1: "-",
+            Item2: "0"
+          },
+          FavoriteUnit: {
+            Item1: "-",
+            Item2: "0"
+          },
+          MostKills: {
+            Item1: "-",
+            Item2: "0"
+          },
+          MostDamage: {
+            Item1: "-",
+            Item2: "0"
+          },
+          MostCastleDamage: {
+            Item1: "-",
+            Item2: "0"
+          }
+        };
+        this.player1FavoriteUnitIcon = "../../assets/img/icons/question icon.png";
+        this.player1MostKillsIcon = "../../assets/img/icons/question icon.png";
+        this.player1MostDamageIcon = "../../assets/img/icons/question icon.png";
+        this.player1MostCastleDamageIcon = "../../assets/img/icons/question icon.png";
+        this.player2FavoriteUnitIcon = "../../assets/img/icons/question icon.png";
+        this.player2MostKillsIcon = "../../assets/img/icons/question icon.png";
+        this.player2MostDamageIcon = "../../assets/img/icons/question icon.png";
+        this.player2MostCastleDamageIcon = "../../assets/img/icons/question icon.png";
 
         this.init = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this10, void 0, void 0,
@@ -2185,7 +2245,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _this10.player1 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           _this10.player2 = new _player__WEBPACK_IMPORTED_MODULE_4__["Player"](0, 0, 0, 0, 0, new _castle__WEBPACK_IMPORTED_MODULE_5__["Castle"](0, 0, "white", 0, 0, 0));
           _this10.units = new Array();
-          _this10.ended = 0;
 
           _this10.route.paramMap.subscribe(function (map) {
             var mapParams = map;
@@ -2243,14 +2302,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this13.player2.updatePlayer(playerData, 1);
           });
           connection.on("EndGame", function (side) {
-            var stats = _this13.gameServices.getPlayerStats(_this13.id, 1);
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this13, void 0, void 0,
+            /*#__PURE__*/
+            regeneratorRuntime.mark(function _callee11() {
+              return regeneratorRuntime.wrap(function _callee11$(_context12) {
+                while (1) {
+                  switch (_context12.prev = _context12.next) {
+                    case 0:
+                      _context12.next = 2;
+                      return this.gameServices.getPlayerStats(this.id, 1);
 
-            console.log(stats);
-            _this13.ended = side;
+                    case 2:
+                      this.player1Stats = _context12.sent;
+                      _context12.next = 5;
+                      return this.gameServices.getPlayerStats(this.id, 2);
+
+                    case 5:
+                      this.player2Stats = _context12.sent;
+                      this.player1FavoriteUnitIcon = "../../assets/img/icons/" + this.player1Stats.FavoriteUnit.Item1 + " icon.png";
+                      this.player1MostKillsIcon = "../../assets/img/icons/" + this.player1Stats.MostKills.Item1 + " icon.png";
+                      this.player1MostDamageIcon = "../../assets/img/icons/" + this.player1Stats.MostDamage.Item1 + " icon.png";
+                      this.player1MostCastleDamageIcon = "../../assets/img/icons/" + this.player1Stats.MostCastleDamage.Item1 + " icon.png";
+                      this.player2FavoriteUnitIcon = "../../assets/img/icons/" + this.player2Stats.FavoriteUnit.Item1 + " icon.png";
+                      this.player2MostKillsIcon = "../../assets/img/icons/" + this.player2Stats.MostKills.Item1 + " icon.png";
+                      this.player2MostDamageIcon = "../../assets/img/icons/" + this.player2Stats.MostDamage.Item1 + " icon.png";
+                      this.player2MostCastleDamageIcon = "../../assets/img/icons/" + this.player2Stats.MostCastleDamage.Item1 + " icon.png";
+
+                      if (side == this.side) {
+                        this.gameResult = "VICTORY";
+                        document.getElementById("endgame-modal-content").style.backgroundColor = "#ccffcc";
+                      } else if (this.side > 2) this.gameResult = "PLAYER " + side + " WINS";else {
+                        this.gameResult = "DEFEAT";
+                        document.getElementById("endgame-modal-content").style.backgroundColor = "#ffcccc";
+                      }
+
+                      document.getElementById("endgame-modal").style.display = "block";
+
+                    case 16:
+                    case "end":
+                      return _context12.stop();
+                  }
+                }
+              }, _callee11, this);
+            }));
           });
           connection.onclose(function () {
             if (_this13.side >= 3) return;
-            document.getElementById("main-menu").style.display = "none";
+            document.getElementById("endgame-modal").style.display = "none";
 
             _this13.gameServices.end(_this13.id);
 
@@ -2282,11 +2380,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function draw() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee11() {
+          regeneratorRuntime.mark(function _callee12() {
             var ctx;
-            return regeneratorRuntime.wrap(function _callee11$(_context12) {
+            return regeneratorRuntime.wrap(function _callee12$(_context13) {
               while (1) {
-                switch (_context12.prev = _context12.next) {
+                switch (_context13.prev = _context13.next) {
                   case 0:
                     ctx = this.context;
                     this.draw_background();
@@ -2296,10 +2394,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 3:
                   case "end":
-                    return _context12.stop();
+                    return _context13.stop();
                 }
               }
-            }, _callee11, this);
+            }, _callee12, this);
           }));
         }
       }, {
@@ -2332,21 +2430,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (connected) {
             this.player1.castle.draw(ctx);
             this.player2.castle.draw(ctx);
-          }
-
-          if (this.ended) document.getElementById("main-menu").style.display = "block";
-
-          if (this.ended != 0 && this.side != this.ended) {
-            ctx.fillStyle = "red";
-            ctx.font = "300px servif";
-            ctx.fillText("DEFEAT!", 100, 300, 1300);
-          }
-
-          if (this.ended != 0 && (this.side == this.ended || this.side >= 3)) {
-            this.context.fillStyle = "black";
-            this.context.font = "300px serif";
-            this.context.fillText("VICTORY!", 100, 300, 1300); //if (AppComponent.user.name != "new_user")
-            //  AppComponent.user.win(this.id);
           }
         }
       }]);
@@ -2560,26 +2643,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.checkGame = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this15, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee12() {
-            return regeneratorRuntime.wrap(function _callee12$(_context13) {
+          regeneratorRuntime.mark(function _callee13() {
+            return regeneratorRuntime.wrap(function _callee13$(_context14) {
               while (1) {
-                switch (_context13.prev = _context13.next) {
+                switch (_context14.prev = _context14.next) {
                   case 0:
                     document.getElementById("start").addEventListener("click", function () {});
                     this.updateTeam();
-                    _context13.next = 4;
+                    _context14.next = 4;
                     return this.gameServices.getLevelID(this.id);
 
                   case 4:
-                    this.id = _context13.sent;
+                    this.id = _context14.sent;
                     this.router.navigate(["../game/", this.id, this.team, this.side]);
 
                   case 6:
                   case "end":
-                    return _context13.stop();
+                    return _context14.stop();
                 }
               }
-            }, _callee12, this);
+            }, _callee13, this);
           }));
         };
 
@@ -2762,27 +2845,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.updateGamesAsync = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this17, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee13() {
+          regeneratorRuntime.mark(function _callee14() {
             var jsonData, obj;
-            return regeneratorRuntime.wrap(function _callee13$(_context14) {
+            return regeneratorRuntime.wrap(function _callee14$(_context15) {
               while (1) {
-                switch (_context14.prev = _context14.next) {
+                switch (_context15.prev = _context15.next) {
                   case 0:
-                    _context14.next = 2;
+                    _context15.next = 2;
                     return this.gameServices.getAllGameIDsAndStates();
 
                   case 2:
-                    jsonData = _context14.sent;
+                    jsonData = _context15.sent;
                     obj = jsonData;
                     this.allIDsandStates = obj;
                     if (Object.keys(this.allIDsandStates)) this.gameIDs = Object.keys(this.allIDsandStates);else this.gameIDs = [];
 
                   case 6:
                   case "end":
-                    return _context14.stop();
+                    return _context15.stop();
                 }
               }
-            }, _callee13, this);
+            }, _callee14, this);
           }));
         };
 
@@ -2816,12 +2899,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.newGame = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this17, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee14() {
-            return regeneratorRuntime.wrap(function _callee14$(_context15) {
+          regeneratorRuntime.mark(function _callee15() {
+            return regeneratorRuntime.wrap(function _callee15$(_context16) {
               while (1) {
-                switch (_context15.prev = _context15.next) {
+                switch (_context16.prev = _context16.next) {
                   case 0:
-                    _context15.next = 2;
+                    _context16.next = 2;
                     return this.updateGamesAsync();
 
                   case 2:
@@ -2831,44 +2914,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 5:
                   case "end":
-                    return _context15.stop();
+                    return _context16.stop();
                 }
               }
-            }, _callee14, this);
+            }, _callee15, this);
           }));
         };
 
         this.joinGame = function () {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this17, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee15() {
+          regeneratorRuntime.mark(function _callee16() {
             var side;
-            return regeneratorRuntime.wrap(function _callee15$(_context16) {
+            return regeneratorRuntime.wrap(function _callee16$(_context17) {
               while (1) {
-                switch (_context16.prev = _context16.next) {
+                switch (_context17.prev = _context17.next) {
                   case 0:
                     side = 2;
-                    _context16.next = 3;
+                    _context17.next = 3;
                     return this.updateGamesAsync();
 
                   case 3:
                     if (this.tryId()) {
-                      _context16.next = 10;
+                      _context17.next = 10;
                       break;
                     }
 
                     if (!(this.allIDsandStates[this.id] == 2)) {
-                      _context16.next = 8;
+                      _context17.next = 8;
                       break;
                     }
 
                     side = 3;
-                    _context16.next = 10;
+                    _context17.next = 10;
                     break;
 
                   case 8:
                     alert("The ID entered is invalid! Check to make sure the entered ID is correct.\n(or it's just a bug lol)");
-                    return _context16.abrupt("return");
+                    return _context17.abrupt("return");
 
                   case 10:
                     this.updateTeam();
@@ -2876,10 +2959,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                   case 12:
                   case "end":
-                    return _context16.stop();
+                    return _context17.stop();
                 }
               }
-            }, _callee15, this);
+            }, _callee16, this);
           }));
         };
 

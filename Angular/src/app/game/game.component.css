@@ -1,3 +1,17 @@
+table {
+    width: 100%;
+}
+td {
+    font-weight: 600;
+}
+h2 {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+.contains-icon {
+    height: 100px;
+}
+
 #game-canvas {
     position: absolute;
     top: 0;
@@ -14,18 +28,22 @@
     left: 0px;
 }
 
-#main-menu {
-    display: none;
-    position: absolute;
-    z-index: 5;
-    left: 676px;
-    top: 350px;
+#endgame-stats {
+    border-top: 1px solid black;
+}
+#player1-stats {
+    display: inline-block;
+    width: 50%;
+}
+#player2-stats {
+    display: inline-block;
+    width: 50%;
+}
 
+#main-menu {
     color: white;
     background-color: #00ee55;
     font-size: 20px;
-    margin: 25px;
-    margin-left: 600;
     padding: 25px;
     border: 0px;
     border-radius: 5px;
@@ -68,4 +86,38 @@
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+/* Modal Styling... */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    padding-top: 15px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 1500px; /* Full width */
+    height: 605px; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border-radius: 0px 0px 20px 20px;
+}
+  
+  /* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 85%;
+    height: 90%;
+    font-family: arial;
+    font-size: 15px;
+    text-align: center;
+}
+.modal-header {
+      margin-top: 0px;
+      font-size: 20px;
 }

@@ -31,9 +31,9 @@ namespace WebApi.Models
             this.HealthPrice = 5;
             this.UnitsBought = new Dictionary<string, int>();
 
-            this.MostKills = new Tuple<string, int>("None", 0);
-            this.MostDamage = new Tuple<string, int>("None", 0);
-            this.MostCastleDamage = new Tuple<string, int>("None", 0);
+            this.MostKills = new Tuple<string, int>("question", 0);
+            this.MostDamage = new Tuple<string, int>("question", 0);
+            this.MostCastleDamage = new Tuple<string, int>("question", 0);
         }
         public Player(string team, int side) : this()
         {
@@ -92,7 +92,7 @@ namespace WebApi.Models
             Dictionary<string, Tuple<string, int>> result = new Dictionary<string, Tuple<string, int>>();
             result.Add("TotalIncome", new Tuple<string, int>("TotalIncome", (int)this.TotalIncome));
 
-            Tuple<string, int> favoriteUnit = new Tuple<string, int>("None", 0);
+            Tuple<string, int> favoriteUnit = new Tuple<string, int>("question", 0);
             int totalUnitsBought = 0;
             foreach(KeyValuePair<string, int> entry in this.UnitsBought)
             {
