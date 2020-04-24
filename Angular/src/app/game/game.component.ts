@@ -34,8 +34,8 @@ export class GameComponent implements OnInit, AfterViewInit {
   private clouds: Cloud[];
   private nextCloud: number;
 
-  private gameResult: string = "";
-  private player1Stats: Object = {
+  public gameResult: string = "";
+  public player1Stats: any = {
     TotalIncome: {Item1: "-", Item2: "0"},
     UnitsBought: {Item1: "-", Item2: "0"},
     FavoriteUnit: {Item1: "-", Item2: "0"},
@@ -43,7 +43,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     MostDamage: {Item1: "-", Item2: "0"},
     MostCastleDamage: {Item1: "-", Item2: "0"},
   };
-  private player2Stats: Object = {
+  public player2Stats: any = {
     TotalIncome: {Item1: "-", Item2: "0"},
     UnitsBought: {Item1: "-", Item2: "0"},
     FavoriteUnit: {Item1: "-", Item2: "0"},
@@ -51,14 +51,14 @@ export class GameComponent implements OnInit, AfterViewInit {
     MostDamage: {Item1: "-", Item2: "0"},
     MostCastleDamage: {Item1: "-", Item2: "0"},
   };
-  private player1FavoriteUnitIcon: string = "../../assets/img/icons/question icon.png";
-  private player1MostKillsIcon: string = "../../assets/img/icons/question icon.png";
-  private player1MostDamageIcon: string = "../../assets/img/icons/question icon.png";
-  private player1MostCastleDamageIcon: string = "../../assets/img/icons/question icon.png";
-  private player2FavoriteUnitIcon: string = "../../assets/img/icons/question icon.png";
-  private player2MostKillsIcon: string = "../../assets/img/icons/question icon.png";
-  private player2MostDamageIcon: string = "../../assets/img/icons/question icon.png";
-  private player2MostCastleDamageIcon: string = "../../assets/img/icons/question icon.png";
+  public player1FavoriteUnitIcon: string = "../../assets/img/icons/question icon.png";
+  public player1MostKillsIcon: string = "../../assets/img/icons/question icon.png";
+  public player1MostDamageIcon: string = "../../assets/img/icons/question icon.png";
+  public player1MostCastleDamageIcon: string = "../../assets/img/icons/question icon.png";
+  public player2FavoriteUnitIcon: string = "../../assets/img/icons/question icon.png";
+  public player2MostKillsIcon: string = "../../assets/img/icons/question icon.png";
+  public player2MostDamageIcon: string = "../../assets/img/icons/question icon.png";
+  public player2MostCastleDamageIcon: string = "../../assets/img/icons/question icon.png";
 
   constructor(private route: ActivatedRoute, private gameServices: GameService) { 
     this.background = new Image();
