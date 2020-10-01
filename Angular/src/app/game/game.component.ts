@@ -65,7 +65,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     this.background.src = "../../assets/img/background/background default.png";
   }
 
-  @ViewChild(CharacterBarComponent, {static: false}) 
+  @ViewChild(CharacterBarComponent) 
     characterbar: CharacterBarComponent;
 
   ngOnInit() {

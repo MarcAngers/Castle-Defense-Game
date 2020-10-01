@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\WebApi\\WebApi\\WebApi.csproj": {}
+    "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\repos\\WebApi\\WebApi\\WebApi.csproj": {
+    "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\WebApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\repos\\WebApi\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\marc.angers\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\WebApi\\WebApi\\obj\\",
+        "projectPath": "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\Marc\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\Castle Defense Game\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\marc.angers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Marc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,8 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/caseware/_packaging/Caseware.IDEA_Feed/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -73,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
