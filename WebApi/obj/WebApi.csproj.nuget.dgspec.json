@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj": {}
+    "C:\\repos\\Castle-Defense-Game\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj": {
+    "C:\\repos\\Castle-Defense-Game\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\repos\\Castle-Defense-Game\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\Marc\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\Castle Defense Game\\WebApi\\obj\\",
+        "projectPath": "C:\\repos\\Castle-Defense-Game\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\Castle-Defense-Game\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Marc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.SignalR": {
               "target": "Package",
@@ -66,8 +69,20 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[3.1.8, 3.1.8]"
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.24, 3.1.24]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
             }
           ],
           "frameworkReferences": {
@@ -78,12 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
