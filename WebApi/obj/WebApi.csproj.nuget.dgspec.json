@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj": {}
+    "D:\\Coding\\Castle Defense Game\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj": {
+    "D:\\Coding\\Castle Defense Game\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "D:\\Coding\\Castle Defense Game\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "D:\\repos\\Castle Defense Game\\WebApi\\WebApi.csproj",
+        "projectPath": "D:\\Coding\\Castle Defense Game\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\Marc\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\Castle Defense Game\\WebApi\\obj\\",
+        "outputPath": "D:\\Coding\\Castle Defense Game\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -64,12 +64,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[3.1.8, 3.1.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,11 +73,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
         }
       }
     }
